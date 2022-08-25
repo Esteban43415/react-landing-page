@@ -9,16 +9,16 @@ TOC:
 a. Webfonts and Icon fonts
 b. Reset
 c. Default Styles
-   1. Basic
-   2. Typography
-   3. Links
-   4. Images
-   5. Buttons
-   6. Forms
+    1. Basic
+    2. Typography
+    3. Links
+    4. Images
+    5. Buttons
+    6. Forms
 d. Grid
 e. Others
-   1. Clearing
-   2. Misc
+    1. Clearing
+    2. Misc
 
 =====================================================================  */
 
@@ -29,15 +29,17 @@ e. Others
 /* a. Webfonts and Icon fonts
  ------------------------------------------------------------------ */
 
-@import url("fonts.css");
+
+/* @import url("fonts.css");
 @import url("fontello/css/fontello.css");
-@import url("font-awesome/css/font-awesome.min.css");
+@import url("font-awesome/css/font-awesome.min.css"); */
+
 
 /* ------------------------------------------------------------------
 /* b. Reset
-      Adapted from:
-      Normalize.css - https://github.com/necolas/normalize.css/
-      HTML5 Doctor Reset - html5doctor.com/html-5-reset-stylesheet/
+    Adapted from:
+    Normalize.css - https://github.com/necolas/normalize.css/
+    HTML5 Doctor Reset - html5doctor.com/html-5-reset-stylesheet/
 /* ------------------------------------------------------------------ */
 
 html,
@@ -159,11 +161,6 @@ pre {
     white-space: pre;
     white-space: pre-wrap;
     word-wrap: break-word;
-}
-
-blockquote,
-q {
-    quotes: &#8220 &#8220;
 }
 
 blockquote:before,
@@ -297,8 +294,6 @@ h6 {
     font-size: 14px;
     line-height: 30px;
 }
-
-.subheader {}
 
 p {
     margin: 0 0 30px 0;
@@ -540,10 +535,6 @@ li {
     margin-bottom: 12px;
 }
 
-ul.large li {}
-
-li p {}
-
 
 /* ---------------------------------------------------------------------
 /*  Stats Tab Markup
@@ -706,9 +697,6 @@ dd {
     color: #A9ADB2;
 }
 
-.pagination .prev,
-.pagination .next {}
-
 
 /*  5. Images  --------------------------------------------------------- */
 
@@ -815,7 +803,7 @@ select {
     margin: 0 0 24px 0;
     border: 0;
     outline: none;
-    vertical-align: middle;
+    /* vertical-align: middle; */
     min-width: 225px;
     max-width: 100%;
     font-size: 15px;
