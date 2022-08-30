@@ -1,6 +1,11 @@
 {
     "rules": {
-        ".read": "now < 1663736400000", // 2022-9-21
-        ".write": "now < 1663736400000", // 2022-9-21
+        "participantes": {
+            "$id": {
+                ".read": "now < 1663736400000",
+                ".write": "now < 1663736400000",
+                ".validate": "newData.child('ruta10km').val() === true ? !root.child('Carrera/Rutas/ruta10km').child(newData.child('cedula').val()).exists() : (newData.child('ruta21km').val() === true? !root.child('Carrera/Rutas/ruta21km').child(newData.child('cedula').val()).exists() : (newData.child('ruta34km').val() === true ? !root.child('Carrera/Rutas/ruta34km').child(newData.child('cedula').val()).exists() : true))"
+            }
+        }
     }
 }
