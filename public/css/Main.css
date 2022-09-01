@@ -1,6 +1,7 @@
 @import url("fonts.css");
 @import url("fontello/css/fontello.css");
 @import url("font-awesome/css/font-awesome.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
 
 /* 
 =====================================================================
@@ -15,6 +16,11 @@
 @font-face {
     font-family: 'Skia';
     src: url('../fonts/Skia_Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Std';
+    src: url('../fonts/DIN1451StdEngschrift.otf');
 }
 
 
@@ -37,11 +43,12 @@ input[type="text"],
 input[type="password"],
 input[type="email"],
 input[type="tel"],
+input[type="date"],
 textarea,
 select {
     display: block;
-    padding: 10px 15px;
-    margin: 0 0 24px 0;
+    padding: 9px 0px;
+    margin: 0 0 0px 0;
     border: 0;
     outline: none;
     /* vertical-align: middle; */
@@ -62,6 +69,7 @@ input[type="text"]:focus,
 input[type="tel"]:focus,
 input[type="password"]:focus,
 input[type="email"]:focus,
+input[type="date"]:focus,
 textarea:focus {
     color: #3c3d3f;
     background-color: #e6ebef;
@@ -108,10 +116,18 @@ input[type=checkbox]:checked+.combos:before~.contenedor {
 /* ------------------------------------------------------------------ */
 
 body {
-    background: #062b3d;
-    background: #062b3d url(../imagenes/tramasvg.svg) top center;
+    background: #0d2946;
+    background: #0d2946 url(../imagenes/tramasvg.svg) top center;
     background-size: cover !important;
     -webkit-background-size: cover !important;
+    z-index: 0;
+}
+
+#premios {
+    background: transparent;
+    background: transparent url(../imagenes/premios.svg) top center;
+    background-size: auto !important;
+    -webkit-background-size: auto !important;
     z-index: 0;
 }
 
@@ -265,7 +281,7 @@ body {
 --------------------------------------------------------------------- */
 
 nav {
-    background-color: #08223a;
+    background-color: #083d56;
     z-index: 0;
 }
 
@@ -352,7 +368,7 @@ ul#nav li.current a {
     padding-bottom: 25px;
     color: #636363;
     text-align: center;
-    background: rgba(14, 42, 71, 0.75)url(../imagenes/fondo2.jpg) top center;
+    background: rgba(14, 42, 71, 0.75) url(../imagenes/fondo2.jpg) top center;
     background-size: cover !important;
     -webkit-background-size: cover !important;
     /* margin-left: 100px;
@@ -603,4 +619,28 @@ footer .social-links li {
 
 footer .social-links li:first-child {
     margin-left: 0;
+}
+
+.hover-underline-animation {
+    position: relative;
+    color: #000000;
+    padding-bottom: 2px;
+}
+
+.hover-underline-animation:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1.5px;
+    bottom: 0;
+    left: 0;
+    background-color: #0e618a;
+    transform-origin: bottom;
+    transition: transform 0.25s ease-out;
+}
+
+.cta:hover .hover-underline-animation:after {
+    transform: scaleX(1);
+    transform-origin: bottom;
 }

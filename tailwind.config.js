@@ -2,6 +2,12 @@
 module.exports = {
     content: ["./src/**/*.{js,jsx,ts,tsx}", ],
     theme: {
+        fontFamily: {
+            'roboto': ['Roboto Condensed', 'sans-serif'],
+            'STD': ['Std', 'sans-serif'],
+            'Skia': ['Skia', 'sans-serif'],
+            'Spongebob': ['Spongebob', 'sans-serif'],
+        },
         screens: {
 
             '3sm': { 'min': '320px', 'max': '480px' },
@@ -28,7 +34,8 @@ module.exports = {
         extend: {
 
             backgroundImage: {
-                'd-t-y': 'linear-gradient(180deg, rgba(14,42,71,0.74) 40%, rgba(21,64,109,0.74) 65%, rgba(255,142,0,0.7440156482514881) 100%)'
+                'd-t-y': 'linear-gradient(180deg, rgba(14,97,138,0.74) 0%, rgba(17,123,176,0.74) 35%, rgba(255,142,0,0.74) 100%)',
+
             },
 
             boxShadow: {
@@ -44,7 +51,7 @@ module.exports = {
                 'borderCard': 'border',
             },
             transitionTimingFunction: {
-                'cube': 'cubic-bezier(0.175, 0.885, 0.32, 1.275)',
+                'cube': 'cubic-bezier(0.175, 0.885, 0.32, 1.275)'
             },
             transitionDuration: {
                 'borderCube': '0.15s',
