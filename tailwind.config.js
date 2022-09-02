@@ -37,6 +37,7 @@ module.exports = {
             'mob': { 'min': '360px', 'max': '768px' },
 
             'xmob': { 'max': '360px' },
+            'all': { 'min': '0px' },
 
 
         },
