@@ -3,8 +3,8 @@ import React, { Component } from "react";
 class Acerca extends Component {
     render() {
         return (
-            <div className="rounded-t-2xl p-10 ">
-                <div className="place-content-center border-2 grid grid-cols-1 gap-5 p-5 px-24 text-center">
+            <div className="rounded-t-2xl p-10  ">
+                <div className="grid grid-cols-1 gap-5 p-5 px-24 text-center">
                     <div className="col-span-1 border-b-4 border-second-color border-dotted pb-[60px]">
                         <div className="pc:grid pc:grid-cols-2 pc:gap-5 tab:grid tab:grid-cols-2 tab:gap-5 mob:grid mob:grid-cols-2 mob:gap-3 xmob:grid xmob:grid-cols-2 xmob:gap-3">
                             {/* 

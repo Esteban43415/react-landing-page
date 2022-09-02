@@ -1,7 +1,6 @@
 
 import React, { Component, Fragment } from 'react';
 import { Disclosure, Transition, Dialog } from '@headlessui/react'
-import { ChevronUpIcon } from '@heroicons/react/solid'
 // import MyDialog from './ModalRutas';
 class Rutas extends Component {
 
@@ -133,12 +132,12 @@ class Rutas extends Component {
                     <h1 className="text-6xl tracking-tight  text-white">Conoce nuestras rutas</h1>
                 </div>
                 <div className='row-span-4'>
-                    <div className="grid grid-cols-6 gap-8 px-10 pb-10">
+                    <div className="grid grid-cols-6 tab:grid-cols-1 mob:grid-cols-1 xmob:grid-cols-1 gap-8 px-10 tab:px-0 mob:px-0 xmob:px-0 pb-10">
 
 
                         {/* //* Ruta 10km -------------------------------------------------------------------------------------------------------------------------- */}
 
-                        <div className="p-10 col-span-2 bg-white/50 rounded-2xl text-center">
+                        <div className="p-10 tab:p-5 mob:p-5 xmob:p-5 col-span-2 bg-white/50 rounded-2xl text-center">
                             <div className="grid grid-rows-6 bg-gray-200 rounded-md pb-10 group-hover:opacity-75 lg:h-80 lg:aspect-none border-4 transition-borderCard ease-cube hover:border-4 hover:border-second-color  duration-borderCube">
                                 <div className='row-span-5'>
                                     <div htmlFor="ruta10" className="p-4 w-full bg-gray-200 rounded-md">
@@ -147,13 +146,13 @@ class Rutas extends Component {
                                             alt="Ruta10KM"
                                             className="w-full h-full object-center object-cover lg:w-full lg:h-full"
                                         />
-                                        <div className='p-5'>
+                                        <div className='p-5 tab:p-2 mob:p-2 xmob:p-2'>
                                             <h3 className='text-4xl tracking-normal  text-dark-blue'>"Escalera al cielo"</h3>
                                             {/* <h4 className='text-3xl tracking-normal font-semibold text-dark-blue'>"Rob D"</h4> */}
                                             <h5 className='text-2xl tracking-normal  text-dark-blue'>Distancia: 10Km</h5>
                                             <h5 className='text-xl tracking-normal  text-dark-blue'>Altura: +1050m</h5>
                                             <br />
-                                            <p className='text-justify text-lg '>Una ruta de puro sendero en casi su totalidad, con intensidad de principio a fin, disfrutando de un lado el valle y del otro la ciudad de Cuenca, dedicada en honor a Roberto Su&aacute;rez Serrano andinista fallecido en agosto 2022 y a todos aquellos que han perdido la vida en las monta&ntilde;as.</p>
+                                            <p className='text-justify text-lg'>Una ruta de puro sendero en casi su totalidad, con intensidad de principio a fin, disfrutando de un lado el valle y del otro la ciudad de Cuenca, dedicada en honor a Roberto Su&aacute;rez Serrano andinista fallecido en agosto 2022 y a todos aquellos que han perdido la vida en las monta&ntilde;as.</p>
                                         </div>
 
                                     </div>
@@ -172,7 +171,7 @@ class Rutas extends Component {
                         {/* //* ------------------------------------------------------------------------------------------------------------------------------------ */}
 
                         {/* //* Ruta 21km -------------------------------------------------------------------------------------------------------------------------- */}
-                        <div className="text-center p-10 bg-white/50 rounded-2xl col-span-2 ">
+                        <div className="text-center p-10 tab:p-5 mob:p-5 xmob:p-5 bg-white/50 rounded-2xl col-span-2 ">
                             <div className="grid grid-rows-6 bg-gray-200 rounded-md pb-10 group-hover:opacity-75 lg:h-80 lg:aspect-none border-4 transition-borderCard ease-cube hover:border-4 hover:border-second-color  duration-borderCube">
                                 <div className='row-span-5'>
                                     <div className="self-center p-4 w-full min-h-80 bg-gray-200  rounded-md overflow-hidden">
@@ -181,7 +180,7 @@ class Rutas extends Component {
                                             alt="Ruta21KM"
                                             className="w-full h-full object-center object-cover lg:w-full lg:h-full"
                                         />
-                                        <div className='p-5 mb-[55px]'>
+                                        <div className='p-5 mb-[55px] tab:p-2 mob:p-2 xmob:p-2'>
                                             <h3 className='text-4xl tracking-normal  text-dark-blue'>"Casa del &Aacute;rbol"</h3>
                                             <h5 className='text-2xl tracking-normal  text-dark-blue'>Distancia: 21Km</h5>
                                             <h5 className='text-xl tracking-normal  text-dark-blue'>Altura: +1370m</h5>
@@ -205,7 +204,7 @@ class Rutas extends Component {
                         {/* //* ------------------------------------------------------------------------------------------------------------------------------------ */}
 
                         {/* //* Ruta 34km -------------------------------------------------------------------------------------------------------------------------- */}
-                        <div className="text-center p-10 bg-white/50 rounded-2xl col-span-2">
+                        <div className="text-center p-10 tab:p-5 mob:p-5 xmob:p-5 bg-white/50 rounded-2xl col-span-2">
                             <div className="grid grid-rows-6 bg-gray-200 rounded-md pb-10 group-hover:opacity-75 lg:h-80 lg:aspect-none border-4 transition-borderCard ease-cube hover:border-4 hover:border-second-color  duration-borderCube">
                                 <div className="row-span-5 ">
                                     <div className="p-4 w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden">
@@ -214,7 +213,7 @@ class Rutas extends Component {
                                             alt="Ruta34KM"
                                             className="w-full h-full object-center object-cover lg:w-full lg:h-full"
                                         />
-                                        <div className='p-5 mb-7'>
+                                        <div className='p-5 mb-7 tab:p-2 mob:p-2 xmob:p-2s'>
                                             <h3 className='text-4xl tracking-normal  text-dark-blue'>"Boca de Pez"</h3>
                                             {/* <h4 className='text-2xl tracking-normal font-semibold text-dark-blue'>"Rob D"</h4> */}
                                             <h5 className='text-2xl tracking-normal  text-dark-blue'>Distancia: 34Km</h5>
