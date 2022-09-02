@@ -11,7 +11,7 @@ function App() {
 
 
   return (
-    <div className="App font-roboto">
+    <div className="App font-roboto" >
       <Header/>
       <div id="About" className="shadow-info 3sm:mx-0 2sm:mx-0 sm:mx-0 md:mx-10 lg:mx-20 xl:mx-28 2xl:mx-36 rounded-2xl">
         <About />

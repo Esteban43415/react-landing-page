@@ -218,7 +218,6 @@ body {
 /* #header social links */
 
 #conSocial {
-    position: relative;
     min-height: 100px;
     width: 100%;
     text-align: center;
@@ -305,8 +304,6 @@ nav {
     margin: 0 auto;
     z-index: 100;
     position: fixed;
-    left: 0;
-    top: 0;
 }
 
 .opaque {
@@ -315,10 +312,6 @@ nav {
 
 
 /* hide toggle button */
-
-#nav-wrap>a.mobile-btn {
-    display: none;
-}
 
 ul#nav {
     min-height: 48px;
@@ -643,4 +636,8 @@ footer .social-links li:first-child {
 .cta:hover .hover-underline-animation:after {
     transform: scaleX(1);
     transform-origin: bottom;
+}
+
+.active {
+    border-bottom: solid 2px #ffb000;
 }

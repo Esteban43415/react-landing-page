@@ -37,23 +37,23 @@ class Formulario extends Component {
             ruta34km: false
         }
     }
-    obtenerSexo=(e)=>{
-        this.setState({Sexo:e.target.value})
+    obtenerSexo = (e) => {
+        this.setState({ Sexo: e.target.value })
     }
-    obtenerFechaNac=(e)=>{
-        this.setState({FechaNac:e.target.value})
+    obtenerFechaNac = (e) => {
+        this.setState({ FechaNac: e.target.value })
     }
-    obtenerContEmer=(e)=>{
-        this.setState({ContactoEmergencia:e.target.value})
+    obtenerContEmer = (e) => {
+        this.setState({ ContactoEmergencia: e.target.value })
     }
-    obtenerCondMed=(e)=>{
-        this.setState({CondicionMedica:e.target.value})
+    obtenerCondMed = (e) => {
+        this.setState({ CondicionMedica: e.target.value })
     }
-    obtenerClub=(e)=>{
-        this.setState({Club:e.target.value})
+    obtenerClub = (e) => {
+        this.setState({ Club: e.target.value })
     }
-    obtenerTalla=(e)=>{
-        this.setState({TallaCamiseta:e.target.value})
+    obtenerTalla = (e) => {
+        this.setState({ TallaCamiseta: e.target.value })
     }
     obtenerNombres = (e) => {
         this.setState({ nombres: e.target.value });
@@ -93,7 +93,7 @@ class Formulario extends Component {
     }
     boton = (e) => {
         e.preventDefault();
-        let usuario = [this.state.cedula, this.state.nombres, this.state.apellidos, this.state.correo, this.state.telefono, this.state.pais, this.state.provincia, this.state.ciudad, this.state.ruta10km, this.state.ruta21km, this.state.ruta34km];
+        let usuario = [this.state.cedula, this.state.nombres, this.state.apellidos, this.state.correo, this.state.telefono, this.state.pais, this.state.provincia, this.state.ciudad, this.state.ruta10km, this.state.ruta21km, this.state.ruta34km, this.state.Sexo, this.state.FechaNac, this.state.ContactoEmergencia, this.state.CondicionMedica, this.state.Club, this.state.TallaCamiseta];
         inscribirUsuario(usuario);
         // console.log(value);
         // if (value) {
@@ -146,25 +146,18 @@ class Formulario extends Component {
             );
         });
         return (
-            // !Agregar nuevos campos --------
-            /*
-            ////Sexo: "",
-            ////FechaNac: "",
-            ContactoEmergencia: "",
-            CondicionMedica: "",
-            Club: "",
-            TallaCamiseta: "",*/
-            // !------------------------------ 
-
             <>
                 <section id="contact" className='bg-blend-multiply rounded-2xl'>
-                    <div className="">
+                    <div id="Inscripciones" className="">
                         <div className="mx-28 rounded-b-xl">
                             <div className="mt-0 sm:mt-0 rounded-b-xl">
                                 <div className="xsm:grid xsm:grid-cols-1 xsm:gap-4 sm:grid sm:grid-cols-3 sm:gap-5 md:grid md:grid-cols-5 md:gap-6 lg:grid lg:grid-cols-4 lg:gap-5 xl:grid xl:grid-cols-5 xl:gap-7 rounded-b-xl">
                                     <div className="xsm:mx-0 xsm:col-start-1 xsm:col-end-4 sm:col-start-1 sm:col-end-4 sm:mx-20 md:mx-24 md:col-start-1 md:col-end-6 lg:col-span-4 xl:col-start-1 xl:mx-50 2xl:mx-56 xl:col-end-6  rounded-b-xl">
                                         <form action="#" >
                                             <div className="shadow-md  overflow-hidden sm:rounded-md bg-dark-blue/80 border-double border-2 border-second-color  rounded-xl">
+                                                <div className='py-6 mx-5 border-dotted border-b-2 border-second-color'>
+                                                    <h2 className='text-5xl text-second-color '>Realiza tu inscripci&oacute;n aqu&iacute;</h2>
+                                                </div>
                                                 <div className="px-4 py-5  sm:p-6">
                                                     <div className="xl:grid xl:grid-cols-6 xl:gap-6 lg:grid lg:grid-cols-6 lg:gap-6 sm:grid sm:grid-cols-6 sm:gap-4">
                                                         {/* 
@@ -481,9 +474,9 @@ class Formulario extends Component {
                                                                                         </label>
                                                                                     </div>
                                                                                     <div className="row-span-1">
-                                                                                        <h2 className='text-4xl text-dark-blue'>Precio - 25$</h2>
+                                                                                        <h2 className='text-4xl text-dark-blue'>Precio - 35$</h2>
                                                                                     </div>
-                                                                                    
+
                                                                                 </div>
                                                                             </div>
                                                                             <div className="xl:col-span-2 lg:col-span-2 sm:col-span-2 rounded-[20px] p-[1em] bg-[#f5f5f5]/50 border-solid border-4 border-[#c3c6ce] transition ease-out hover:border-4 hover:border-second-color hover:shadow-[0_4px_18px_0_rgba(0,0,0,0.25)] duration-[0.9s]">
@@ -507,9 +500,9 @@ class Formulario extends Component {
                                                                                         </label>
                                                                                     </div>
                                                                                     <div className="row-span-1">
-                                                                                        <h2 className='text-4xl text-dark-blue'>Precio - 25$</h2>
+                                                                                        <h2 className='text-4xl text-dark-blue'>Precio - 45$</h2>
                                                                                     </div>
-                                                                                    
+
                                                                                 </div>
                                                                             </div>
                                                                         </div>

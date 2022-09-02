@@ -9,10 +9,10 @@ class About extends Component {
 
       return (
          <div  className='grid grid-cols-1  rounded-t-2xl rounded-b-2xl bg-d-t-y'>
-            <div className='col-span-2'>
+            <div className='col-span-2 'id='Premios'>
                <Acerca/>
             </div>
-            <div className='col-span-2'>
+            <div className='col-span-2' id='Beneficios'>
                <Patrocinadores/> 
             </div>
             <div id="Rutas" className='col-span-2'>
