@@ -34,9 +34,30 @@ class Formulario extends Component {
             open: false,
             ruta10km: false,
             ruta21km: false,
-            ruta34km: false
+            ruta34km: false,
+            error: 'text-red-500 text-[10px]',
+            errors:{}
         }
     }
+
+    validate = values => {
+        const errores = {};
+        if (!values.cedula) {
+            errores.cedula="Campo Obligatorio"
+        }
+    }
+
+    handleSubmit = e => {
+        e.preventDefault();
+        const { errors, ...sinErrors } = this.state;
+        const result = this.validate(sinErrors);
+
+        this.setState({ errors: result });
+        if (!Object.keys(result).length) {
+            // !!Funciones para guardar en firebase
+        }
+    }
+
     obtenerSexo = (e) => {
         this.setState({ Sexo: e.target.value })
     }
@@ -130,6 +151,7 @@ class Formulario extends Component {
         this.obtenerPaises();
     }
     render() {
+        const { errors } = this.state;
         var paises = this.state.paises.map((pais) => {
             return (
                 <option key={pais.iso2} value={pais.iso2}>{pais.name} - {pais.iso2}</option>
@@ -148,384 +170,384 @@ class Formulario extends Component {
         return (
             <>
                 <section id="contact" className='bg-blend-multiply rounded-2xl'>
-                    <div id="Inscripciones" className="">
-                        <div className="mx-28 rounded-b-xl">
-                            <div className="mt-0 sm:mt-0 rounded-b-xl">
-                                <div className="xsm:grid xsm:grid-cols-1 xsm:gap-4 sm:grid sm:grid-cols-3 sm:gap-5 md:grid md:grid-cols-5 md:gap-6 lg:grid lg:grid-cols-4 lg:gap-5 xl:grid xl:grid-cols-5 xl:gap-7 rounded-b-xl">
-                                    <div className="xsm:mx-0 xsm:col-start-1 xsm:col-end-4 sm:col-start-1 sm:col-end-4 sm:mx-20 md:mx-24 md:col-start-1 md:col-end-6 lg:col-span-4 xl:col-start-1 xl:mx-50 2xl:mx-56 xl:col-end-6  rounded-b-xl">
-                                        <form action="#" >
-                                            <div className="shadow-md  overflow-hidden sm:rounded-md bg-dark-blue/80 border-double border-2 border-second-color  rounded-xl">
-                                                <div className='py-6 mx-5 border-dotted border-b-2 border-second-color'>
-                                                    <h2 className='text-5xl text-second-color '>Realiza tu inscripci&oacute;n aqu&iacute;</h2>
-                                                </div>
-                                                <div className="px-4 py-5  sm:p-6">
-                                                    <div className="xl:grid xl:grid-cols-6 xl:gap-6 lg:grid lg:grid-cols-6 lg:gap-6 sm:grid sm:grid-cols-6 sm:gap-4">
-                                                        {/* 
-                                                        * //* param Cedula --------------------------------------------------------------------------------------------------------------------
-                                                        */}
-                                                        <div className="xl:col-span-2 lg:col-span-2 sm:col-span-6">
-                                                            <label htmlFor="Cedula" className="block text-sm font-medium text-second-color">
-                                                                C&eacute;dula / Pasaporte
-                                                            </label>
-                                                            <input
-                                                                onChange={(e) => this.obtenerCedula(e)}
-                                                                type="text"
-                                                                name="Cedula"
-                                                                id="Cedula"
-                                                                autoComplete="given-name"
-                                                                className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                                                            />
-                                                        </div>
-                                                        {/* 
+                    <div className="grid grid-cols-1 gap-5 rounded-b-xl px-28 py-[70px] tab:px-0 mob:px-0 xmob:px-0 " id="Inscripciones">
+                        <div className="col-span-1 rounded-b-xl">
+                            <form onSubmit={this.handleSubmit} >
+                                <div className="shadow-md  overflow-hidden sm:rounded-md bg-dark-blue/80 border-double border-2 border-second-color  rounded-xl self-center">
+                                    <div className='py-6 mx-5 border-dotted border-b-2 border-second-color'>
+                                        <h2 className='text-5xl tab:text-3xl mob:text-3xl xmob:text-3xl text-second-color '>Realiza tu inscripci&oacute;n aqu&iacute;</h2>
+                                    </div>
+
+                                    <div className="grid gap-6 pc:grid-cols-6 tab:grid-cols-1 mob:grid-cols-1 xmob:grid-cols-1 px-28 py-5 tab:px-5 mob:px-5 xmob:px-5">
+                                        {/* 
+                                            * //* param Cedula --------------------------------------------------------------------------------------------------------------------
+                                        */}
+                                        <div className="xl:col-span-2 lg:col-span-2 sm:col-span-6">
+                                            <label htmlFor="Cedula" className="block text-sm font-medium text-second-color">
+                                                C&eacute;dula / Pasaporte
+                                            </label>
+                                            <input
+                                                onChange={(e) => this.obtenerCedula(e)}
+                                                type="text"
+                                                name="Cedula"
+                                                id="Cedula"
+
+                                                autoComplete="given-name"
+                                                className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                                            />
+
+                                            {errors.cedula && <span htmlFor="Cedula" className={this.state.error}>
+                                                {errors.cedula}
+                                            </span>}
+                                        </div>
+                                        {/* 
                                                         * //* param Nombres --------------------------------------------------------------------------------------------------------------------
                                                         */}
-                                                        <div className=" xl:col-span-2 lg:col-span-2 sm:col-span-6">
-                                                            <label htmlFor="Nombres" className="block text-sm font-medium text-second-color">
-                                                                Nombres
-                                                            </label>
-                                                            <input
-                                                                onChange={(e) => this.obtenerNombres(e)}
-                                                                type="text"
-                                                                name="Nombres"
-                                                                id="Nombres"
-                                                                autoComplete="given-name"
-                                                                className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                                                            />
-                                                        </div>
-                                                        {/* 
+                                        <div className=" xl:col-span-2 lg:col-span-2 sm:col-span-6">
+                                            <label htmlFor="Nombres" className="block text-sm font-medium text-second-color">
+                                                Nombres
+                                            </label>
+                                            <input
+                                                onChange={(e) => this.obtenerNombres(e)}
+                                                type="text"
+                                                name="Nombres"
+                                                id="Nombres"
+                                                autoComplete="given-name"
+                                                className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                                            />
+                                        </div>
+                                        {/* 
                                                         * //* param Apellidos --------------------------------------------------------------------------------------------------------------------
                                                         */}
-                                                        <div className=" xl:col-span-2 lg:col-span-2 sm:col-span-6">
-                                                            <label htmlFor="Apellidos" className="block text-sm font-medium text-second-color">
-                                                                Apellidos
-                                                            </label>
-                                                            <input
-                                                                onChange={(e) => this.obtenerApellidos(e)}
-                                                                type="text"
-                                                                name="Apellidos"
-                                                                id="Apellidos"
-                                                                autoComplete="family-name"
-                                                                className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                                                            />
-                                                        </div>
+                                        <div className=" xl:col-span-2 lg:col-span-2 sm:col-span-6">
+                                            <label htmlFor="Apellidos" className="block text-sm font-medium text-second-color">
+                                                Apellidos
+                                            </label>
+                                            <input
+                                                onChange={(e) => this.obtenerApellidos(e)}
+                                                type="text"
+                                                name="Apellidos"
+                                                id="Apellidos"
+                                                autoComplete="family-name"
+                                                className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                                            />
+                                        </div>
 
-                                                        <div className="xl:col-span-6 lg:col-span-6 sm:col-span-6 grid grid-cols-4 gap-5">
-                                                            <div className="xl:col-span-1 lg:col-span-1 sm:col-span-6">
-                                                                {/* 
+                                        <div className="col-span-6 tab:col-span-1 mob:col-span-1 xmob:col-span-1 grid grid-cols-4 tab:grid-cols-1 mob:grid-cols-1 xmob:grid-cols-1 gap-5">
+                                            <div className="col-span-1 tab:col-span-6  mob:col-span-6 xmob:col-span-6">
+                                                {/* 
                                                         * //* param Fecha de nacimiento --------------------------------------------------------------------------------------------------------------------
                                                         */}
-                                                                <div className="xl:col-span-2 lg:col-span-2 sm:col-span-6">
-                                                                    <label htmlFor="FechaNac" className="block text-sm font-medium text-second-color">
-                                                                        Fecha de nacimiento
-                                                                    </label>
-                                                                    <input
-                                                                        onChange={(e) => this.obtenerCorreo(e)}
-                                                                        type="date"
-                                                                        name="FechaNac"
-                                                                        id="fechaNac"
-                                                                        className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                                                                    />
-                                                                </div>
-                                                            </div>
-                                                            <div className="xl:col-span-1 lg:col-span-1 sm:col-span-6">
+                                                <div className="xl:col-span-2 lg:col-span-2 sm:col-span-6">
+                                                    <label htmlFor="FechaNac" className="block text-sm font-medium text-second-color">
+                                                        Fecha de nacimiento
+                                                    </label>
+                                                    <input
+                                                        onChange={(e) => this.obtenerCorreo(e)}
+                                                        type="date"
+                                                        name="FechaNac"
+                                                        id="fechaNac"
+                                                        className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                                                    />
+                                                </div>
+                                            </div>
+                                            <div className="col-span-1 tab:col-span-6  mob:col-span-6 xmob:col-span-6">
 
-                                                                {/* 
+                                                {/* 
                                                         * //* param Sexo --------------------------------------------------------------------------------------------------------------------
                                                         */}
-                                                                <div className="xl:col-span-2 lg:col-span-2 sm:col-span-6">
-                                                                    <label htmlFor="Sexo" className="block text-sm font-medium text-second-color">
-                                                                        Sexo
-                                                                    </label>
-                                                                    <select
-                                                                        onChange={(e) => this.obtenerSexo(e)}
-                                                                        id="Sexo"
-                                                                        name="Sexo"
-                                                                        className=" mt-1 block w-full px-[12px] py-[8px] border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                                                                    >
-                                                                        <option value="">Seleccione un valor</option>
-                                                                        <option value="M">Masculino</option>
-                                                                        <option value="F">Femenino</option>
+                                                <div className="xl:col-span-2 lg:col-span-2 sm:col-span-6">
+                                                    <label htmlFor="Sexo" className="block text-sm font-medium text-second-color">
+                                                        Sexo
+                                                    </label>
+                                                    <select
+                                                        onChange={(e) => this.obtenerSexo(e)}
+                                                        id="Sexo"
+                                                        name="Sexo"
+                                                        className=" mt-1 block w-full px-[12px] py-[8px] border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                                                    >
+                                                        <option value="">Seleccione un valor</option>
+                                                        <option value="M">Masculino</option>
+                                                        <option value="F">Femenino</option>
 
-                                                                    </select>
-                                                                </div>
-                                                            </div>
-                                                            <div className="xl:col-span-1 lg:col-span-1 sm:col-span-6">
-                                                                {/* 
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div className="col-span-1 tab:col-span-6  mob:col-span-6 xmob:col-span-6">
+                                                {/* 
                                                         * //* param Teléfono --------------------------------------------------------------------------------------------------------------------
                                                         */}
-                                                                <div className="xl:col-span-2 lg:col-span-2 sm:col-span-6">
-                                                                    <label htmlFor="Telefono" className="block text-sm font-medium text-second-color">
-                                                                        Tel&eacute;fono
-                                                                    </label>
-                                                                    <input
-                                                                        onChange={(e) => this.obtenerTelefono(e)}
-                                                                        type="tel"
-                                                                        name="Telefono"
-                                                                        id="Telefono"
-                                                                        className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                                                                    />
-                                                                </div>
-                                                            </div>
-                                                            <div className="xl:col-span-1 lg:col-span-1 sm:col-span-6">
-                                                                {/* 
+                                                <div className="xl:col-span-2 lg:col-span-2 sm:col-span-6">
+                                                    <label htmlFor="Telefono" className="block text-sm font-medium text-second-color">
+                                                        Tel&eacute;fono
+                                                    </label>
+                                                    <input
+                                                        onChange={(e) => this.obtenerTelefono(e)}
+                                                        type="tel"
+                                                        name="Telefono"
+                                                        id="Telefono"
+                                                        className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                                                    />
+                                                </div>
+                                            </div>
+                                            <div className="col-span-1 tab:col-span-6  mob:col-span-6 xmob:col-span-6">
+                                                {/* 
                                                         * //* param Correo electrónico --------------------------------------------------------------------------------------------------------------------
                                                         */}
-                                                                <div className="xl:col-span-2 lg:col-span-2 sm:col-span-6">
-                                                                    <label htmlFor="email" className="block text-sm font-medium text-second-color">
-                                                                        Correo electr&oacute;nico
-                                                                    </label>
-                                                                    <input
-                                                                        onChange={(e) => this.obtenerCorreo(e)}
-                                                                        type="email"
-                                                                        name="email"
-                                                                        id="email"
-                                                                        className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                                                                    />
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        {/* 
+                                                <div className="xl:col-span-2 lg:col-span-2 sm:col-span-6">
+                                                    <label htmlFor="email" className="block text-sm font-medium text-second-color">
+                                                        Correo electr&oacute;nico
+                                                    </label>
+                                                    <input
+                                                        onChange={(e) => this.obtenerCorreo(e)}
+                                                        type="email"
+                                                        name="email"
+                                                        id="email"
+                                                        className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                                                    />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {/* 
                                                             //* Contenedor Locación --------------------------------------------------------------------------------------------------------------------
                                                         */}
-                                                        <div className="xl:col-span-2 lg:col-span-2 sm:col-span-6 grid grid-rows-3 gap-5">
-                                                            <div className="row-span-1">
-                                                                {/* 
+                                        <div className="xl:col-span-2 lg:col-span-2 sm:col-span-6 grid grid-rows-3 gap-5">
+                                            <div className="row-span-1">
+                                                {/* 
                                                                     * //* param País --------------------------------------------------------------------------------------------------------------------
                                                                  */}
-                                                                {/* <div className="xl:col-span-2 lg:col-span-2 sm:col-span-6"> */}
-                                                                <label htmlFor="Pais" className="block text-sm font-medium text-second-color">
-                                                                    Pa&iacute;s
-                                                                </label>
-                                                                <select
-                                                                    onChange={(e) => this.obtenerProvincia(e)}
-                                                                    id="Pais"
-                                                                    name="Pais"
-                                                                    className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                                                                >
-                                                                    <option value="">Seleccione un pa&iacute;s</option>
-                                                                    {paises}
-                                                                </select>
-                                                                {/* </div> */}
+                                                {/* <div className="xl:col-span-2 lg:col-span-2 sm:col-span-6"> */}
+                                                <label htmlFor="Pais" className="block text-sm font-medium text-second-color">
+                                                    Pa&iacute;s
+                                                </label>
+                                                <select
+                                                    onChange={(e) => this.obtenerProvincia(e)}
+                                                    id="Pais"
+                                                    name="Pais"
+                                                    className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                                                >
+                                                    <option value="">Seleccione un pa&iacute;s</option>
+                                                    {paises}
+                                                </select>
+                                                {/* </div> */}
 
-                                                            </div>
-                                                            {/* 
+                                            </div>
+                                            {/* 
                                                                 * //* param Provincia --------------------------------------------------------------------------------------------------------------------
                                                             */}
-                                                            <div className="row-span-1">
-                                                                <label htmlFor="Provincia" className="block text-sm font-medium text-second-color">
-                                                                    Provincia
-                                                                </label>
-                                                                <select
-                                                                    onChange={(e) => this.obtenerCiudades(e)}
-                                                                    id="Provincia"
-                                                                    name="Provincia"
-                                                                    className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                                                                >
-                                                                    <option value="">Seleccione una provincia</option>
-                                                                    {provincias}
-                                                                </select>
-                                                            </div>
-                                                            <div className="row-span-1">
-                                                                {/* 
+                                            <div className="row-span-1">
+                                                <label htmlFor="Provincia" className="block text-sm font-medium text-second-color">
+                                                    Provincia
+                                                </label>
+                                                <select
+                                                    onChange={(e) => this.obtenerCiudades(e)}
+                                                    id="Provincia"
+                                                    name="Provincia"
+                                                    className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                                                >
+                                                    <option value="">Seleccione una provincia</option>
+                                                    {provincias}
+                                                </select>
+                                            </div>
+                                            <div className="row-span-1">
+                                                {/* 
                                                                     * //* param Ciudad --------------------------------------------------------------------------------------------------------------------
                                                                 */}
-                                                                <label htmlFor="Ciudad" className="block text-sm font-medium text-second-color">
-                                                                    Ciudad
-                                                                </label>
-                                                                <select
-                                                                    onChange={(e) => this.obtenerCiudad(e)}
-                                                                    id="Ciudad"
-                                                                    name="Ciudad"
-                                                                    className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                                                                >
-                                                                    <option value="">Seleccione una ciudad</option>
-                                                                    {ciudades}
-                                                                </select>
-                                                            </div>
-                                                        </div>
+                                                <label htmlFor="Ciudad" className="block text-sm font-medium text-second-color">
+                                                    Ciudad
+                                                </label>
+                                                <select
+                                                    onChange={(e) => this.obtenerCiudad(e)}
+                                                    id="Ciudad"
+                                                    name="Ciudad"
+                                                    className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                                                >
+                                                    <option value="">Seleccione una ciudad</option>
+                                                    {ciudades}
+                                                </select>
+                                            </div>
+                                        </div>
 
 
-                                                        <div className="xl:col-span-2 lg:col-span-2 sm:col-span-6">
-                                                            <div className="grid grid-rows-3 gap-5">
-                                                                {/*
+                                        <div className="xl:col-span-2 lg:col-span-2 sm:col-span-6">
+                                            <div className="grid grid-rows-3 gap-5">
+                                                {/*
                                                                     * //* param Club -------------------------------------------------------------------------------------------------------------------- 
                                                                  */}
-                                                                <div className="xl:row-span-1 lg:row-span-1 sm:row-span-1">
-                                                                    <label htmlFor="Club" className="block text-sm font-medium text-second-color">
-                                                                        Club
-                                                                    </label>
-                                                                    <input
-                                                                        onChange={(e) => this.obtenerClub(e)}
-                                                                        type="text"
-                                                                        name="Club"
-                                                                        id="Club"
-                                                                        className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                                                                    />
-                                                                </div>
-                                                                {/* 
+                                                <div className="xl:row-span-1 lg:row-span-1 sm:row-span-1">
+                                                    <label htmlFor="Club" className="block text-sm font-medium text-second-color">
+                                                        Club
+                                                    </label>
+                                                    <input
+                                                        onChange={(e) => this.obtenerClub(e)}
+                                                        type="text"
+                                                        name="Club"
+                                                        id="Club"
+                                                        className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                                                    />
+                                                </div>
+                                                {/* 
                                                                     //* param Talla --------------------------------------------------------------------------------------------------------------------
                                                                  */}
-                                                                <div className="xl:row-span-1 lg:row-span-1 sm:row-span-1">
-                                                                    <label htmlFor="Talla" className="block text-sm font-medium text-second-color">
-                                                                        Talla
-                                                                    </label>
-                                                                    <select
-                                                                        onChange={(e) => this.obtenerTalla(e)}
-                                                                        id="Talla"
-                                                                        name="Talla"
-                                                                        className=" mt-1 block w-full px-[12px] py-[8px] border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                                                                    >
-                                                                        <option value="">Seleccione un valor</option>
-                                                                        <option value="XS">XS</option>
-                                                                        <option value="S">S</option>
-                                                                        <option value="M">M</option>
-                                                                        <option value="L">L</option>
-                                                                        <option value="XL">XL</option>
+                                                <div className="xl:row-span-1 lg:row-span-1 sm:row-span-1">
+                                                    <label htmlFor="Talla" className="block text-sm font-medium text-second-color">
+                                                        Talla
+                                                    </label>
+                                                    <select
+                                                        onChange={(e) => this.obtenerTalla(e)}
+                                                        id="Talla"
+                                                        name="Talla"
+                                                        className=" mt-1 block w-full px-[12px] py-[8px] border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                                                    >
+                                                        <option value="">Seleccione un valor</option>
+                                                        <option value="XS">XS</option>
+                                                        <option value="S">S</option>
+                                                        <option value="M">M</option>
+                                                        <option value="L">L</option>
+                                                        <option value="XL">XL</option>
 
-                                                                    </select>
-                                                                </div>
-                                                                {/*
+                                                    </select>
+                                                </div>
+                                                {/*
                                                                     * //* param Contacto de emergencia -------------------------------------------------------------------------------------------------------------------- 
                                                                  */}
-                                                                <div className="xl:row-span-1 lg:row-span-1 sm:row-span-1">
-                                                                    <label htmlFor="ContEmer" className="block text-sm font-medium text-second-color">
-                                                                        Contacto de emergencia
-                                                                    </label>
-                                                                    <input
-                                                                        onChange={(e) => this.obtenerContEmer(e)}
-                                                                        type="text"
-                                                                        name="ContEmer"
-                                                                        id="ContEmer"
-                                                                        autoComplete="given-name"
-                                                                        className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                                                                    />
-                                                                </div>
-                                                            </div>
+                                                <div className="xl:row-span-1 lg:row-span-1 sm:row-span-1">
+                                                    <label htmlFor="ContEmer" className="block text-sm font-medium text-second-color">
+                                                        Contacto de emergencia
+                                                    </label>
+                                                    <input
+                                                        onChange={(e) => this.obtenerContEmer(e)}
+                                                        type="text"
+                                                        name="ContEmer"
+                                                        id="ContEmer"
+                                                        autoComplete="given-name"
+                                                        className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                                                    />
+                                                </div>
+                                            </div>
 
-                                                        </div>
+                                        </div>
 
-                                                        <div className="xl:col-span-2 lg:col-span-2 sm:col-span-6">
-                                                            <label htmlFor="CondMed" className="block text-sm font-medium text-second-color">
-                                                                Condici&oacute;n m&eacute;dica
-                                                            </label>
-                                                            <textarea
-                                                                id="CondMed"
-                                                                name='CondMed'
-                                                                onChange={(e) => this.obtenerCondMed(e)}
-                                                                className="mt-1 min-h-[200px] p-5 text-justify focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-                                                                rows="3"
-                                                                placeholder="Describir a detalle si contiene algun tipo de condición médica como: Diabétes, problemas cardiacos entre otros"></textarea>
-                                                        </div>
-                                                        {/* 
+                                        <div className="xl:col-span-2 lg:col-span-2 sm:col-span-6">
+                                            <label htmlFor="CondMed" className="block text-sm font-medium text-second-color">
+                                                Condici&oacute;n m&eacute;dica
+                                            </label>
+                                            <textarea
+                                                id="CondMed"
+                                                name='CondMed'
+                                                onChange={(e) => this.obtenerCondMed(e)}
+                                                className="resize-none  mt-1 min-h-[200px] p-5 text-justify focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                                                rows="3"
+                                                placeholder="Describir a detalle si contiene algun tipo de condición médica como: Diabétes, problemas cardiacos entre otros"></textarea>
+                                        </div>
+                                        {/* 
                                                         * //* param RUTAS --------------------------------------------------------------------------------------------------------------------
                                                         */}
-                                                        <div className="xl:col-span-6 lg:col-span-6 md:col-span-6 sm:col-span-5">
-                                                            <div className="px-4 py-5  bg-white/30 rounded-md space-y-6 sm:p-6">
-                                                                <fieldset>
-                                                                    <div className='grid grid-rows-3 gap-5'>
-                                                                        <div className="row-span-3 font-medium text-4xl text-second-color" aria-hidden="true">
-                                                                            RUTAS
+                                        <div className="xl:col-span-6 lg:col-span-6 md:col-span-6 sm:col-span-5">
+                                            <div className="px-4 py-5  bg-white/30 rounded-md space-y-6 sm:p-6">
+                                                <div className='grid grid-rows-3 gap-5'>
+                                                    <div className="row-span-3 font-medium text-4xl text-second-color" aria-hidden="true">
+                                                        RUTAS
+                                                    </div>
+                                                    <div className="row-span-6 xl:grid xl:grid-cols-6 xl:gap-x-32 xl:px-8 lg:grid lg:grid-cols-6 lg:gap-x-10 sm:grid sm:grid-cols-1 sm:gap-x-10">
+                                                        <div className="xl:col-span-2 lg:col-span-2 sm:col-span-2 rounded-[20px] p-[1em] bg-[#f5f5f5]/50 border-solid border-4 border-[#c3c6ce] transition ease-out hover:border-4 hover:border-second-color hover:shadow-[0_4px_18px_0_rgba(0,0,0,0.25)] duration-[0.9s]">
+                                                            <div className="grid grid-rows-3 gap-7">
+                                                                <div className="row-span-3">
+                                                                    <input
+                                                                        id="10km"
+                                                                        name="rutas"
+                                                                        type="radio"
+                                                                        value="10km"
+                                                                        onClick={(e) => this.establecerRutas(e)}
+                                                                    />
+                                                                    <label htmlFor="10km" className="combos text-second-color ">
+                                                                        <div className="aspect-w-3 aspect-h-4 rounded-lg overflow-hidden lg:block">
+                                                                            <img
+                                                                                src='../imagenes/rutas/ruta10km.png'
+                                                                                alt="Ruta32KM"
+                                                                                className=" w-full h-full object-center object-cover"
+                                                                            />
                                                                         </div>
-                                                                        <div className="row-span-6 xl:grid xl:grid-cols-6 xl:gap-x-32 xl:px-8 lg:grid lg:grid-cols-6 lg:gap-x-10 sm:grid sm:grid-cols-1 sm:gap-x-10">
-                                                                            <div className="xl:col-span-2 lg:col-span-2 sm:col-span-2 rounded-[20px] p-[1em] bg-[#f5f5f5]/50 border-solid border-4 border-[#c3c6ce] transition ease-out hover:border-4 hover:border-second-color hover:shadow-[0_4px_18px_0_rgba(0,0,0,0.25)] duration-[0.9s]">
-                                                                                <div className="grid grid-rows-3 gap-7">
-                                                                                    <div className="row-span-3">
-                                                                                        <input
-                                                                                            id="10km"
-                                                                                            name="rutas"
-                                                                                            type="radio"
-                                                                                            value="10km"
-                                                                                            onClick={(e) => this.establecerRutas(e)}
-                                                                                        />
-                                                                                        <label htmlFor="10km" className="combos text-second-color ">
-                                                                                            <div className="aspect-w-3 aspect-h-4 rounded-lg overflow-hidden lg:block">
-                                                                                                <img
-                                                                                                    src='../imagenes/rutas/ruta10km.png'
-                                                                                                    alt="Ruta32KM"
-                                                                                                    className=" w-full h-full object-center object-cover"
-                                                                                                />
-                                                                                            </div>
-                                                                                        </label>
-                                                                                    </div>
-                                                                                    <div className="row-span-1">
-                                                                                        <h2 className='text-4xl text-dark-blue'>Precio - 25$</h2>
+                                                                    </label>
+                                                                </div>
+                                                                <div className="row-span-1">
+                                                                    <h2 className='text-4xl text-dark-blue'>Precio - 25$</h2>
 
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div className="xl:col-span-2 lg:col-span-2 sm:col-span-2 rounded-[20px] p-[1em] bg-[#f5f5f5]/50 border-solid border-4 border-[#c3c6ce] transition ease-out hover:border-4 hover:border-second-color hover:shadow-[0_4px_18px_0_rgba(0,0,0,0.25)] duration-[0.9s]">
-                                                                                <div className="grid grid-rows-3 gap-7">
-                                                                                    <div className="row-span-3">
-                                                                                        <input
-                                                                                            id="21km"
-                                                                                            name="rutas"
-                                                                                            type="radio"
-                                                                                            value="21km"
-                                                                                            onClick={(e) => this.establecerRutas(e)}
-                                                                                        />
-                                                                                        <label htmlFor="21km" className="combos text-second-color ">
-                                                                                            <div className="aspect-w-3 aspect-h-4 rounded-lg overflow-hidden lg:block">
-                                                                                                <img
-                                                                                                    src='../imagenes/rutas/ruta21km.png'
-                                                                                                    alt="Ruta21KM"
-                                                                                                    className="w-full h-full object-center object-cover"
-                                                                                                />
-                                                                                            </div>
-                                                                                        </label>
-                                                                                    </div>
-                                                                                    <div className="row-span-1">
-                                                                                        <h2 className='text-4xl text-dark-blue'>Precio - 35$</h2>
-                                                                                    </div>
-
-                                                                                </div>
-                                                                            </div>
-                                                                            <div className="xl:col-span-2 lg:col-span-2 sm:col-span-2 rounded-[20px] p-[1em] bg-[#f5f5f5]/50 border-solid border-4 border-[#c3c6ce] transition ease-out hover:border-4 hover:border-second-color hover:shadow-[0_4px_18px_0_rgba(0,0,0,0.25)] duration-[0.9s]">
-                                                                                <div className="grid grid-rows-3 gap-7">
-                                                                                    <div className="row-span-3">
-                                                                                        <input
-                                                                                            id="34km"
-                                                                                            name="rutas"
-                                                                                            type="radio"
-                                                                                            value="34km"
-                                                                                            onClick={(e) => this.establecerRutas(e)}
-                                                                                        />
-                                                                                        <label htmlFor="34km" className="combos text-second-color ">
-                                                                                            <div className="aspect-w-3 aspect-h-4 rounded-lg overflow-hidden lg:block">
-                                                                                                <img
-                                                                                                    src='../imagenes/rutas/ruta34km.png'
-                                                                                                    alt="Ruta32KM"
-                                                                                                    className="w-full h-full object-center object-cover"
-                                                                                                />
-                                                                                            </div>
-                                                                                        </label>
-                                                                                    </div>
-                                                                                    <div className="row-span-1">
-                                                                                        <h2 className='text-4xl text-dark-blue'>Precio - 45$</h2>
-                                                                                    </div>
-
-                                                                                </div>
-                                                                            </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div className="xl:col-span-2 lg:col-span-2 sm:col-span-2 rounded-[20px] p-[1em] bg-[#f5f5f5]/50 border-solid border-4 border-[#c3c6ce] transition ease-out hover:border-4 hover:border-second-color hover:shadow-[0_4px_18px_0_rgba(0,0,0,0.25)] duration-[0.9s]">
+                                                            <div className="grid grid-rows-3 gap-7">
+                                                                <div className="row-span-3">
+                                                                    <input
+                                                                        id="21km"
+                                                                        name="rutas"
+                                                                        type="radio"
+                                                                        value="21km"
+                                                                        onClick={(e) => this.establecerRutas(e)}
+                                                                    />
+                                                                    <label htmlFor="21km" className="combos text-second-color ">
+                                                                        <div className="aspect-w-3 aspect-h-4 rounded-lg overflow-hidden lg:block">
+                                                                            <img
+                                                                                src='../imagenes/rutas/ruta21km.png'
+                                                                                alt="Ruta21KM"
+                                                                                className="w-full h-full object-center object-cover"
+                                                                            />
                                                                         </div>
-                                                                    </div>
-                                                                </fieldset>
+                                                                    </label>
+                                                                </div>
+                                                                <div className="row-span-1">
+                                                                    <h2 className='text-4xl text-dark-blue'>Precio - 35$</h2>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                        <div className="xl:col-span-2 lg:col-span-2 sm:col-span-2 rounded-[20px] p-[1em] bg-[#f5f5f5]/50 border-solid border-4 border-[#c3c6ce] transition ease-out hover:border-4 hover:border-second-color hover:shadow-[0_4px_18px_0_rgba(0,0,0,0.25)] duration-[0.9s]">
+                                                            <div className="grid grid-rows-3 gap-7">
+                                                                <div className="row-span-3">
+                                                                    <input
+                                                                        id="34km"
+                                                                        name="rutas"
+                                                                        type="radio"
+                                                                        value="34km"
+                                                                        onClick={(e) => this.establecerRutas(e)}
+                                                                    />
+                                                                    <label htmlFor="34km" className="combos text-second-color ">
+                                                                        <div className="aspect-w-3 aspect-h-4 rounded-lg overflow-hidden lg:block">
+                                                                            <img
+                                                                                src='../imagenes/rutas/ruta34km.png'
+                                                                                alt="Ruta32KM"
+                                                                                className="w-full h-full object-center object-cover"
+                                                                            />
+                                                                        </div>
+                                                                    </label>
+                                                                </div>
+                                                                <div className="row-span-1">
+                                                                    <h2 className='text-4xl text-dark-blue'>Precio - 45$</h2>
+                                                                </div>
+
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div className="px-4 py-3 text-center sm:px-6">
-                                                    <button
-                                                        onClick={this.boton}
-                                                        className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-second-color hover:bg-second-color/40 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                                                        Guardar Cambios
-                                                    </button>
-                                                </div>
+
                                             </div>
-                                        </form>
+                                        </div>
+                                    </div>
+
+                                    <div className="px-4 py-3 text-center sm:px-6">
+                                        <button
+                                            type="submit"
+                                            // onClick={this.boton}
+                                            className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-second-color hover:bg-second-color/40 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                            Guardar Cambios
+                                        </button>
                                     </div>
                                 </div>
-                            </div>
+                            </form>
                         </div>
                     </div>
+
                 </section>
             </>
         );

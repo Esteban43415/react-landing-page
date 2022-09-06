@@ -92,15 +92,15 @@ class Rutas extends Component {
 
     Equipación() {
         return (
-            <Disclosure>
+            <Disclosure className="relative z-0" >
 
                 {({ open }) => (
                     <>
                         <Disclosure.Button className=" cta border-2">
-                            
+
                             <div className='hover-underline-animation'><p className='text-xl font-semibold'>Indumentaria para esta ruta</p></div>
-                            
-                            
+
+
                         </Disclosure.Button>
 
                         <Transition
@@ -139,62 +139,76 @@ class Rutas extends Component {
 
                         <div className="p-10 tab:p-5 mob:p-5 xmob:p-5 col-span-2 bg-white/50 rounded-2xl text-center">
                             <div className="grid grid-rows-6 bg-gray-200 rounded-md pb-10 group-hover:opacity-75 lg:h-80 lg:aspect-none border-4 transition-borderCard ease-cube hover:border-4 hover:border-second-color  duration-borderCube">
-                                <div className='row-span-5'>
-                                    <div htmlFor="ruta10" className="p-4 w-full bg-gray-200 rounded-md">
-                                        <img
-                                            src='../imagenes/rutas/ruta10km.png'
-                                            alt="Ruta10KM"
-                                            className="w-full h-full object-center object-cover lg:w-full lg:h-full"
-                                        />
-                                        <div className='p-5 tab:p-2 mob:p-2 xmob:p-2'>
-                                            <h3 className='text-4xl tracking-normal  text-dark-blue'>"Escalera al cielo"</h3>
-                                            {/* <h4 className='text-3xl tracking-normal font-semibold text-dark-blue'>"Rob D"</h4> */}
-                                            <h5 className='text-2xl tracking-normal  text-dark-blue'>Distancia: 10Km</h5>
-                                            <h5 className='text-xl tracking-normal  text-dark-blue'>Altura: +1050m</h5>
-                                            <br />
-                                            <p className='text-justify text-lg'>Una ruta de puro sendero en casi su totalidad, con intensidad de principio a fin, disfrutando de un lado el valle y del otro la ciudad de Cuenca, dedicada en honor a Roberto Su&aacute;rez Serrano andinista fallecido en agosto 2022 y a todos aquellos que han perdido la vida en las monta&ntilde;as.</p>
-                                        </div>
+                                <div className='row-span-5 group'>
+                                    <button className="tab:pointer-events-none tab:cursor-not-allowed mob:pointer-events-none xmob:cursor-not-allowed" onClick={this.openModal}>
 
-                                    </div>
+                                        <div htmlFor="ruta10" className="p-4 w-full bg-gray-200 rounded-md">
+                                            <img
+                                                src='../imagenes/rutas/ruta10km.png'
+                                                alt="Ruta10KM"
+                                                className="object-center object-cover w-full"
+                                            />
+                                            <span className="group-hover:visible rounded-md shadow-md text-white bg-gray-900 text-xs font-bold transition-all duration-100 p-2 text-center min-w-max invisible z-50 static">
+                                                M&aacute;s informaci&oacute;n sobre esta ruta haz click aqu&iacute;
+                                            </span>
+                                            <div className='p-5 tab:p-2 mob:p-2 xmob:p-2'>
+                                                <h3 className='text-4xl tracking-normal  text-dark-blue'>"Escalera al cielo"</h3>
+                                                {/* <h4 className='text-3xl tracking-normal font-semibold text-dark-blue'>"Rob D"</h4> */}
+                                                <h5 className='text-2xl tracking-normal  text-dark-blue'>Distancia: 10Km</h5>
+                                                <h5 className='text-xl tracking-normal  text-dark-blue'>Altura: +1050m</h5>
+                                                <br />
+                                                <p className='text-justify text-lg'>Una ruta de puro sendero en casi su totalidad, con intensidad de principio a fin, disfrutando de un lado el valle y del otro la ciudad de Cuenca, dedicada en honor a Roberto Su&aacute;rez Serrano andinista fallecido en agosto 2022 y a todos aquellos que han perdido la vida en las monta&ntilde;as.</p>
+                                            </div>
+
+                                        </div>
+                                    </button>
                                 </div>
                                 <div className="row-span-1">
                                     {this.Equipación()}
                                 </div>
                                 <div className="row-span-1">
-                                    <button id="ruta10" className="bg-second-color hover:bg-second-color/80 text-white  py-2 px-4 rounded" onClick={this.openModal}>
+                                    <button id="ruta10" className="pc:hidden bg-second-color hover:bg-second-color/80 text-white  py-2 px-4 rounded" onClick={this.openModal}>
                                         Conoce m&aacute;s sobre esta ruta
                                     </button>
                                 </div>
                             </div>
-                            
+
                         </div>
                         {/* //* ------------------------------------------------------------------------------------------------------------------------------------ */}
 
                         {/* //* Ruta 21km -------------------------------------------------------------------------------------------------------------------------- */}
                         <div className="text-center p-10 tab:p-5 mob:p-5 xmob:p-5 bg-white/50 rounded-2xl col-span-2 ">
-                            <div className="grid grid-rows-6 bg-gray-200 rounded-md pb-10 group-hover:opacity-75 lg:h-80 lg:aspect-none border-4 transition-borderCard ease-cube hover:border-4 hover:border-second-color  duration-borderCube">
-                                <div className='row-span-5'>
-                                    <div className="self-center p-4 w-full min-h-80 bg-gray-200  rounded-md overflow-hidden">
-                                        <img
-                                            src='../imagenes/rutas/ruta21km.png'
-                                            alt="Ruta21KM"
-                                            className="w-full h-full object-center object-cover lg:w-full lg:h-full"
-                                        />
-                                        <div className='p-5 mb-[55px] tab:p-2 mob:p-2 xmob:p-2'>
-                                            <h3 className='text-4xl tracking-normal  text-dark-blue'>"Casa del &Aacute;rbol"</h3>
-                                            <h5 className='text-2xl tracking-normal  text-dark-blue'>Distancia: 21Km</h5>
-                                            <h5 className='text-xl tracking-normal  text-dark-blue'>Altura: +1370m</h5>
-                                            <br />
-                                            <p className='text-justify text-xl '>Una media marat&oacute;n donde el atractivo son sus senderos y conexiones alrededor de las monta&ntilde;as disfrutando de las vistas de la ciudad y la naturaleza por el sendero que te lleva a la casa del &aacute;rbol.</p>
-                                        </div>
 
-                                    </div>
+                            <div className="grid grid-rows-6 bg-gray-200 rounded-md pb-10 group-hover:opacity-75 lg:h-80 lg:aspect-none border-4 transition-borderCard ease-cube hover:border-4 hover:border-second-color  duration-borderCube">
+                                <div className='row-span-5 group'>
+                                    <button className="tab:pointer-events-none tab:cursor-not-allowed mob:pointer-events-none xmob:cursor-not-allowed" onClick={this.openModal}>
+                                        <div className="self-center p-4 w-full min-h-80 bg-gray-200  rounded-md overflow-hidden">
+                                            <img
+                                                src='../imagenes/rutas/ruta21km.png'
+                                                alt="Ruta21KM"
+                                                className="w-full h-full object-center object-cover lg:w-full lg:h-full"
+                                            />
+                                            <span className="group-hover:visible rounded-md shadow-md text-white bg-gray-900 text-xs font-bold transition-all duration-100 p-2 text-center min-w-max invisible z-50 static">
+                                                M&aacute;s informaci&oacute;n sobre esta ruta haz click aqu&iacute;
+                                            </span>
+                                            <div className='p-5 mb-[55px] tab:p-2 mob:p-2 xmob:p-2'>
+                                                <h3 className='text-4xl tracking-normal  text-dark-blue'>"Casa del &Aacute;rbol"</h3>
+                                                <h5 className='text-2xl tracking-normal  text-dark-blue'>Distancia: 21Km</h5>
+                                                <h5 className='text-xl tracking-normal  text-dark-blue'>Altura: +1370m</h5>
+                                                <br />
+                                                <p className='text-justify text-xl '>Una media marat&oacute;n donde el atractivo son sus senderos y conexiones alrededor de las monta&ntilde;as disfrutando de las vistas de la ciudad y la naturaleza por el sendero que te lleva a la casa del &aacute;rbol.</p>
+                                            </div>
+
+                                        </div>
+                                    </button>
+
+
                                 </div>
                                 <div className='row-span-1'>
                                     {this.Equipación()}
                                 </div>
                                 <div className='row-span-1'>
-                                    <button id="ruta10" className="bg-second-color hover:bg-second-color/80 text-white py-2 px-4 rounded" onClick={this.openModal}>
+                                    <button id="ruta10" className="pc:hidden bg-second-color hover:bg-second-color/80 text-white py-2 px-4 rounded" onClick={this.openModal}>
                                         Conoce m&aacute;s sobre esta ruta
                                     </button>
                                 </div>
@@ -206,30 +220,35 @@ class Rutas extends Component {
                         {/* //* Ruta 34km -------------------------------------------------------------------------------------------------------------------------- */}
                         <div className="text-center p-10 tab:p-5 mob:p-5 xmob:p-5 bg-white/50 rounded-2xl col-span-2">
                             <div className="grid grid-rows-6 bg-gray-200 rounded-md pb-10 group-hover:opacity-75 lg:h-80 lg:aspect-none border-4 transition-borderCard ease-cube hover:border-4 hover:border-second-color  duration-borderCube">
-                                <div className="row-span-5 ">
-                                    <div className="p-4 w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden">
-                                        <img
-                                            src='../imagenes/rutas/ruta34km.png'
-                                            alt="Ruta34KM"
-                                            className="w-full h-full object-center object-cover lg:w-full lg:h-full"
-                                        />
-                                        <div className='p-5 mb-7 tab:p-2 mob:p-2 xmob:p-2s'>
-                                            <h3 className='text-4xl tracking-normal  text-dark-blue'>"Boca de Pez"</h3>
-                                            {/* <h4 className='text-2xl tracking-normal font-semibold text-dark-blue'>"Rob D"</h4> */}
-                                            <h5 className='text-2xl tracking-normal  text-dark-blue'>Distancia: 34Km</h5>
-                                            <h5 className='text-xl tracking-normal  text-dark-blue'>Altura: +2300m</h5>
-                                            <br />
-                                            <p className='text-justify text-xl '>Inspirada en la primera carrera del nacimiento del trail running en Francia en 1904. Es una ruta de combinaci&oacute;n de km verticales donde se disfruta desde pavimiento, hasta el sendero m&aacute;s t&eacute;cnico y pasa por todas las rutas del evento.</p>
+                                <div className="row-span-5 group">
+                                    <button className="tab:pointer-events-none tab:cursor-not-allowed mob:pointer-events-none xmob:cursor-not-allowed" onClick={this.openModal}>
+                                        <div className="p-4 w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden">
+                                            <img
+                                                src='../imagenes/rutas/ruta34km.png'
+                                                alt="Ruta34KM"
+                                                className="w-full h-full object-center object-cover lg:w-full lg:h-full"
+                                            />
+                                            <span className="group-hover:visible rounded-md shadow-md text-white bg-gray-900 text-xs font-bold transition-all duration-100 p-2 text-center min-w-max invisible z-50 static">
+                                                M&aacute;s informaci&oacute;n sobre esta ruta haz click aqu&iacute;
+                                            </span>
+                                            <div className='p-5 mb-7 tab:p-2 mob:p-2 xmob:p-2s'>
+                                                <h3 className='text-4xl tracking-normal  text-dark-blue'>"Boca de Pez"</h3>
+                                                {/* <h4 className='text-2xl tracking-normal font-semibold text-dark-blue'>"Rob D"</h4> */}
+                                                <h5 className='text-2xl tracking-normal  text-dark-blue'>Distancia: 34Km</h5>
+                                                <h5 className='text-xl tracking-normal  text-dark-blue'>Altura: +2300m</h5>
+                                                <br />
+                                                <p className='text-justify text-xl '>Inspirada en la primera carrera del nacimiento del trail running en Francia en 1904. Es una ruta de combinaci&oacute;n de km verticales donde se disfruta desde pavimiento, hasta el sendero m&aacute;s t&eacute;cnico y pasa por todas las rutas del evento.</p>
+                                            </div>
+
+
                                         </div>
-
-
-                                    </div>
+                                    </button>
                                 </div>
-                                <div className="row-span-1 ">
+                                <div className="row-span-1">
                                     {this.Equipación()}
                                 </div>
                                 <div className="row-span-1 ">
-                                    <button id="ruta10" className="bg-second-color hover:bg-second-color/80 text-white  py-2 px-4 rounded" onClick={this.openModal}>
+                                    <button id="ruta10" className="pc:hidden bg-second-color hover:bg-second-color/80 text-white  py-2 px-4 rounded" onClick={this.openModal}>
                                         Conoce m&aacute;s sobre esta ruta
                                     </button>
                                 </div>

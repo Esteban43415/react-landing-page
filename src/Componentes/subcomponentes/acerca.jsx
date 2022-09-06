@@ -4,7 +4,7 @@ class Acerca extends Component {
     render() {
         return (
             <div className="rounded-t-2xl p-10  ">
-                <div className="grid grid-cols-1 gap-5 p-5 px-24 text-center">
+                <div className="grid grid-cols-1 gap-5 p-5 pc:px-24 text-center">
                     <div className="col-span-1 border-b-4 border-second-color border-dotted pb-[60px]">
                         <div className="pc:grid pc:grid-cols-2 pc:gap-5 tab:grid tab:grid-cols-2 tab:gap-5 mob:grid mob:grid-cols-2 mob:gap-3 xmob:grid xmob:grid-cols-2 xmob:gap-3">
                             {/* 
@@ -73,7 +73,7 @@ class Acerca extends Component {
                     {/* 
                         //* ---------------------------------------------------------------------------------------------------------------
                     */}
-                    <div className="col-span-1 py-[41px]">
+                    <div className="col-span-1 py-[41px] ">
                         <h3 className="mb-14 text-6xl mob:text-4xl xmob:text-4xl text-white ">
                             Categor&iacute;as disponibles
                         </h3>
