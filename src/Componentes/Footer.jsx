@@ -17,7 +17,7 @@ class Footer extends Component {
             </ul>
             <ul className="copyright">
               <li>&copy; Boca de pez TRAIL 2022 - Cuenca - Ecuador</li>
-              <li><a title="Styleshout" href="http://www.styleshout.com"> Empresa </a></li>
+              <li>Black Funned Machine - Cuenca </li>
             </ul>
 
           </div>

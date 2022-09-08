@@ -293,29 +293,31 @@ class Rutas extends Component {
                         {/* //* Ruta 10km -------------------------------------------------------------------------------------------------------------------------- */}
 
                         <div className="p-10 tab:p-5 mob:p-5 xmob:p-5 col-span-2 bg-white/50 rounded-2xl text-center">
-                            <div className="grid grid-rows-6 bg-gray-200 rounded-md pb-10 group-hover:opacity-75 lg:h-80 lg:aspect-none border-4 transition-borderCard ease-cube hover:border-4 hover:border-second-color  duration-borderCube">
-                                <div className='row-span-5 group'>
+                            <div className="grid grid-rows-6 h-full bg-gray-200 rounded-md pb-10 group-hover:opacity-75 lg:h-80 lg:aspect-none border-4 transition-borderCard ease-cube hover:border-4 hover:border-second-color  duration-borderCube">
+                                <div className='row-span-5 group '>
                                     {/* <button className="tab:pointer-events-none tab:cursor-not-allowed mob:pointer-events-none xmob:cursor-not-allowed" onClick={this.openModal}> */}
 
                                     <div htmlFor="ruta10" className="p-4 w-full bg-gray-200 rounded-md">
-                                        
-                                        <div className='relative z-0' >
-                                            <img
-                                                src='../imagenes/rutas/ruta10km.png'
-                                                alt="Ruta10KM"
-                                                className="object-center object-cover w-full"
-                                            />
-                                            <div className='absolute top-0 left-0 p-1'>
-                                                <img className='w-32 tab:w-24 mob:w-24 xmob:w-24' src="../imagenes/itra/itra0.png" alt="" />
+
+                                        <div className='grid grid-cols-2 gap-1'>
+
+                                            <div className='col-span-1'>
+                                                <img className='w-full' src="../imagenes/itra/itra0.png" alt="ITRA" />
                                             </div>
-                                            <div className="absolute top-1 right-0 ">
-                                                <img className='w-32 tab:w-24 mob:w-24 xmob:w-24 py-2' src="../imagenes/utmb/20k.png" alt="" />
+                                            <div className="col-span-1">
+                                                <img className='w-full py-2' src="../imagenes/utmb/20K.png" alt="UTMB" />
                                             </div>
                                         </div>
+                                        <img
+                                            src='../imagenes/rutas/ruta10km.png'
+                                            alt="Ruta10KM"
+                                            className="object-center object-cover w-full"
+                                        />
+
                                         {/* <span className="group-hover:visible rounded-md shadow-md text-white bg-gray-900 text-xs font-bold transition-all duration-100 p-2 text-center min-w-max invisible z-50 static">
                                                 M&aacute;s informaci&oacute;n sobre esta ruta haz click aqu&iacute;
                                             </span> */}
-                                        <div className='p-5 tab:p-2 mob:p-2 xmob:p-2'>
+                                        <div className='px-5 tab:px-2 mob:px-2 xmob:px-2'>
                                             <h3 className='text-4xl tracking-normal  text-dark-blue'>"Escalera al cielo 'Rob D'"</h3>
                                             {/* <h4 className='text-3xl tracking-normal font-semibold text-dark-blue'>"Rob D"</h4> */}
                                             <h5 className='text-2xl tracking-normal  text-dark-blue'>Distancia: 10Km</h5>
@@ -346,28 +348,30 @@ class Rutas extends Component {
                         {/* //* Ruta 21km -------------------------------------------------------------------------------------------------------------------------- */}
                         <div className="text-center p-10 tab:p-5 mob:p-5 xmob:p-5 bg-white/50 rounded-2xl col-span-2 ">
 
-                            <div className="grid grid-rows-6 bg-gray-200 rounded-md pb-10 group-hover:opacity-75 lg:h-80 lg:aspect-none border-4 transition-borderCard ease-cube hover:border-4 hover:border-second-color  duration-borderCube">
+                            <div className="grid grid-rows-6 h-full bg-gray-200 rounded-md pb-10 group-hover:opacity-75 lg:h-80 lg:aspect-none border-4 transition-borderCard ease-cube hover:border-4 hover:border-second-color  duration-borderCube">
                                 <div className='row-span-5 group'>
                                     {/* <button className="tab:pointer-events-none tab:cursor-not-allowed mob:pointer-events-none xmob:cursor-not-allowed" onClick={this.openModal}> */}
                                     <div className="self-center p-4 w-full min-h-80 bg-gray-200  rounded-md overflow-hidden">
-                                        
-                                        <div className='relative z-0' >
-                                            <img
-                                                src='../imagenes/rutas/ruta21km.png'
-                                                alt="Ruta21KM"
-                                                className="w-full h-full object-center object-cover lg:w-full lg:h-full"
-                                            />
-                                            <div className='absolute top-0 left-0 p-2'>
-                                                <img className='w-32 tab:w-24 mob:w-24 xmob:w-24' src="../imagenes/itra/itra1.png" alt="" />
+
+                                        <div className='grid grid-cols-2 gap-1'>
+
+                                            <div className='col-span-1'>
+                                                <img className='w-full' src="../imagenes/itra/itra1.png" alt="ITRA" />
                                             </div>
-                                            <div className="absolute top-1 right-0 ">
-                                                <img className='w-32 py-2 tab:w-24 mob:w-24 xmob:w-24' src="../imagenes/utmb/20k.png" alt="" />
+                                            <div className="col-span-1">
+                                                <img className='w-full py-2' src="../imagenes/utmb/20K.png" alt="UTMB" />
                                             </div>
                                         </div>
+                                        <img
+                                            src='../imagenes/rutas/ruta21km.png'
+                                            alt="Ruta21KM"
+                                            className="w-full h-full object-center object-cover lg:w-full lg:h-full"
+                                        />
+
                                         {/* <span className="group-hover:visible rounded-md shadow-md text-white bg-gray-900 text-xs font-bold transition-all duration-100 p-2 text-center min-w-max invisible z-50 static">
                                                 M&aacute;s informaci&oacute;n sobre esta ruta haz click aqu&iacute;
                                             </span> */}
-                                        <div className='p-5 mb-[96px] tab:p-2 mob:p-2 xmob:p-2'>
+                                        <div className='px-5 tab:px-2 mob:px-2 xmob:px-2'>
                                             <h3 className='text-4xl tracking-normal  text-dark-blue'>"Casa del &Aacute;rbol"</h3>
                                             <h5 className='text-2xl tracking-normal  text-dark-blue'>Distancia: 21Km</h5>
                                             <h5 className='text-xl tracking-normal  text-dark-blue'>Altura: +1370m</h5>
@@ -396,28 +400,29 @@ class Rutas extends Component {
 
                         {/* //* Ruta 34km -------------------------------------------------------------------------------------------------------------------------- */}
                         <div className="text-center p-10 tab:p-5 mob:p-5 xmob:p-5 bg-white/50 rounded-2xl col-span-2">
-                            <div className="grid grid-rows-6 bg-gray-200 rounded-md pb-10 group-hover:opacity-75 lg:h-80 lg:aspect-none border-4 transition-borderCard ease-cube hover:border-4 hover:border-second-color  duration-borderCube">
+                            <div className="grid grid-rows-6 h-full bg-gray-200 rounded-md pb-10 group-hover:opacity-75 lg:h-80 lg:aspect-none border-4 transition-borderCard ease-cube hover:border-4 hover:border-second-color  duration-borderCube">
                                 <div className="row-span-5 group">
                                     {/* <button className="tab:pointer-events-none tab:cursor-not-allowed mob:pointer-events-none xmob:cursor-not-allowed" onClick={this.openModal}> */}
                                     <div className="p-4 w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden">
-                                        
-                                        <div className='relative z-0' >
-                                            <img
-                                                src='../imagenes/rutas/ruta34km.png'
-                                                alt="Ruta34KM"
-                                                className="w-full h-full object-center object-cover lg:w-full lg:h-full"
-                                            />
-                                            <div className='absolute top-0 left-0 p-2'>
-                                                <img className='w-32 tab:w-24 mob:w-24 xmob:w-24' src="../imagenes/itra/itra2.png" alt="" />
+
+                                        <div className='grid grid-cols-2 gap-1'>
+
+                                            <div className='col-span-1'>
+                                                <img className='w-full' src="../imagenes/itra/itra2.png" alt="ITRA" />
                                             </div>
-                                            <div className="absolute top-1 right-0 ">
-                                                <img className='w-32 tab:w-24 mob:w-24 xmob:w-24 py-2' src="../imagenes/utmb/50k.avif" alt="" />
+                                            <div className="col-span-1">
+                                                <img className='w-full py-2' src="../imagenes/utmb/50K.png" alt="UTMB" />
                                             </div>
                                         </div>
+                                        <img
+                                            src='../imagenes/rutas/ruta34km.png'
+                                            alt="Ruta34KM"
+                                            className="w-full h-full object-center object-cover lg:w-full lg:h-full"
+                                        />
                                         {/* <span className="group-hover:visible rounded-md shadow-md text-white bg-gray-900 text-xs font-bold transition-all duration-100 p-2 text-center min-w-max invisible z-50 static">
                                                 M&aacute;s informaci&oacute;n sobre esta ruta haz click aqu&iacute;
                                             </span> */}
-                                        <div className='p-5 mb-[67px] tab:p-2 mob:p-2 xmob:p-2s'>
+                                        <div className='px-5 tab:px-2 mob:px-2 xmob:px-2'>
                                             <h3 className='text-4xl tracking-normal  text-dark-blue'>"Boca de Pez"</h3>
                                             {/* <h4 className='text-2xl tracking-normal font-semibold text-dark-blue'>"Rob D"</h4> */}
                                             <h5 className='text-2xl tracking-normal  text-dark-blue'>Distancia: 34Km</h5>

@@ -132,7 +132,7 @@ class Header extends Component {
                                 <div className="pc:col-span-2 tab:col-span-2 mob:col-span-2">
                                     <h1 className="font-Spongebob pc:text-6xl tab:text-6xl mob:text-4xl xmob:text-4xl">BOCA DE PEZ</h1>
                                     <br />
-                                    <h3 className='font-Skia pc:text-xl tab:text-lg mob:text-base xmob:text-base'>LA PRIMERA CARRERA DE TRAIL EN CUENCA CON BENEFICIOS iTRA</h3>
+                                    <h3 className='font-roboto pc:text-xl tab:text-lg mob:text-base xmob:text-base'>LA PRIMERA CARRERA DE TRAIL EN CUENCA CON BENEFICIOS iTRA</h3>
                                 </div>
                             </div>
                         </div>

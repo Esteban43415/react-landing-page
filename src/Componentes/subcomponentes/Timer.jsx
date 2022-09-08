@@ -12,7 +12,7 @@ function MyTimer({ expiryTimestamp }) {
 
 
     return (
-        <div className='font-Skia'>
+        <div className='font-roboto'>
 
             <div className="pc:grid pc:grid-cols-4 pc:gap-5 tab:grid tab:grid-cols-4 tab:gap-3 mob:grid mob:grid-cols-4 mob:gap-2 xmob:grid xmob:grid-cols-4 xmob:gap-1">
                 <div className="col-span-6"><h1 className="lg:text-2xl xl:text-5xl 2xl:text-5xl  tab:text-5xl mob:text-2xl">LA CARRERA EMPIEZA EN:</h1></div>
