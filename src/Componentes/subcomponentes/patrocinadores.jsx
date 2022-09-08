@@ -75,7 +75,7 @@ class Patrocinadores extends Component {
                     <div className="grid grid-cols-4 gap-0 p-20 rounded-md text-white tab:grid-cols-1 tab:gap-4 mob:grid-cols-1 xmob:grid-cols-1 tab:p-10 mob:p-5 xmob:p-5">
                         <div className='group col-span-2 px-6 self-center'>
                             <div className='border-b-4 border-b-[#94a3b8] transition-borderCard ease-cube hover:border-b-4 hover:border-b-[#000d44]  duration-500 tab:mb-5 mob:mb-5 xmob:mb-5'>
-                                <a href='https://utmb.world/utmb-world-series-events' target='_blank' rel='noreferrer' >
+                                <a href='https://utmb.world/index-races' target='_blank' rel='noreferrer' >
                                     <img
                                         src='../imagenes/auspicios/utmb.png'
                                         alt="utmb"
@@ -84,7 +84,7 @@ class Patrocinadores extends Component {
                                 </a>
                             </div>
                             <span className="group-hover:visible rounded-md shadow-md text-white bg-gray-900 text-xs font-bold transition-all duration-100 p-2 text-center min-w-max invisible">
-                                M&aacute;s informaci&oacute;n sobre este tipo de clasificaci&oacute;n haz click aqu&iacute;
+                                M&aacute;s informaci&oacute;n sobre la clasificaci&oacute;n de las carreras haz click aqu&iacute;
                             </span>
                         </div>
                         <div className="col-span-2 ">

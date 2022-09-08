@@ -400,7 +400,6 @@ class Formulario extends Component {
                                                         className=" mt-1 block w-full px-[12px] py-[8px] border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                                                     >
                                                         <option value="">Seleccione un valor</option>
-                                                        <option value="XS">XS</option>
                                                         <option value="S">S</option>
                                                         <option value="M">M</option>
                                                         <option value="L">L</option>

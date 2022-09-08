@@ -3,30 +3,19 @@ import Temporizador from './subcomponentes/Timer';
 import { Disclosure, Transition } from '@headlessui/react'
 import { Link } from 'react-scroll';
 var navigation = [
-    { name: 'Inicio', id: 'A', href: '#', current: true },
-    { name: 'Premios', id: 'B', href: '#', current: false },
-    { name: 'Beneficios', id: 'C', href: '#', current: false },
-    { name: 'Rutas', id: 'D', href: '#', current: false },
-    { name: 'Inscripciones', id: 'E', href: '#', current: false },
+    { name: 'Inicio', id: 'A', href: '#' },
+    { name: 'Premios', id: 'B', href: '#' },
+    { name: 'Beneficios', id: 'C', href: '#' },
+    { name: 'Rutas', id: 'D', href: '#' }
 ]
 
 
 class Header extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            inicio: false,
-            premios: false,
-            beneficios: false,
-            rutas: false,
-            inscripciones: false
-        }
-    }
-
+   
     barraNav() {
         return (
 
-            <Disclosure as="nav" className="bg-[#083d56] ">
+            <Disclosure as="nav" className="bg-[#083d56]">
                 {({ open }) => (
                     <>
 
@@ -117,7 +106,7 @@ class Header extends Component {
 
             <div className='flex justify-center items-center' id="Inicio">
                 <header className='md:w-full  pc:w-full'>
-                    <nav className='fixed md:w-full pc:w-full'>
+                    <nav className='fixed md:w-full pc:w-full z-50'>
                         {this.barraNav()}
                     </nav>
 

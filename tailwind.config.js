@@ -45,11 +45,12 @@ module.exports = {
 
             backgroundImage: {
                 'd-t-y': 'linear-gradient(180deg, rgba(14,97,138,0.74) 0%, rgba(17,123,176,0.74) 35%, rgba(255,142,0,0.74) 100%)',
-
             },
 
             boxShadow: {
                 'info': '10px 10px 40px 5px black',
+                'btnA': 'inset 0 0 0 0 #083d56',
+                'btnB': 'inset 0 -100px 0 0 #083d56',
             },
 
             colors: {

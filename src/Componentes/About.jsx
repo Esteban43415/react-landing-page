@@ -18,6 +18,7 @@ class About extends Component {
             <div id="Rutas" className='col-span-2'>
                <Rutas />
             </div>
+            
          </div>
       );
    }
