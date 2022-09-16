@@ -7,34 +7,41 @@ class Patrocinadores extends Component {
             <>
                 <h2 className='text-7xl tab:text-3xl mob:text-3xl xmob:text-3xl text-center text-white col-span-4'>Nuestros auspiciantes</h2>
                 <div className='flex justify-center items-center'>
-                    <div className="grid grid-cols-6 gap-20  tab:grid-cols-3 mob:grid-cols-3 xmob:grid-cols-3 pc:pt-10 pc:px-20 tab:p-10 mob:p-10 xmob:p-10">
+                    <div className="grid grid-cols-10 gap-7 pc:gap-10  tab:grid-cols-3 mob:grid-cols-3 xmob:grid-cols-3 pc:pt-10 pc:px-20 tab:p-10 mob:p-10 xmob:p-10">
 
-                        {/* <div className="col-span-1 self-center">
-                            <img src="../imagenes/auspicios/Visa.png" alt="" className="object-center  w-full h-full" />
+                        <div className="col-span-2 self-center tab:col-span-1 mob:col-span-1 xmob:col-span-1">
+                            <img src="../imagenes/auspicios/petzl.png" alt="" className="object-center  w-full h-full" />
                         </div>
-                        <div className="col-span-1 self-center">
-                            <img src="../imagenes/auspicios/Produbanco.png" alt="" className="object-center  w-full h-full" />
+                        <div className="col-span-2 self-center tab:col-span-1 mob:col-span-1 xmob:col-span-1">
+                            <img src="../imagenes/auspicios/uswe.png" alt="" className="object-center  w-full h-full" />
                         </div>
-                        <div className="col-span-1 ">
+                        {/* <div className="col-span-2 tab:col-span-1 mob:col-span-1 xmob:col-span-1">
                             <img src="../imagenes/auspicios/mi.png" alt="" className="w-full h-full object-center object-cover" />
                         </div> */}
-                        <div className="col-span-1 ">
+                        <div className="col-span-2 tab:col-span-1 mob:col-span-1 xmob:col-span-1">
                             <img src="../imagenes/auspicios/PrintTextil.png" alt="" className="w-full h-full object-center object-cover" />
                         </div>
-                        <div className="col-span-1 self-center">
+                        <div className="col-span-2 self-center tab:col-span-1 mob:col-span-1 xmob:col-span-1">
+                            <img src="../imagenes/auspicios/Hammer.png" alt="" className="w-full  object-center " />
+                        </div>
+                        <div className="col-span-2 self-center tab:col-span-1 mob:col-span-1 xmob:col-span-1">
                             <img src="../imagenes/auspicios/Monodedo.png" alt="" className="w-full  object-center " />
                         </div>
-                        {/* <div className="col-span-1 self-center">
+                        <div className="col-span-2 self-center tab:col-span-1 mob:col-span-1 xmob:col-span-1">
+                            <img src="../imagenes/auspicios/CruzRoja.png" alt="" className="w-full  object-center " />
+                        </div>
+                        {/* <div className="col-span-2 self-center tab:col-span-1 mob:col-span-1 xmob:col-span-1">
                             <img src="../imagenes/auspicios/KTM.png" alt="" className="w-full  object-center " />
                         </div> */}
-                        <div className="col-span-1 ">
+                        <div className="col-span-2 tab:col-span-1 mob:col-span-1 xmob:col-span-1">
                             <img src="../imagenes/auspicios/Cofradia.png" alt="" className=" object-center object-cover w-full h-full" />
                         </div>
-                        <div className="col-span-1 ">
+                        <div className="col-span-2 tab:col-span-1 mob:col-span-1 xmob:col-span-1">
                             <img src="../imagenes/auspicios/Turismo.png" alt="" className=" object-center object-cover w-full h-full" /></div>
-                        <div className="col-span-1 "><img src="../imagenes/auspicios/CasaFarah.png" alt="" className=" object-center object-cover w-full h-full" />
+                        <div className="col-span-2 tab:col-span-1 mob:col-span-1 xmob:col-span-1">
+                            <img src="../imagenes/auspicios/CasaFarah.png" alt="" className=" object-center object-cover w-full h-full" />
                         </div>
-                        <div className="col-span-1 ">
+                        <div className="col-span-2 tab:col-span-1 mob:col-span-1 xmob:col-span-1">
                             <img src="../imagenes/auspicios/Marsella.png" alt="" className=" object-center object-cover w-full h-full" />
                         </div>
                     </div>

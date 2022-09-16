@@ -11,18 +11,13 @@ var inforutas = {
         "Distancia": 10,
         "Descripcion": "10.10km conformados por un 99% de sendero, mantiene partes técnicas y abiertas, cruces de riachuelos y zonas de bosque y pajonal, con desnivel positivo 1050m y negativo 1050m, tiene una intensidad moderada y su dificultad es media, punto más alto 3800m, punto más bajo 2700m, hora de salida 9am el sábado 29 de Octubre del 2022, lugar de salida y llegada km 2 vía barabón (Cuenca – Ecuador) tiempo límite 4 horas",
         "PuntosControl": [{
-            "Nombre": "PC #1",
+            "Nombre": "PC 1",
             "Descripcion": "km 5 fin de ascenso pico Km vertical"
         }],
         "PuntosAbasto": [{
-            "Nombre": "PA #1",
-            "Descripcion": "km 4 - Sector parqueaderopico de pez"
-        },
-        {
-            "Nombre": "PA #2",
-            "Descripcion": "km 6 - sector parqueadero pico de pez"
-        }
-        ],
+            "Nombre": "PA 1 - PA 2",
+            "Descripcion": "km 4 y km 6 sector parqueadero pico de pez."
+        }],
         "imagen": "../imagenes/rutas/Altimetria/Alt10km.png"
     },
     "RutaB": {
@@ -30,16 +25,16 @@ var inforutas = {
         "Distancia": 21,
         "Descripcion": "20.20km conformados por un 85% de sendero 12% de lastre 3% de pavimento, matiene partes técnicas y abiertas, cruces de riachuelos y zonas de bosque y pajonal, con desnivel positivo 1370m y negativo 1370m, tiene una intensidad moderada y su dificultad es media, punto más alto 3800m, punto más bajo 2700m, hora de salida 7am el sábado 29 de Octubre del 2022, lugar de salida y llegada km 2 vía de barabón (Cuenca – Ecuador) tiempo límite 8 horas.",
         "PuntosControl": [{
-            "Nombre": "PC #1",
+            "Nombre": "PC 1",
             "Descripcion": "Km 5 a la salida del sendero sector iglesia"
         }],
         "PuntosAbasto": [{
-            "Nombre": "PA #1",
-            "Descripcion": "Km 9 - sector parqueadero pico de pez"
+            "Nombre": "PA 1 - PA 3",
+            "Descripcion": "Km 9 – km 16 sector parqueadero pico de pez"
         },
         {
-            "Nombre": "PA #2",
-            "Descripcion": "Km 16 - sector parqueadero pico de pez"
+            "Nombre": "PA 2",
+            "Descripcion": "Km 12 cumbre boca de pez"
         }
         ],
         "imagen": "../imagenes/rutas/Altimetria/Alt21km.png"
@@ -49,29 +44,25 @@ var inforutas = {
         "Distancia": 34,
         "Descripcion": "33.30km conformados por un 75% de sendero 15% de lastre 5% de pavimento, mantiene partes técnicas y abiertas, cruces de riachuelos y zonas de bosque y pajonal, con desnivel positivo 2300m y negativo 2300m, tiene una intensidad moderada y su dificultad es media – alta, punto más alto 3800m, punto más bajo 2700m, hora de salida 4h30am el sábado 29 de Octubre del 2022, lugar y llegada km 2 vía barabón (Cuenca – Ecuador) tiempo límite 10 horas.",
         "PuntosControl": [{
-            "Nombre": "PC #1",
-            "Descripcion": "Km 7.5 Cumbre final del kil&oacute;metro vertical"
+            "Nombre": "PC 1",
+            "Descripcion": "Km 7.5 Cumbre final del kilómetro vertical"
         },
         {
-            "Nombre": "PC #2",
-            "Descripcion": "Km 9.2 Final del kil&oacute;metro vertical antiguo"
+            "Nombre": "PC 2",
+            "Descripcion": "Km 9.2 Final del kilómetro vertical antiguo"
         }
         ],
         "PuntosAbasto": [{
-            "Nombre": "PA #1",
+            "Nombre": "PA 1",
             "Descripcion": "Km 11.5 Cumbre boca de pez"
         },
         {
-            "Nombre": "PA #2",
-            "Descripcion": "Km 15 - sector parqueadero pico de pez"
+            "Nombre": "PA 2 - PA 4",
+            "Descripcion": "Km 15 y km 29 sector parqueadero pico de pez"
         },
         {
-            "Nombre": "PA #3",
+            "Nombre": "PA 3",
             "Descripcion": "Km 25 a la salida del sendero sector iglesia"
-        },
-        {
-            "Nombre": "PA #4",
-            "Descripcion": "Km 29 - sector parqueadero pico de pez"
         }
         ],
         "imagen": "../imagenes/rutas/Altimetria/Alt34km.png"
@@ -107,13 +98,15 @@ class Rutas extends Component {
         var PuntosControl = inforutas[this.state.ruta].PuntosControl.map((PC) => {
             return (
                 <>
-                    <div className="col-span-1 text-center">
-                        <div className='flex flex-row justify-center items-center'>
-                            <img className='w-[25px]' src='/imagenes/correr.gif' alt="correr" /> <p className=" px-5"> {PC.Nombre}</p>
+                    <div className="col-span-3 grid grid-cols-3 gap-3 border-solid border-b-[1px]  border-gray-500/40 py-5 pc:px-5">
+                        <div className="col-span-1 text-center tab:col-span-3 mob:col-span-3 xmob:col-span-3">
+                            <div className='flex flex-row'>
+                                <img className='w-[25px]' src='/imagenes/correr.gif' alt="correr" /> <p className="pc:px-5 font-semibold"> {PC.Nombre}</p>
+                            </div>
                         </div>
-                    </div>
-                    <div className="col-span-2 text-left">
-                        <p className="">{PC.Descripcion}</p>
+                        <div className="col-span-2 text-left tab:col-span-3 mob:col-span-3 xmob:col-span-3">
+                            <p className="">{PC.Descripcion}</p>
+                        </div>
                     </div>
                 </>
             )
@@ -121,13 +114,15 @@ class Rutas extends Component {
         var PuntosAbasto = inforutas[this.state.ruta].PuntosAbasto.map((PA) => {
             return (
                 <>
-                    <div className="col-span-1 text-center">
-                        <div className='flex flex-row justify-center items-center'>
-                            <img className='w-[25px] ' src='/imagenes/correr.gif' alt="correr" /> <p className=" px-5"> {PA.Nombre}</p>
+                    <div className="col-span-3 grid grid-cols-3 gap-3 border-solid border-b-[1px]  border-gray-500/40 py-5 pc:px-5">
+                        <div className="col-span-1 text-center tab:col-span-3 mob:col-span-3 xmob:col-span-3 ">
+                            <div className='flex flex-row'>
+                                <img className='w-[25px] ' src='/imagenes/correr.gif' alt="correr" /> <p className="pc:px-5 font-semibold"> {PA.Nombre}</p>
+                            </div>
                         </div>
-                    </div>
-                    <div className="col-span-2 text-left">
-                        <p className="">{PA.Descripcion}</p>
+                        <div className="col-span-2 text-left tab:col-span-3 mob:col-span-3 xmob:col-span-3">
+                            <p className="">{PA.Descripcion}</p>
+                        </div>
                     </div>
                 </>)
         });
@@ -137,7 +132,7 @@ class Rutas extends Component {
             <>
 
                 <Transition appear show={this.state.isOpen} as={Fragment}>
-                    <Dialog as="div" className="relative z-10" onClose={this.closeModal}>
+                    <Dialog as="div" className="relative z-50" onClose={this.closeModal}>
                         <Transition.Child
                             as={Fragment}
                             enter="ease-out duration-300"
@@ -150,7 +145,7 @@ class Rutas extends Component {
                             <div className="fixed inset-0 bg-black bg-opacity-25" />
                         </Transition.Child>
 
-                        <div className="fixed inset-0 overflow-y-auto">
+                        <div className="fixed inset-0 overflow-y-auto font-roboto">
                             <div className="flex min-h-full items-center justify-center p-4 text-center">
                                 <Transition.Child
                                     as={Fragment}
@@ -164,12 +159,12 @@ class Rutas extends Component {
                                     <Dialog.Panel className="w-full max-w-7xl transform overflow-hidden rounded-2xl bg-white p-16 text-left align-middle shadow-xl transition-all">
                                         <Dialog.Title
                                             as="h3"
-                                            className="text-4xl tab:text-xl mob:text-xl xmob:text-xl font-medium leading-6 text-gray-900 text-center pb-8"
+                                            className="border-b-4 border-dotted border-gray-500 text-5xl font-semibold tab:text-2xl mob:text-2xl xmob:text-2xl leading-6 text-gray-900 text-center pb-8"
                                         >
                                             {NombreRuta} - {Distancia}km
                                         </Dialog.Title>
                                         <div className="grid grid-rows-4 gap-5 ">
-                                            <div className="row-span-4">
+                                            <div className="row-span-4 border-b-4 border-dotted border-gray-500 py-10">
                                                 <div className="grid grid-cols-4 gap-5 tab:grid-cols-1 mob:grid-cols-1 xmob:grid-cols-1">
                                                     <div className="col-span-2 self-center">
                                                         <img
@@ -181,10 +176,42 @@ class Rutas extends Component {
                                                     <div className="col-span-2 self-center ">
 
                                                         <p className='pc:px-10 text-justify'>{Descripcion}</p>
-                                                        <div className='grid grid-cols-3 gap-7 text-xl py-10 '>{PuntosControl} {PuntosAbasto}</div>
+                                                        <div className='grid grid-cols-3 gap-0 text-xl py-10 pc:pl-5'>{PuntosControl}{PuntosAbasto}</div>
 
                                                     </div>
 
+                                                </div>
+                                            </div>
+                                            <div className="row-span-1">
+                                                <div className="grid grid-cols-4 gap-0 pc:p-10">
+                                                    <div className="col-span-4 pc:p-6 border-solid border-b-[1px] border-gray-500/40 tab:py-5 mob:py-5 xmob:py-5">
+                                                        <h3 className='text-2xl text-center font-semibold'>Puntos de Control y Abasto</h3>
+                                                        <p className="text-justify text-lg">Cada participante deber&aacute; pasar por los puntos de control como de abasto
+                                                            ya que deber&aacute;n contar con su chip pegado a su n&uacute;mero de forma visible
+                                                            para poder ser chequeados y poder continuar con la carrera en caso
+                                                            contrario el corredor ser&aacute; descalificado, no obstante dichos puntos tiene la
+                                                            siguientes caracter&iacute;sticas:</p>
+                                                    </div>
+                                                    <div className="col-span-2 pc:p-6 tab:col-span-4 mob:col-span-4 xmob:col-span-4 tab:py-5 mob:py-5 xmob:py-5">
+                                                        <h3 className='text-2xl text-center font-semibold'>Puntos de Control (PC)</h3>
+                                                        <p className="text-justify text-lg">
+                                                            Se situ&aacute; en un sitio estrat&eacute;gico y contar&aacute; con un
+                                                            asistente m&eacute;dico y un miembro del staff para resguardar su salud y el
+                                                            rendimiento de su participaci&oacute;n en cualquiera de las rutas, si los
+                                                            participantes no pasan por dicho punto ser&aacute;n descalificados. Cada
+                                                            distancia tiene un n&uacute;mero fijado de estos puestos ya que a mayor distancia
+                                                            mayor riesgos se corren y la dificultad se vuelve m&aacute;s alta, el sitio de salida
+                                                            como de llegada en este caso es el mismo, ser&aacute; un punto de control
+                                                            adicional.
+                                                        </p>
+                                                    </div>
+                                                    <div className="col-span-2 pc:p-6 tab:col-span-4 mob:col-span-4 xmob:col-span-4 tab:py-5 mob:py-5 xmob:py-5">
+                                                        <h3 className='text-2xl text-center font-semibold'>Puntos de Abasto (PA)</h3>
+                                                        <p className="text-justify text-lg">Son los puestos m&aacute;s completos, ya que son
+                                                            puntos de control y de avituallamiento, se contar&aacute; con comida (frutas,
+                                                            barras energeticas,etc) e hidrataci&oacute;n (agua, electrolitos,etc) con 2
+                                                            asistentes m&eacute;dicos y 2 miembros del staff.</p>
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div className="row-span-1 text-center">

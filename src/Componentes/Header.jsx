@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Temporizador from './subcomponentes/Timer';
 import { Disclosure, Transition } from '@headlessui/react'
 import { Link } from 'react-scroll';
+import { useTranslation} from "react-i18next"
 var navigation = [
     { name: 'Inicio', id: 'A', href: '#' },
     { name: 'Premios', id: 'B', href: '#' },
@@ -10,8 +11,9 @@ var navigation = [
 ]
 
 
+
 class Header extends Component {
-   
+
     barraNav() {
         return (
 
@@ -106,7 +108,7 @@ class Header extends Component {
 
             <div className='flex justify-center items-center' id="Inicio">
                 <header className='md:w-full  pc:w-full'>
-                    <nav className='fixed md:w-full pc:w-full z-50'>
+                    <nav className='fixed md:w-full pc:w-full z-30'>
                         {this.barraNav()}
                     </nav>
 
@@ -132,7 +134,7 @@ class Header extends Component {
                                 <div className="pc:col-span-2 tab:col-span-2 mob:col-span-2">
                                     <h1 className="font-Spongebob pc:text-6xl tab:text-6xl mob:text-4xl xmob:text-4xl">BOCA DE PEZ</h1>
                                     <br />
-                                    <h3 className='font-roboto pc:text-xl tab:text-lg mob:text-base xmob:text-base'>LA PRIMERA CARRERA DE TRAIL EN CUENCA CON BENEFICIOS iTRA</h3>
+                                    <h3 className='font-roboto pc:text-xl tab:text-lg mob:text-base xmob:text-base'>LA PRIMERA CARRERA DE TRAIL EN CUENCA CON BENEFICIOS iTRA Y UTMB</h3>
                                 </div>
                             </div>
                         </div>

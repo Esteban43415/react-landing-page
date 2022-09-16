@@ -16,8 +16,8 @@ class Footer extends Component {
 
             </ul>
             <ul className="copyright">
-              <li>&copy; Boca de pez TRAIL 2022 - Cuenca - Ecuador</li>
-              <li>Black Funned Machine - Cuenca </li>
+              <li>&copy; Boca de pez Trail Journey 2022 - Cuenca - Ecuador</li>
+              {/* <li>Black Funned Machine - Cuenca </li> */}
             </ul>
 
           </div>
