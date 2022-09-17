@@ -1,101 +1,90 @@
 
-import React, { Component, Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
 import { Transition, Dialog } from '@headlessui/react'
 import { App } from './visualizadorPDF';
+import { useTranslation } from "react-i18next"
 
 
 
-var inforutas = {
-    "RutaA": {
-        "Nombre": "Escalera al Cielo 'ROB D'",
-        "Distancia": 10,
-        "Descripcion": "10.10km conformados por un 99% de sendero, mantiene partes técnicas y abiertas, cruces de riachuelos y zonas de bosque y pajonal, con desnivel positivo 1050m y negativo 1050m, tiene una intensidad moderada y su dificultad es media, punto más alto 3800m, punto más bajo 2700m, hora de salida 9am el sábado 29 de Octubre del 2022, lugar de salida y llegada km 2 vía barabón (Cuenca – Ecuador) tiempo límite 4 horas",
-        "PuntosControl": [{
-            "Nombre": "PC 1",
-            "Descripcion": "km 5 fin de ascenso pico Km vertical"
-        }],
-        "PuntosAbasto": [{
-            "Nombre": "PA 1 - PA 2",
-            "Descripcion": "km 4 y km 6 sector parqueadero pico de pez."
-        }],
-        "imagen": "../imagenes/rutas/Altimetria/Alt10km.png"
-    },
-    "RutaB": {
-        "Nombre": "Casa de Árbol",
-        "Distancia": 21,
-        "Descripcion": "20.20km conformados por un 85% de sendero 12% de lastre 3% de pavimento, matiene partes técnicas y abiertas, cruces de riachuelos y zonas de bosque y pajonal, con desnivel positivo 1370m y negativo 1370m, tiene una intensidad moderada y su dificultad es media, punto más alto 3800m, punto más bajo 2700m, hora de salida 7am el sábado 29 de Octubre del 2022, lugar de salida y llegada km 2 vía de barabón (Cuenca – Ecuador) tiempo límite 8 horas.",
-        "PuntosControl": [{
-            "Nombre": "PC 1",
-            "Descripcion": "Km 5 a la salida del sendero sector iglesia"
-        }],
-        "PuntosAbasto": [{
-            "Nombre": "PA 1 - PA 3",
-            "Descripcion": "Km 9 – km 16 sector parqueadero pico de pez"
-        },
-        {
-            "Nombre": "PA 2",
-            "Descripcion": "Km 12 cumbre boca de pez"
-        }
-        ],
-        "imagen": "../imagenes/rutas/Altimetria/Alt21km.png"
-    },
-    "RutaC": {
-        "Nombre": "Boca de Pez",
-        "Distancia": 34,
-        "Descripcion": "33.30km conformados por un 75% de sendero 15% de lastre 5% de pavimento, mantiene partes técnicas y abiertas, cruces de riachuelos y zonas de bosque y pajonal, con desnivel positivo 2300m y negativo 2300m, tiene una intensidad moderada y su dificultad es media – alta, punto más alto 3800m, punto más bajo 2700m, hora de salida 4h30am el sábado 29 de Octubre del 2022, lugar y llegada km 2 vía barabón (Cuenca – Ecuador) tiempo límite 10 horas.",
-        "PuntosControl": [{
-            "Nombre": "PC 1",
-            "Descripcion": "Km 7.5 Cumbre final del kilómetro vertical"
-        },
-        {
-            "Nombre": "PC 2",
-            "Descripcion": "Km 9.2 Final del kilómetro vertical antiguo"
-        }
-        ],
-        "PuntosAbasto": [{
-            "Nombre": "PA 1",
-            "Descripcion": "Km 11.5 Cumbre boca de pez"
-        },
-        {
-            "Nombre": "PA 2 - PA 4",
-            "Descripcion": "Km 15 y km 29 sector parqueadero pico de pez"
-        },
-        {
-            "Nombre": "PA 3",
-            "Descripcion": "Km 25 a la salida del sendero sector iglesia"
-        }
-        ],
-        "imagen": "../imagenes/rutas/Altimetria/Alt34km.png"
-    }
-}
 
-class Rutas extends Component {
-    constructor(props) {
-        super(props);
-        this.state = { isOpen: false, isOpenG: false, url: '/extras/Sample.pdf', ruta: 'RutaA' };
+// var inforutas = {
+//     "RutaA": {
+//         "Nombre": "Escalera al Cielo 'ROB D'",
+//         "Distancia": 10,
+//         "Descripcion": "10.10km conformados por un 99% de sendero, mantiene partes técnicas y abiertas, cruces de riachuelos y zonas de bosque y pajonal, con desnivel positivo 1050m y negativo 1050m, tiene una intensidad moderada y su dificultad es media, punto más alto 3800m, punto más bajo 2700m, hora de salida 9am el sábado 29 de Octubre del 2022, lugar de salida y llegada km 2 vía barabón (Cuenca – Ecuador) tiempo límite 4 horas",
+//         "PuntosControl": [{
+//             "Nombre": "PC 1",
+//             "Descripcion": "km 5 fin de ascenso pico Km vertical"
+//         }],
+//         "PuntosAbasto": [{
+//             "Nombre": "PA 1 - PA 2",
+//             "Descripcion": "km 4 y km 6 sector parqueadero pico de pez."
+//         }],
+//         "imagen": "../imagenes/rutas/Altimetria/Alt10km.png"
+//     },
+//     "RutaB": {
+//         "Nombre": "Casa de Árbol",
+//         "Distancia": 21,
+//         "Descripcion": "20.20km conformados por un 85% de sendero 12% de lastre 3% de pavimento, matiene partes técnicas y abiertas, cruces de riachuelos y zonas de bosque y pajonal, con desnivel positivo 1370m y negativo 1370m, tiene una intensidad moderada y su dificultad es media, punto más alto 3800m, punto más bajo 2700m, hora de salida 7am el sábado 29 de Octubre del 2022, lugar de salida y llegada km 2 vía de barabón (Cuenca – Ecuador) tiempo límite 8 horas.",
+//         "PuntosControl": [{
+//             "Nombre": "PC 1",
+//             "Descripcion": "Km 5 a la salida del sendero sector iglesia"
+//         }],
+//         "PuntosAbasto": [{
+//             "Nombre": "PA 1 - PA 3",
+//             "Descripcion": "Km 9 – km 16 sector parqueadero pico de pez"
+//         },
+//         {
+//             "Nombre": "PA 2",
+//             "Descripcion": "Km 12 cumbre boca de pez"
+//         }
+//         ],
+//         "imagen": "../imagenes/rutas/Altimetria/Alt21km.png"
+//     },
+//     "RutaC": {
+//         "Nombre": "Boca de Pez",
+//         "Distancia": 34,
+//         "Descripcion": "33.30km conformados por un 75% de sendero 15% de lastre 5% de pavimento, mantiene partes técnicas y abiertas, cruces de riachuelos y zonas de bosque y pajonal, con desnivel positivo 2300m y negativo 2300m, tiene una intensidad moderada y su dificultad es media – alta, punto más alto 3800m, punto más bajo 2700m, hora de salida 4h30am el sábado 29 de Octubre del 2022, lugar y llegada km 2 vía barabón (Cuenca – Ecuador) tiempo límite 10 horas.",
+//         "PuntosControl": [{
+//             "Nombre": "PC 1",
+//             "Descripcion": "Km 7.5 Cumbre final del kilómetro vertical"
+//         },
+//         {
+//             "Nombre": "PC 2",
+//             "Descripcion": "Km 9.2 Final del kilómetro vertical antiguo"
+//         }
+//         ],
+//         "PuntosAbasto": [{
+//             "Nombre": "PA 1",
+//             "Descripcion": "Km 11.5 Cumbre boca de pez"
+//         },
+//         {
+//             "Nombre": "PA 2 - PA 4",
+//             "Descripcion": "Km 15 y km 29 sector parqueadero pico de pez"
+//         },
+//         {
+//             "Nombre": "PA 3",
+//             "Descripcion": "Km 25 a la salida del sendero sector iglesia"
+//         }
+//         ],
+//         "imagen": "../imagenes/rutas/Altimetria/Alt34km.png"
+//     }
+// }
 
-    }
-    openModal = () => {
-        this.setState({ isOpen: true });
-    }
-    closeModal = () => { this.setState({ isOpen: false }) }
+function Rutas() {
 
-    openModalG = () => {
-        this.setState({ isOpenG: true });
+    var [isOpen, setIsOpen] = useState(false);
+    var [isOpenG, setIsOpenG] = useState(false);
+    var [url] = useState('/extras/Sample.pdf');
+    var [ruta, setRuta] = useState('RutaA');
+    const [t] = useTranslation("global");
 
-    }
-    closeModalG = () => {
-        this.setState({ isOpenG: false })
-    }
+    function modal() {
 
-
-
-    modal() {
-
-        var NombreRuta = inforutas[this.state.ruta].Nombre;
-        var Distancia = inforutas[this.state.ruta].Distancia;
-        var Descripcion = inforutas[this.state.ruta].Descripcion;
-        var PuntosControl = inforutas[this.state.ruta].PuntosControl.map((PC) => {
+        var NombreRuta = t("Rutas." + ruta + ".Nombre");
+        var Distancia = t("Rutas." + ruta + ".Distancia");
+        var Descripcion = t("Rutas." + ruta + ".Descripcion");
+        var PuntosControl = t("Rutas." + ruta + ".PuntosControl", { returnObjects: true }).map((PC) => {
             return (
                 <>
                     <div className="col-span-3 grid grid-cols-3 gap-3 border-solid border-b-[1px]  border-gray-500/40 py-5 pc:px-5">
@@ -111,7 +100,7 @@ class Rutas extends Component {
                 </>
             )
         });
-        var PuntosAbasto = inforutas[this.state.ruta].PuntosAbasto.map((PA) => {
+        var PuntosAbasto = t("Rutas." + ruta + ".PuntosAbasto", { returnObjects: true }).map((PA) => {
             return (
                 <>
                     <div className="col-span-3 grid grid-cols-3 gap-3 border-solid border-b-[1px]  border-gray-500/40 py-5 pc:px-5">
@@ -126,13 +115,13 @@ class Rutas extends Component {
                     </div>
                 </>)
         });
-        var imagen = inforutas[this.state.ruta].imagen;
+        var imagen = t("Rutas." + ruta + ".imagen");
 
         return (
             <>
 
-                <Transition appear show={this.state.isOpen} as={Fragment}>
-                    <Dialog as="div" className="relative z-50" onClose={this.closeModal}>
+                <Transition appear show={isOpen} as={Fragment}>
+                    <Dialog as="div" className="relative z-50" onClose={() => setIsOpen(false)}>
                         <Transition.Child
                             as={Fragment}
                             enter="ease-out duration-300"
@@ -185,32 +174,18 @@ class Rutas extends Component {
                                             <div className="row-span-1">
                                                 <div className="grid grid-cols-4 gap-0 pc:p-10">
                                                     <div className="col-span-4 pc:p-6 border-solid border-b-[1px] border-gray-500/40 tab:py-5 mob:py-5 xmob:py-5">
-                                                        <h3 className='text-2xl text-center font-semibold'>Puntos de Control y Abasto</h3>
-                                                        <p className="text-justify text-lg">Cada participante deber&aacute; pasar por los puntos de control como de abasto
-                                                            ya que deber&aacute;n contar con su chip pegado a su n&uacute;mero de forma visible
-                                                            para poder ser chequeados y poder continuar con la carrera en caso
-                                                            contrario el corredor ser&aacute; descalificado, no obstante dichos puntos tiene la
-                                                            siguientes caracter&iacute;sticas:</p>
+                                                        <h3 className='text-2xl text-center font-semibold'>{t("Rutas.pcpa-titulo")}</h3>
+                                                        <p className="text-justify text-lg">{t("Rutas.pcpa-descripcion")}</p>
                                                     </div>
                                                     <div className="col-span-2 pc:p-6 tab:col-span-4 mob:col-span-4 xmob:col-span-4 tab:py-5 mob:py-5 xmob:py-5">
-                                                        <h3 className='text-2xl text-center font-semibold'>Puntos de Control (PC)</h3>
+                                                        <h3 className='text-2xl text-center font-semibold'>{t("Rutas.pc-titulo")}</h3>
                                                         <p className="text-justify text-lg">
-                                                            Se situ&aacute; en un sitio estrat&eacute;gico y contar&aacute; con un
-                                                            asistente m&eacute;dico y un miembro del staff para resguardar su salud y el
-                                                            rendimiento de su participaci&oacute;n en cualquiera de las rutas, si los
-                                                            participantes no pasan por dicho punto ser&aacute;n descalificados. Cada
-                                                            distancia tiene un n&uacute;mero fijado de estos puestos ya que a mayor distancia
-                                                            mayor riesgos se corren y la dificultad se vuelve m&aacute;s alta, el sitio de salida
-                                                            como de llegada en este caso es el mismo, ser&aacute; un punto de control
-                                                            adicional.
+                                                            {t("Rutas.pc-descripcion")}
                                                         </p>
                                                     </div>
                                                     <div className="col-span-2 pc:p-6 tab:col-span-4 mob:col-span-4 xmob:col-span-4 tab:py-5 mob:py-5 xmob:py-5">
-                                                        <h3 className='text-2xl text-center font-semibold'>Puntos de Abasto (PA)</h3>
-                                                        <p className="text-justify text-lg">Son los puestos m&aacute;s completos, ya que son
-                                                            puntos de control y de avituallamiento, se contar&aacute; con comida (frutas,
-                                                            barras energeticas,etc) e hidrataci&oacute;n (agua, electrolitos,etc) con 2
-                                                            asistentes m&eacute;dicos y 2 miembros del staff.</p>
+                                                        <h3 className='text-2xl text-center font-semibold'>{t("Rutas.pa-titulo")}</h3>
+                                                        <p className="text-justify text-lg">{t("Rutas.pa-descripcion")}</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -220,8 +195,8 @@ class Rutas extends Component {
                                                     <button
                                                         type="button"
                                                         className='relative inline-block m-[15px] py-[15px] px-[30px] text-center text-[18px] text-[#083d56] bg-transparent cursor-pointer ease-out duration-500 border-2 border-solid border-[#083d56] rounded-xl shadow-btnA hover:text-white hover:shadow-btnB active:scale-90'
-                                                        onClick={this.closeModal}>
-                                                        ¡Entendido!
+                                                        onClick={() => setIsOpen(false)}>
+                                                        ¡{t("Rutas.btn-dialog")}!
                                                     </button>
                                                 </div>
 
@@ -238,12 +213,12 @@ class Rutas extends Component {
     }
 
 
-    modalGuia() {
+    function modalGuia() {
         return (
             <>
 
-                <Transition appear show={this.state.isOpenG} as={Fragment}>
-                    <Dialog as="div" className="relative z-10" onClose={this.closeModalG}>
+                <Transition appear show={isOpenG} as={Fragment}>
+                    <Dialog as="div" className="relative z-10" onClose={() => setIsOpenG(false)}>
                         <Transition.Child
                             as={Fragment}
                             enter="ease-out duration-300"
@@ -276,7 +251,7 @@ class Rutas extends Component {
                                         </Dialog.Title>
                                         <div className="grid grid-rows-4 gap-5">
                                             <div className="row-span-3">
-                                                <App fileUrl={this.state.url} />
+                                                <App fileUrl={url} />
                                             </div>
                                             <div className="row-span-1 text-center">
                                                 <div className="mt-2">
@@ -289,7 +264,7 @@ class Rutas extends Component {
                                                     <button
                                                         type="button"
                                                         className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
-                                                        onClick={this.closeModalG}>
+                                                        onClick={() => setIsOpenG(false)}>
                                                         ¡Entendido!
                                                     </button>
                                                 </div>
@@ -305,188 +280,183 @@ class Rutas extends Component {
         )
     }
 
-    render() {
 
 
-        return (
-            <div className='grid grid-rows-2 gap-8 p-10 rounded-b-2xl'>
-                <div className='row-span-2 pt-4 text-center '>
-                    <h1 className="text-6xl tracking-tight  text-white">Conoce nuestras rutas</h1>
-                </div>
-                <div className='row-span-4'>
-                    <div className="grid grid-cols-6 tab:grid-cols-1 mob:grid-cols-1 xmob:grid-cols-1 gap-8 px-10 tab:px-0 mob:px-0 xmob:px-0 pb-10">
+    return (
+        <div className='grid grid-rows-2 gap-8 p-10 rounded-b-2xl'>
+            <div className='row-span-2 pt-4 text-center '>
+                <h1 className="text-6xl tracking-tight  text-white">{t("Rutas.titulo")}</h1>
+            </div>
+            <div className='row-span-4'>
+                <div className="grid grid-cols-6 tab:grid-cols-1 mob:grid-cols-1 xmob:grid-cols-1 gap-8 px-10 tab:px-0 mob:px-0 xmob:px-0 pb-10">
 
 
-                        {/* //* Ruta 10km -------------------------------------------------------------------------------------------------------------------------- */}
+                    {/* //* Ruta 10km -------------------------------------------------------------------------------------------------------------------------- */}
 
-                        <div className="p-10 tab:p-5 mob:p-5 xmob:p-5 col-span-2 bg-white/50 rounded-2xl text-center">
-                            <div className="grid grid-rows-6 h-full bg-gray-200 rounded-md pb-10 group-hover:opacity-75 lg:h-80 lg:aspect-none border-4 transition-borderCard ease-cube hover:border-4 hover:border-second-color  duration-borderCube">
-                                <div className='row-span-5 group '>
-                                    {/* <button className="tab:pointer-events-none tab:cursor-not-allowed mob:pointer-events-none xmob:cursor-not-allowed" onClick={this.openModal}> */}
+                    <div className="p-10 tab:p-5 mob:p-5 xmob:p-5 col-span-2 bg-white/50 rounded-2xl text-center">
+                        <div className="grid grid-rows-6 h-full bg-gray-200 rounded-md pb-10 group-hover:opacity-75 lg:h-80 lg:aspect-none border-4 transition-borderCard ease-cube hover:border-4 hover:border-second-color  duration-borderCube">
+                            <div className='row-span-5 group '>
+                                <div htmlFor="ruta10" className="p-4 w-full bg-gray-200 rounded-md">
 
-                                    <div htmlFor="ruta10" className="p-4 w-full bg-gray-200 rounded-md">
+                                    <div className='grid grid-cols-2 gap-1'>
 
-                                        <div className='grid grid-cols-2 gap-1'>
-
-                                            <div className='col-span-1'>
-                                                <img className='w-full' src="../imagenes/itra/itra0.png" alt="ITRA" />
-                                            </div>
-                                            <div className="col-span-1">
-                                                <img className='w-full py-2' src="../imagenes/utmb/20K.png" alt="UTMB" />
-                                            </div>
+                                        <div className='col-span-1'>
+                                            <img className='w-full' src="../imagenes/itra/itra0.png" alt="ITRA" />
                                         </div>
-                                        <img
-                                            src='../imagenes/rutas/ruta10km.png'
-                                            alt="Ruta10KM"
-                                            className="object-center object-cover w-full"
-                                        />
+                                        <div className="col-span-1">
+                                            <img className='w-full py-2' src="../imagenes/utmb/20K.png" alt="UTMB" />
+                                        </div>
+                                    </div>
+                                    <img
+                                        src='../imagenes/rutas/ruta10km.png'
+                                        alt="Ruta10KM"
+                                        className="object-center object-cover w-full"
+                                    />
 
-                                        {/* <span className="group-hover:visible rounded-md shadow-md text-white bg-gray-900 text-xs font-bold transition-all duration-100 p-2 text-center min-w-max invisible z-50 static">
+                                    {/* <span className="group-hover:visible rounded-md shadow-md text-white bg-gray-900 text-xs font-bold transition-all duration-100 p-2 text-center min-w-max invisible z-50 static">
                                                 M&aacute;s informaci&oacute;n sobre esta ruta haz click aqu&iacute;
                                             </span> */}
-                                        <div className='px-5 tab:px-2 mob:px-2 xmob:px-2'>
-                                            <h3 className='text-4xl tracking-normal  text-dark-blue'>"Escalera al cielo 'Rob D'"</h3>
-                                            {/* <h4 className='text-3xl tracking-normal font-semibold text-dark-blue'>"Rob D"</h4> */}
-                                            <h5 className='text-2xl tracking-normal  text-dark-blue'>Distancia: 10Km</h5>
-                                            <h5 className='text-xl tracking-normal  text-dark-blue'>Altura: +1050m</h5>
-                                            <br />
-                                            <p className='text-justify text-lg'>Una ruta de puro sendero en casi su totalidad, con intensidad de principio a fin, disfrutando de un lado el valle y del otro la ciudad de Cuenca, dedicada en honor a Roberto Su&aacute;rez Serrano andinista fallecido en agosto 2022 y a todos aquellos que han perdido la vida en las monta&ntilde;as.</p>
-                                        </div>
-
+                                    <div className='px-5 tab:px-2 mob:px-2 xmob:px-2'>
+                                        <h3 className='text-4xl tracking-normal  text-dark-blue'>"Escalera al cielo 'Rob D'"</h3>
+                                        {/* <h4 className='text-3xl tracking-normal font-semibold text-dark-blue'>"Rob D"</h4> */}
+                                        <h5 className='text-2xl tracking-normal  text-dark-blue'>{t("Rutas.distancia")}: 10Km</h5>
+                                        <h5 className='text-xl tracking-normal  text-dark-blue'>{t("Rutas.altura")}: +1050m</h5>
+                                        <br />
+                                        <p className='text-justify text-lg'>{t("Rutas.ruta10k-desc")}</p>
                                     </div>
-                                    {/* </button> */}
+
                                 </div>
-                                <div className="row-span-1">
-                                    {/* <button className='cta' onClick={() => { this.openModalG(); this.setState({ url: '/extras/Sample.pdf' }) }}>
+                                {/* </button> */}
+                            </div>
+                            <div className="row-span-1">
+                                {/* <button className='cta' onClick={() => { this.openModalG(); this.setState({ url: '/extras/Sample.pdf' }) }}>
                                         <div className='hover-underline-animation'><p className='text-xl font-semibold'>Conoce la gu&iacute;a del <br /> corredor para esta ruta</p></div></button> */}
-                                    <button className='cta' onClick={() => { this.openModal(); this.setState({ ruta: 'RutaA' }) }}>
-                                        <div className='hover-underline-animation'><p className='text-xl font-semibold'>Haz click aqu&iacute; para m&aacute;s <br /> detalles t&eacute;cnicos</p></div></button>
-                                </div>
-                                {/* <div className="row-span-1">
+                                <button className='cta' onClick={() => { setIsOpen(true); setRuta('RutaA') }}>
+                                    <div className='hover-underline-animation'><p className='text-xl font-semibold'>{t("Rutas.btn-detalles1")}<br />{t("Rutas.btn-detalles2")}</p></div></button>
+                            </div>
+                            {/* <div className="row-span-1">
                                     <button id="ruta10" className="pc:hidden bg-second-color hover:bg-second-color/80 text-white  py-2 px-4 rounded" onClick={() => { this.openModal(); this.setState({ url: 'hola' }) }}>
                                         Conoce m&aacute;s sobre esta ruta
                                     </button>
                                 </div> */}
-                            </div>
-
                         </div>
-                        {/* //* ------------------------------------------------------------------------------------------------------------------------------------ */}
 
-                        {/* //* Ruta 21km -------------------------------------------------------------------------------------------------------------------------- */}
-                        <div className="text-center p-10 tab:p-5 mob:p-5 xmob:p-5 bg-white/50 rounded-2xl col-span-2 ">
+                    </div>
+                    {/* //* ------------------------------------------------------------------------------------------------------------------------------------ */}
 
-                            <div className="grid grid-rows-6 h-full bg-gray-200 rounded-md pb-10 group-hover:opacity-75 lg:h-80 lg:aspect-none border-4 transition-borderCard ease-cube hover:border-4 hover:border-second-color  duration-borderCube">
-                                <div className='row-span-5 group'>
-                                    {/* <button className="tab:pointer-events-none tab:cursor-not-allowed mob:pointer-events-none xmob:cursor-not-allowed" onClick={this.openModal}> */}
-                                    <div className="self-center p-4 w-full min-h-80 bg-gray-200  rounded-md overflow-hidden">
+                    {/* //* Ruta 21km -------------------------------------------------------------------------------------------------------------------------- */}
+                    <div className="text-center p-10 tab:p-5 mob:p-5 xmob:p-5 bg-white/50 rounded-2xl col-span-2 ">
 
-                                        <div className='grid grid-cols-2 gap-1'>
+                        <div className="grid grid-rows-6 h-full bg-gray-200 rounded-md pb-10 group-hover:opacity-75 lg:h-80 lg:aspect-none border-4 transition-borderCard ease-cube hover:border-4 hover:border-second-color  duration-borderCube">
+                            <div className='row-span-5 group'>
+                                {/* <button className="tab:pointer-events-none tab:cursor-not-allowed mob:pointer-events-none xmob:cursor-not-allowed" onClick={this.openModal}> */}
+                                <div className="self-center p-4 w-full min-h-80 bg-gray-200  rounded-md overflow-hidden">
 
-                                            <div className='col-span-1'>
-                                                <img className='w-full' src="../imagenes/itra/itra1.png" alt="ITRA" />
-                                            </div>
-                                            <div className="col-span-1">
-                                                <img className='w-full py-2' src="../imagenes/utmb/20K.png" alt="UTMB" />
-                                            </div>
+                                    <div className='grid grid-cols-2 gap-1'>
+
+                                        <div className='col-span-1'>
+                                            <img className='w-full' src="../imagenes/itra/itra1.png" alt="ITRA" />
                                         </div>
-                                        <img
-                                            src='../imagenes/rutas/ruta21km.png'
-                                            alt="Ruta21KM"
-                                            className="w-full h-full object-center object-cover lg:w-full lg:h-full"
-                                        />
-
-                                        {/* <span className="group-hover:visible rounded-md shadow-md text-white bg-gray-900 text-xs font-bold transition-all duration-100 p-2 text-center min-w-max invisible z-50 static">
-                                                M&aacute;s informaci&oacute;n sobre esta ruta haz click aqu&iacute;
-                                            </span> */}
-                                        <div className='px-5 tab:px-2 mob:px-2 xmob:px-2'>
-                                            <h3 className='text-4xl tracking-normal  text-dark-blue'>"Casa del &Aacute;rbol"</h3>
-                                            <h5 className='text-2xl tracking-normal  text-dark-blue'>Distancia: 21Km</h5>
-                                            <h5 className='text-xl tracking-normal  text-dark-blue'>Altura: +1370m</h5>
-                                            <br />
-                                            <p className='text-justify text-xl '>Una media marat&oacute;n donde el atractivo son sus senderos y conexiones alrededor de las monta&ntilde;as disfrutando de las vistas de la ciudad y la naturaleza por el sendero que te lleva a la casa del &aacute;rbol.</p>
+                                        <div className="col-span-1">
+                                            <img className='w-full py-2' src="../imagenes/utmb/20K.png" alt="UTMB" />
                                         </div>
-
                                     </div>
-                                    {/* </button> */}
+                                    <img
+                                        src='../imagenes/rutas/ruta21km.png'
+                                        alt="Ruta21KM"
+                                        className="w-full h-full object-center object-cover lg:w-full lg:h-full"
+                                    />
+
+                                    
+                                    <div className='px-5 tab:px-2 mob:px-2 xmob:px-2'>
+                                        <h3 className='text-4xl tracking-normal  text-dark-blue'>"Casa del &Aacute;rbol"</h3>
+                                        <h5 className='text-2xl tracking-normal  text-dark-blue'>{t("Rutas.distancia")}: 21Km</h5>
+                                        <h5 className='text-xl tracking-normal  text-dark-blue'>{t("Rutas.altura")}: +1370m</h5>
+                                        <br />
+                                        <p className='text-justify text-xl '>{t("Rutas.ruta21k-desc")}</p>
+                                    </div>
+
                                 </div>
-                                <div className='row-span-1'>
-                                    {/* <button className='cta' onClick={() => { this.openModalG(); this.setState({ url: '/extras/Sample.pdf' }) }}>
+                                {/* </button> */}
+                            </div>
+                            <div className='row-span-1'>
+                                {/* <button className='cta' onClick={() => { this.openModalG(); this.setState({ url: '/extras/Sample.pdf' }) }}>
                                         <div className='hover-underline-animation'><p className='text-xl font-semibold'>Conoce la gu&iacute;a del <br /> corredor para esta ruta</p></div></button> */}
-                                    <button className='cta' onClick={() => { this.openModal(); this.setState({ ruta: 'RutaB' }) }}>
-                                        <div className='hover-underline-animation'><p className='text-xl font-semibold'>Haz click aqu&iacute; para m&aacute;s <br /> detalles t&eacute;cnicos</p></div></button>
-                                </div>
-                                {/* <div className='row-span-1'>
+                                <button className='cta' onClick={() => { setIsOpen(true); setRuta('RutaB') }}>
+                                    <div className='hover-underline-animation'><p className='text-xl font-semibold'>{t("Rutas.btn-detalles1")}<br />{t("Rutas.btn-detalles2")}</p></div></button>
+                            </div>
+                            {/* <div className='row-span-1'>
                                     <button id="ruta10" className="pc:hidden bg-second-color hover:bg-second-color/80 text-white py-2 px-4 rounded" onClick={this.openModal}>
                                         Conoce m&aacute;s sobre esta ruta
                                     </button>
                                 </div> */}
-                            </div>
-
                         </div>
-                        {/* //* ------------------------------------------------------------------------------------------------------------------------------------ */}
 
-                        {/* //* Ruta 34km -------------------------------------------------------------------------------------------------------------------------- */}
-                        <div className="text-center p-10 tab:p-5 mob:p-5 xmob:p-5 bg-white/50 rounded-2xl col-span-2">
-                            <div className="grid grid-rows-6 h-full bg-gray-200 rounded-md pb-10 group-hover:opacity-75 lg:h-80 lg:aspect-none border-4 transition-borderCard ease-cube hover:border-4 hover:border-second-color  duration-borderCube">
-                                <div className="row-span-5 group">
-                                    {/* <button className="tab:pointer-events-none tab:cursor-not-allowed mob:pointer-events-none xmob:cursor-not-allowed" onClick={this.openModal}> */}
-                                    <div className="p-4 w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden">
+                    </div>
+                    {/* //* ------------------------------------------------------------------------------------------------------------------------------------ */}
 
-                                        <div className='grid grid-cols-2 gap-1'>
+                    {/* //* Ruta 34km -------------------------------------------------------------------------------------------------------------------------- */}
+                    <div className="text-center p-10 tab:p-5 mob:p-5 xmob:p-5 bg-white/50 rounded-2xl col-span-2">
+                        <div className="grid grid-rows-6 h-full bg-gray-200 rounded-md pb-10 group-hover:opacity-75 lg:h-80 lg:aspect-none border-4 transition-borderCard ease-cube hover:border-4 hover:border-second-color  duration-borderCube">
+                            <div className="row-span-5 group">
+                                {/* <button className="tab:pointer-events-none tab:cursor-not-allowed mob:pointer-events-none xmob:cursor-not-allowed" onClick={this.openModal}> */}
+                                <div className="p-4 w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden">
 
-                                            <div className='col-span-1'>
-                                                <img className='w-full' src="../imagenes/itra/itra2.png" alt="ITRA" />
-                                            </div>
-                                            <div className="col-span-1">
-                                                <img className='w-full py-2' src="../imagenes/utmb/50K.png" alt="UTMB" />
-                                            </div>
+                                    <div className='grid grid-cols-2 gap-1'>
+
+                                        <div className='col-span-1'>
+                                            <img className='w-full' src="../imagenes/itra/itra2.png" alt="ITRA" />
                                         </div>
-                                        <img
-                                            src='../imagenes/rutas/ruta34km.png'
-                                            alt="Ruta34KM"
-                                            className="w-full h-full object-center object-cover lg:w-full lg:h-full"
-                                        />
-                                        {/* <span className="group-hover:visible rounded-md shadow-md text-white bg-gray-900 text-xs font-bold transition-all duration-100 p-2 text-center min-w-max invisible z-50 static">
+                                        <div className="col-span-1">
+                                            <img className='w-full py-2' src="../imagenes/utmb/50K.png" alt="UTMB" />
+                                        </div>
+                                    </div>
+                                    <img
+                                        src='../imagenes/rutas/ruta34km.png'
+                                        alt="Ruta34KM"
+                                        className="w-full h-full object-center object-cover lg:w-full lg:h-full"
+                                    />
+                                    {/* <span className="group-hover:visible rounded-md shadow-md text-white bg-gray-900 text-xs font-bold transition-all duration-100 p-2 text-center min-w-max invisible z-50 static">
                                                 M&aacute;s informaci&oacute;n sobre esta ruta haz click aqu&iacute;
                                             </span> */}
-                                        <div className='px-5 tab:px-2 mob:px-2 xmob:px-2'>
-                                            <h3 className='text-4xl tracking-normal  text-dark-blue'>"Boca de Pez"</h3>
-                                            {/* <h4 className='text-2xl tracking-normal font-semibold text-dark-blue'>"Rob D"</h4> */}
-                                            <h5 className='text-2xl tracking-normal  text-dark-blue'>Distancia: 34Km</h5>
-                                            <h5 className='text-xl tracking-normal  text-dark-blue'>Altura: +2300m</h5>
-                                            <br />
-                                            <p className='text-justify text-xl '>Inspirada en la primera carrera del nacimiento del trail running en Francia en 1904. Es una ruta de combinaci&oacute;n de km verticales donde se disfruta desde pavimiento, hasta el sendero m&aacute;s t&eacute;cnico y pasa por todas las rutas del evento.</p>
-                                        </div>
-
-
+                                    <div className='px-5 tab:px-2 mob:px-2 xmob:px-2'>
+                                        <h3 className='text-4xl tracking-normal  text-dark-blue'>"Boca de Pez"</h3>
+                                        {/* <h4 className='text-2xl tracking-normal font-semibold text-dark-blue'>"Rob D"</h4> */}
+                                        <h5 className='text-2xl tracking-normal  text-dark-blue'>{t("Rutas.distancia")}: 34Km</h5>
+                                        <h5 className='text-xl tracking-normal  text-dark-blue'>{t("Rutas.altura")}: +2300m</h5>
+                                        <br />
+                                        <p className='text-justify text-xl '>{t("Rutas.ruta34k-desc")}</p>
                                     </div>
-                                    {/* </button> */}
+
+
                                 </div>
-                                <div className="row-span-1">
-                                    {/* <button className='cta' onClick={() => { this.openModalG(); this.setState({ url: '/extras/Sample.pdf' }) }}>
+                                {/* </button> */}
+                            </div>
+                            <div className="row-span-1">
+                                {/* <button className='cta' onClick={() => { this.openModalG(); this.setState({ url: '/extras/Sample.pdf' }) }}>
                                         <div className='hover-underline-animation'><p className='text-xl font-semibold'>Conoce la gu&iacute;a del <br /> corredor para esta ruta</p></div></button> */}
-                                    <button className='cta' onClick={() => { this.openModal(); this.setState({ ruta: 'RutaC' }) }}>
-                                        <div className='hover-underline-animation'><p className='text-xl font-semibold'>Haz click aqu&iacute; para m&aacute;s <br /> detalles t&eacute;cnicos</p></div></button>
-                                </div>
-                                {/* <div className="row-span-1 ">
+                                <button className='cta' onClick={() => { setIsOpen(true); setRuta('RutaC') }}>
+                                    <div className='hover-underline-animation'><p className='text-xl font-semibold'>{t("Rutas.btn-detalles1")}<br />{t("Rutas.btn-detalles2")}</p></div></button>
+                            </div>
+                            {/* <div className="row-span-1 ">
                                     <button id="ruta10" className="pc:hidden bg-second-color hover:bg-second-color/80 text-white  py-2 px-4 rounded" onClick={this.openModal}>
                                         Conoce m&aacute;s sobre esta ruta
                                     </button>
                                 </div> */}
 
 
-                            </div>
-
-                            {this.modal()}
-                            {this.modalGuia()}
-
                         </div>
+
+                        {modal()}
+                        {modalGuia()}
+
                     </div>
                 </div>
             </div>
+        </div>
 
-        );
-    }
+    );
 }
+
 
 export default Rutas;

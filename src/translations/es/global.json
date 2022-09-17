@@ -1,5 +1,133 @@
 {
     "header": {
-        "hello-world": "Hola mundo"
+        "titulo": "BOCA DE PEZ",
+        "descripcion": "LA PRIMERA CARRERA DE TRAIL EN CUENCA CON BENEFICIOS iTRA Y UTMB"
+    },
+    "acerca": {
+        "premios": "Premios",
+        "generales": "Generales",
+        "en-efectivo": "En efectivo",
+        "categorias": "Categorías disponibles",
+        "categoria": "Categoría",
+        "años": "Años"
+    },
+    "patrocinadores": {
+        "beneficios": "Beneficios",
+        "desc-beneficios": "Es el primer evento en Cuenca que cuenta con puntos para calificar al Ultra Trail Du Mont Blanc (UTMB) y sus carreras anexas, además 2 de las 3 rutas contarán con puntos iTRA.",
+        "tooltip-itra": "Más información sobre la carrera click aquí",
+        "tooltip-utmb": "Más información sobre la clasificación de las carreras haz clic aquí",
+        "desc-itra": "La Asociación Internacional de Trail Running (iTRA) tiene como objetivo dar voz a los actores del trail running para promover sus sólidos valores, su diversidad, la seguridad de los recorridos y prevalecer la salud de los corredores, contribuir al desarrollo del trail running y fomentar el diálogo con las asociaciones nacionales e internacionales.",
+        "desc-utmb": "Ultra Trail Du Mont Blanc (UTMB) es un evento deportivo ubicado entre francia, Suiza e Italia que a lo largo de 19 años a marcado tendencia internacional, acrecentando la atención de muchos deportistas egendarios en el Trail Running.",
+        "auspiciantes": "Nuestros auspiciantes"
+    },
+    "Rutas": {
+        "titulo": "Conoce nuestras rutas",
+        "distancia": "Distancia",
+        "altura": "Altura",
+        "ruta10k-desc": "Una ruta de puro sendero en casi su totalidad, con intensidad de principio a fin, disfrutando de un lado el valle y del otro la ciudad de Cuenca, dedicada en honor a Roberto Suárez Serrano andinista fallecido en agosto 2022 y a todos aquellos que han perdido la vida en las montañas.",
+        "ruta21k-desc": "Una media maratón donde el atractivo son sus senderos y conexiones alrededor de las montañas disfrutando de las vistas de la ciudad y la naturaleza por el sendero que te lleva a la casa del árbol.",
+        "ruta34k-desc": "Inspirada en la primera carrera del nacimiento del trail running en Francia en 1904. Es una ruta de combinación de km verticales donde se disfruta desde pavimiento, hasta el sendero más técnico y pasa por todas las rutas del evento.",
+        "btn-detalles1": "Haz click aquí para más",
+        "btn-detalles2": "detalles técnicos",
+        "pcpa-titulo": "Puntos de Control y Abasto",
+        "pcpa-descripcion": "Cada participante deberá pasar por los puntos de control como de abasto ya que deberán contar con su chip pegado a su número de forma visible para poder ser chequeados y poder continuar con la carrera en caso contrario el corredor será descalificado, no obstante dichos puntos tiene la siguientes características:",
+        "pc-titulo": "Puntos de Control (PC)",
+        "pc-descripcion": "Se situá en un sitio estratégico y contará con un asistente médico y un miembro del staff para resguardar su salud y el rendimiento de su participación en cualquiera de las rutas, si los participantes no pasan por dicho punto serán descalificados. Cada distancia tiene un número fijado de estos puestos ya que a mayor distancia mayor riesgos se corren y la dificultad se vuelve más alta, el sitio de salida como de llegada en este caso es el mismo, será un punto de control adicional.",
+        "pa-titulo": "Puntos de Abasto (PA)",
+        "pa-descripcion": "Son los puestos más completos, ya que son puntos de control y de avituallamiento, se contará con comida (frutas, barras energeticas,etc) e hidratación (agua, electrolitos,etc) con 2 asistentes médicos y 2 miembros del staff.",
+        "btn-dialog": "Entendido",
+        "RutaA": {
+            "Nombre": "Escalera al Cielo 'ROB D'",
+            "Distancia": 10,
+            "Descripcion": "10.10km conformados por un 99% de sendero, mantiene partes técnicas y abiertas, cruces de riachuelos y zonas de bosque y pajonal, con desnivel positivo 1050m y negativo 1050m, tiene una intensidad moderada y su dificultad es media, punto más alto 3800m, punto más bajo 2700m, hora de salida 9am el sábado 29 de Octubre del 2022, lugar de salida y llegada km 2 vía barabón (Cuenca – Ecuador) tiempo límite 4 horas",
+            "PuntosControl": [{
+                "Nombre": "PC 1",
+                "Descripcion": "km 5 fin de ascenso pico Km vertical"
+            }],
+            "PuntosAbasto": [{
+                "Nombre": "PA 1 - PA 2",
+                "Descripcion": "km 4 y km 6 sector parqueadero pico de pez."
+            }],
+            "imagen": "../imagenes/rutas/Altimetria/Alt10km.png"
+        },
+        "RutaB": {
+            "Nombre": "Casa de Árbol",
+            "Distancia": 21,
+            "Descripcion": "20.20km conformados por un 85% de sendero 12% de lastre 3% de pavimento, matiene partes técnicas y abiertas, cruces de riachuelos y zonas de bosque y pajonal, con desnivel positivo 1370m y negativo 1370m, tiene una intensidad moderada y su dificultad es media, punto más alto 3800m, punto más bajo 2700m, hora de salida 7am el sábado 29 de Octubre del 2022, lugar de salida y llegada km 2 vía de barabón (Cuenca – Ecuador) tiempo límite 8 horas.",
+            "PuntosControl": [{
+                "Nombre": "PC 1",
+                "Descripcion": "Km 5 a la salida del sendero sector iglesia"
+            }],
+            "PuntosAbasto": [{
+                    "Nombre": "PA 1 - PA 3",
+                    "Descripcion": "Km 9 – km 16 sector parqueadero pico de pez"
+                },
+                {
+                    "Nombre": "PA 2",
+                    "Descripcion": "Km 12 cumbre boca de pez"
+                }
+            ],
+            "imagen": "../imagenes/rutas/Altimetria/Alt21km.png"
+        },
+        "RutaC": {
+            "Nombre": "Boca de Pez",
+            "Distancia": 34,
+            "Descripcion": "33.30km conformados por un 75% de sendero 15% de lastre 5% de pavimento, mantiene partes técnicas y abiertas, cruces de riachuelos y zonas de bosque y pajonal, con desnivel positivo 2300m y negativo 2300m, tiene una intensidad moderada y su dificultad es media – alta, punto más alto 3800m, punto más bajo 2700m, hora de salida 4h30am el sábado 29 de Octubre del 2022, lugar y llegada km 2 vía barabón (Cuenca – Ecuador) tiempo límite 10 horas.",
+            "PuntosControl": [{
+                    "Nombre": "PC 1",
+                    "Descripcion": "Km 7.5 Cumbre final del kilómetro vertical"
+                },
+                {
+                    "Nombre": "PC 2",
+                    "Descripcion": "Km 9.2 Final del kilómetro vertical antiguo"
+                }
+            ],
+            "PuntosAbasto": [{
+                    "Nombre": "PA 1",
+                    "Descripcion": "Km 11.5 Cumbre boca de pez"
+                },
+                {
+                    "Nombre": "PA 2 - PA 4",
+                    "Descripcion": "Km 15 y km 29 sector parqueadero pico de pez"
+                },
+                {
+                    "Nombre": "PA 3",
+                    "Descripcion": "Km 25 a la salida del sendero sector iglesia"
+                }
+            ],
+            "imagen": "../imagenes/rutas/Altimetria/Alt34km.png"
+        }
+    },
+    "Tiempo": {
+        "titulo": "LA CARRERA EMPIEZA EN",
+        "dias": "Días",
+        "horas": "Horas",
+        "minutos": "Minutos",
+        "segundos": "Segundos"
+    },
+    "navegacion": [{
+            "name": "Inicio",
+            "id": "A"
+        },
+        {
+            "name": "Premios",
+            "id": "B"
+        },
+        {
+            "name": "Beneficios",
+            "id": "C"
+        },
+        {
+            "name": "Rutas",
+            "id": "D"
+        },
+        {
+            "name": "Inscripciones",
+            "id": "E"
+        }
+    ],
+    "inscripcion": {
+        "titulo": "Para realizar tu inscripción te enviamos a la página oficial de meet2go",
+        "btn": "Inscribete ahora!"
     }
 }

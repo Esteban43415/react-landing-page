@@ -9,13 +9,13 @@ class About extends Component {
 
       return (
          <div  className='grid grid-cols-1  rounded-t-2xl rounded-b-2xl bg-d-t-y'>
-            <div className='col-span-2 'id='Premios'>
+            <div className='col-span-2 'id='B'>
                <Acerca/>
             </div>
-            <div className='col-span-2' id='Beneficios'>
+            <div className='col-span-2' id='C'>
                <Patrocinadores/> 
             </div>
-            <div id="Rutas" className='col-span-2'>
+            <div id="D" className='col-span-2'>
                <Rutas />
             </div>
             

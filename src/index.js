@@ -23,6 +23,7 @@ i18next.init({
   }                              // language to use
 });
 const root = ReactDOM.createRoot(document.getElementById('root'));
+i18next.t('array',{returnObjects:true});
 root.render(
   <React.StrictMode>
     <I18nextProvider i18n={i18next}>

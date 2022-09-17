@@ -1,5 +1,133 @@
 {
     "header": {
-        "hello-world": "Hello World"
+        "titulo": "BOCA DE PEZ",
+        "descripcion": "THE FIRST TRAIL RACE IN CUENCA WITH iTRA AND UTMB BENEFITS"
+    },
+    "acerca": {
+        "premios": "General",
+        "generales": "Cash",
+        "en-efectivo": "Prizes",
+        "categorias": "Available Categories",
+        "categoria": "Categories",
+        "años": "Years old"
+    },
+    "patrocinadores": {
+        "beneficios": "Benefits",
+        "desc-beneficios": "It is the first event in Cuenca that has points to qualify for the Ultra Trail Du Mont Blanc (UTMB) and its related races, and 2 of the 3 routes will have iTRA points.",
+        "tooltip-itra": "More information about the race click here",
+        "tooltip-utmb": "More information about the classification of the races click here",
+        "desc-itra": "The International Trail Running Association (iTRA) aims to give trail running actors a voice to promote its strong values, diversity, route safety and runner health prevail, contribute to the development of trail running and encourage dialogue with national and international associations.",
+        "desc-utmb": "Ultra Trail Du Mont Blanc (UTMB) is a sporting event located between France, Switzerland and Italy that over 19 years has set an international trend, increasing the attention of many legendary athletes in Trail Running.",
+        "auspiciantes": "Our sponsors"
+    },
+    "Rutas": {
+        "titulo": "Know our routes",
+        "distancia": "Distance",
+        "altura": "Height",
+        "ruta10k-desc": "A route of pure trail in almost its entirety, with intensity from beginning to end, enjoying the valley on one side and the city of Cuenca on the other, dedicated in honor of Roberto Suárez Serrano andinist who died in August 2022 and all those who have lost the life in the mountains.",
+        "ruta21k-desc": "A half marathon where the attraction is its trails and connections around the mountains enjoying the views of the city and nature along the path that takes you to the tree house.",
+        "ruta34k-desc": "Inspired by the first race of the birth of trail running in France in 1904. It is a route of vertical km combination where you can enjoy from pavement, to the most technical trail and goes through all the routes of the event.",
+        "btn-detalles1": "Click here for more",
+        "btn-detalles2": "technical details",
+        "pcpa-titulo": "Control and Supply Points",
+        "pcpa-descripcion": "Each participant must go through the control points as supply since they must have their chip attached to their number in a visible way to be checked and to be able to continue with the race, otherwise the runner will be disqualified, however said points have the following features:",
+        "pc-titulo": "Control Points (CP)",
+        "pc-descripcion": "It is located in a strategic location and will have a medical assistant and a staff member to protect their health and the performance of their participation in any of the routes, if the participants do not pass through that point they will be disqualified. Each distance has a fixed number of these posts, since the greater the distance, the greater the risks and the difficulty becomes higher. The departure and arrival sites in this case are the same, it will be an additional control point.",
+        "pa-titulo": "Supply Points (SP)",
+        "pa-descripcion": "They are the most complete posts, since they are control and refreshment points, there will be food (fruits, energy bars, etc.) and hydration (water, electrolytes, etc.) with 2 medical assistants and 2 staff members.",
+        "btn-dialog": "It is understood",
+        "RutaA": {
+            "Nombre": "Escalera al Cielo 'ROB D'",
+            "Distancia": 10,
+            "Descripcion": "10.10km made up of 99% trail, it maintains technical and open parts, stream crossings and forest and grassland areas, with a positive drop of 1050m and a negative 1050m, it has a moderate intensity and its difficulty is medium, highest point 3800m, point lowest 2700m, departure time 9am on Saturday October 29, 2022, place of departure and arrival km 2 via barabón (Cuenca – Ecuador) time limit 4 hours",
+            "PuntosControl": [{
+                "Nombre": "CP 1",
+                "Descripcion": "km 5 end of vertical km peak ascent"
+            }],
+            "PuntosAbasto": [{
+                "Nombre": "SP 1 - SP 2",
+                "Descripcion": "km 4 & km 6 pico de pez parking area."
+            }],
+            "imagen": "../imagenes/rutas/Altimetria/Alt10km.png"
+        },
+        "RutaB": {
+            "Nombre": "Casa de Árbol",
+            "Distancia": 21,
+            "Descripcion": "20.20km made up of 85% trail 12% ballast 3% pavement, it maintains technical and open parts, stream crossings and forest and grassland areas, with a positive difference in altitude of 1370m and a negative 1370m, it has a moderate intensity and its difficulty is average, highest point 3800m, lowest point 2700m, departure time 7am on Saturday October 29, 2022, place of departure and arrival km 2 via de barabón (Cuenca – Ecuador) time limit 8 hours.",
+            "PuntosControl": [{
+                "Nombre": "CP 1",
+                "Descripcion": "Km 5 at the exit of the church sector path"
+            }],
+            "PuntosAbasto": [{
+                    "Nombre": "SP 1 - SP 3",
+                    "Descripcion": "Km 9 – km 16 pico de pez parking area."
+                },
+                {
+                    "Nombre": "SP 2",
+                    "Descripcion": "Km 12 Summit boca de pez"
+                }
+            ],
+            "imagen": "../imagenes/rutas/Altimetria/Alt21km.png"
+        },
+        "RutaC": {
+            "Nombre": "Boca de Pez",
+            "Distancia": 34,
+            "Descripcion": "33.30km made up of 75% trail, 15% gravel, 5% pavement, it maintains technical and open parts, stream crossings and forest and grassland areas, with a positive slope of 2300m and a negative 2300m, it has a moderate intensity and its difficulty is medium – high, highest point 3800m, lowest point 2700m, departure time 4h30am on Saturday October 29, 2022, place and arrival km 2 via barabón (Cuenca – Ecuador) time limit 10 hours.",
+            "PuntosControl": [{
+                    "Nombre": "CP 1",
+                    "Descripcion": "Km 7.5 Final summit of the vertical kilometer"
+                },
+                {
+                    "Nombre": "CP 2",
+                    "Descripcion": "Km 9.2 End of the old vertical kilometer"
+                }
+            ],
+            "PuntosAbasto": [{
+                    "Nombre": "SP 1",
+                    "Descripcion": "Km 11.5 Summit boca de pez"
+                },
+                {
+                    "Nombre": "SP 2 - SP 4",
+                    "Descripcion": "Km 15 y km 29 sector parqueadero pico de pez"
+                },
+                {
+                    "Nombre": "SP 3",
+                    "Descripcion": "Km 25 at the exit of the church sector path"
+                }
+            ],
+            "imagen": "../imagenes/rutas/Altimetria/Alt34km.png"
+        }
+    },
+    "Tiempo": {
+        "titulo": "THE RACE STARTS IN",
+        "dias": "Days",
+        "horas": "Hours",
+        "minutos": "Minutes",
+        "segundos": "Seconds"
+    },
+    "navegacion": [{
+            "name": "Home",
+            "id": "A"
+        },
+        {
+            "name": "Awards",
+            "id": "B"
+        },
+        {
+            "name": "Benefits",
+            "id": "C"
+        },
+        {
+            "name": "Routes",
+            "id": "D"
+        },
+        {
+            "name": "Register now",
+            "id": "E"
+        }
+    ],
+    "inscripcion": {
+        "titulo": "To make your registration we send you to the official page of meet2go",
+        "btn": "Register now"
     }
 }
