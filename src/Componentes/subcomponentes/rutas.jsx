@@ -294,11 +294,11 @@ function Rutas() {
                     {/* //* Ruta 10km -------------------------------------------------------------------------------------------------------------------------- */}
 
                     <div className="p-10 tab:p-5 mob:p-5 xmob:p-5 col-span-2 bg-white/50 rounded-2xl text-center">
-                        <div className="grid grid-rows-6 h-full bg-gray-200 rounded-md pb-10 group-hover:opacity-75 lg:h-80 lg:aspect-none border-4 transition-borderCard ease-cube hover:border-4 hover:border-second-color  duration-borderCube">
-                            <div className='row-span-5 group '>
-                                <div htmlFor="ruta10" className="p-4 w-full bg-gray-200 rounded-md">
+                        <div className="grid grid-rows-6 h-full bg-gray-200 rounded-md group-hover:opacity-75  lg:aspect-none border-4 transition-borderCard ease-cube hover:border-4 hover:border-second-color  duration-borderCube">
+                            <div className='row-span-5 p-4 '>
+                                <div htmlFor="ruta10" className=" w-full bg-gray-200 rounded-md">
 
-                                    <div className='grid grid-cols-2 gap-1'>
+                                    <div className='grid grid-cols-2 gap-1 p-2'>
 
                                         <div className='col-span-1'>
                                             <img className='w-full' src="../imagenes/itra/itra0.png" alt="ITRA" />
@@ -313,25 +313,21 @@ function Rutas() {
                                         className="object-center object-cover w-full"
                                     />
 
-                                    {/* <span className="group-hover:visible rounded-md shadow-md text-white bg-gray-900 text-xs font-bold transition-all duration-100 p-2 text-center min-w-max invisible z-50 static">
-                                                M&aacute;s informaci&oacute;n sobre esta ruta haz click aqu&iacute;
-                                            </span> */}
-                                    <div className='px-5 tab:px-2 mob:px-2 xmob:px-2'>
-                                        <h3 className='text-4xl tracking-normal  text-dark-blue'>"Escalera al cielo 'Rob D'"</h3>
-                                        {/* <h4 className='text-3xl tracking-normal font-semibold text-dark-blue'>"Rob D"</h4> */}
+                                    <div className='px-5 tab:px-2 mob:px-2 xmob:px-2 '>
+                                        <h3 className='text-4xl font-semibold tracking-normal  text-dark-blue'>"Escalera al cielo 'Rob D'"</h3>
+                                        <br />
                                         <h5 className='text-2xl tracking-normal  text-dark-blue'>{t("Rutas.distancia")}: 10Km</h5>
                                         <h5 className='text-xl tracking-normal  text-dark-blue'>{t("Rutas.altura")}: +1050m</h5>
                                         <br />
-                                        <p className='text-justify text-lg'>{t("Rutas.ruta10k-desc")}</p>
+                                        <p className='text-justify text-xl'>{t("Rutas.ruta10k-desc")}</p>
                                     </div>
 
                                 </div>
-                                {/* </button> */}
                             </div>
-                            <div className="row-span-1">
+                            <div className="row-span-1 self-center">
                                 {/* <button className='cta' onClick={() => { this.openModalG(); this.setState({ url: '/extras/Sample.pdf' }) }}>
                                         <div className='hover-underline-animation'><p className='text-xl font-semibold'>Conoce la gu&iacute;a del <br /> corredor para esta ruta</p></div></button> */}
-                                <button className='cta' onClick={() => { setIsOpen(true); setRuta('RutaA') }}>
+                                <button className='cta h-[110px]' onClick={() => { setIsOpen(true); setRuta('RutaA') }}>
                                     <div className='hover-underline-animation'><p className='text-xl font-semibold'>{t("Rutas.btn-detalles1")}<br />{t("Rutas.btn-detalles2")}</p></div></button>
                             </div>
                             {/* <div className="row-span-1">
@@ -347,12 +343,12 @@ function Rutas() {
                     {/* //* Ruta 21km -------------------------------------------------------------------------------------------------------------------------- */}
                     <div className="text-center p-10 tab:p-5 mob:p-5 xmob:p-5 bg-white/50 rounded-2xl col-span-2 ">
 
-                        <div className="grid grid-rows-6 h-full bg-gray-200 rounded-md pb-10 group-hover:opacity-75 lg:h-80 lg:aspect-none border-4 transition-borderCard ease-cube hover:border-4 hover:border-second-color  duration-borderCube">
-                            <div className='row-span-5 group'>
+                        <div className="grid grid-rows-6 h-full bg-gray-200 rounded-md pb-10 group-hover:opacity-75  lg:aspect-none border-4 transition-borderCard ease-cube hover:border-4 hover:border-second-color  duration-borderCube">
+                            <div className='row-span-5 p-4'>
                                 {/* <button className="tab:pointer-events-none tab:cursor-not-allowed mob:pointer-events-none xmob:cursor-not-allowed" onClick={this.openModal}> */}
-                                <div className="self-center p-4 w-full min-h-80 bg-gray-200  rounded-md overflow-hidden">
+                                <div className="self-center  w-full min-h-80 bg-gray-200  rounded-md overflow-hidden">
 
-                                    <div className='grid grid-cols-2 gap-1'>
+                                    <div className='grid grid-cols-2 gap-1 p-2'>
 
                                         <div className='col-span-1'>
                                             <img className='w-full' src="../imagenes/itra/itra1.png" alt="ITRA" />
@@ -369,7 +365,8 @@ function Rutas() {
 
                                     
                                     <div className='px-5 tab:px-2 mob:px-2 xmob:px-2'>
-                                        <h3 className='text-4xl tracking-normal  text-dark-blue'>"Casa del &Aacute;rbol"</h3>
+                                        <h3 className='text-4xl tracking-normal font-semibold text-dark-blue'>"Casa del &Aacute;rbol"</h3>
+                                        <br/>
                                         <h5 className='text-2xl tracking-normal  text-dark-blue'>{t("Rutas.distancia")}: 21Km</h5>
                                         <h5 className='text-xl tracking-normal  text-dark-blue'>{t("Rutas.altura")}: +1370m</h5>
                                         <br />
@@ -379,7 +376,7 @@ function Rutas() {
                                 </div>
                                 {/* </button> */}
                             </div>
-                            <div className='row-span-1'>
+                            <div className='row-span-1 self-center'>
                                 {/* <button className='cta' onClick={() => { this.openModalG(); this.setState({ url: '/extras/Sample.pdf' }) }}>
                                         <div className='hover-underline-animation'><p className='text-xl font-semibold'>Conoce la gu&iacute;a del <br /> corredor para esta ruta</p></div></button> */}
                                 <button className='cta' onClick={() => { setIsOpen(true); setRuta('RutaB') }}>
@@ -397,12 +394,12 @@ function Rutas() {
 
                     {/* //* Ruta 34km -------------------------------------------------------------------------------------------------------------------------- */}
                     <div className="text-center p-10 tab:p-5 mob:p-5 xmob:p-5 bg-white/50 rounded-2xl col-span-2">
-                        <div className="grid grid-rows-6 h-full bg-gray-200 rounded-md pb-10 group-hover:opacity-75 lg:h-80 lg:aspect-none border-4 transition-borderCard ease-cube hover:border-4 hover:border-second-color  duration-borderCube">
-                            <div className="row-span-5 group">
+                        <div className="grid grid-rows-6 h-full bg-gray-200 rounded-md pb-10 group-hover:opacity-75 lg:aspect-none border-4 transition-borderCard ease-cube hover:border-4 hover:border-second-color  duration-borderCube">
+                            <div className="row-span-5 p-4">
                                 {/* <button className="tab:pointer-events-none tab:cursor-not-allowed mob:pointer-events-none xmob:cursor-not-allowed" onClick={this.openModal}> */}
-                                <div className="p-4 w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden">
+                                <div className=" w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden">
 
-                                    <div className='grid grid-cols-2 gap-1'>
+                                    <div className='grid grid-cols-2 gap-1 p-2'>
 
                                         <div className='col-span-1'>
                                             <img className='w-full' src="../imagenes/itra/itra2.png" alt="ITRA" />
@@ -420,8 +417,8 @@ function Rutas() {
                                                 M&aacute;s informaci&oacute;n sobre esta ruta haz click aqu&iacute;
                                             </span> */}
                                     <div className='px-5 tab:px-2 mob:px-2 xmob:px-2'>
-                                        <h3 className='text-4xl tracking-normal  text-dark-blue'>"Boca de Pez"</h3>
-                                        {/* <h4 className='text-2xl tracking-normal font-semibold text-dark-blue'>"Rob D"</h4> */}
+                                        <h3 className='text-4xl tracking-normal font-semibold text-dark-blue'>"Boca de Pez"</h3>
+                                        <br/>
                                         <h5 className='text-2xl tracking-normal  text-dark-blue'>{t("Rutas.distancia")}: 34Km</h5>
                                         <h5 className='text-xl tracking-normal  text-dark-blue'>{t("Rutas.altura")}: +2300m</h5>
                                         <br />
@@ -432,7 +429,7 @@ function Rutas() {
                                 </div>
                                 {/* </button> */}
                             </div>
-                            <div className="row-span-1">
+                            <div className="row-span-1 self-center">
                                 {/* <button className='cta' onClick={() => { this.openModalG(); this.setState({ url: '/extras/Sample.pdf' }) }}>
                                         <div className='hover-underline-animation'><p className='text-xl font-semibold'>Conoce la gu&iacute;a del <br /> corredor para esta ruta</p></div></button> */}
                                 <button className='cta' onClick={() => { setIsOpen(true); setRuta('RutaC') }}>
