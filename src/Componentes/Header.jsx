@@ -65,7 +65,7 @@ function Header() {
                                                     <Link
                                                         className='text-gray-300 font-medium px-2 py-2 '
                                                         activeClass='active'
-                                                        to={item.id} spy={true} smooth={true} offset={-25} duration={500}>
+                                                        to={item.id} spy={true} smooth={true} offset={0} duration={500}>
 
                                                         {item.name}
                                                     </Link>

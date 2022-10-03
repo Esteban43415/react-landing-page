@@ -75,7 +75,7 @@ function Rutas() {
 
     var [isOpen, setIsOpen] = useState(false);
     var [isOpenG, setIsOpenG] = useState(false);
-    var [url] = useState('/extras/Sample.pdf');
+    var [url] = useState('/extras/reglamento.pdf');
     var [ruta, setRuta] = useState('RutaA');
     const [t] = useTranslation("global");
 
@@ -218,7 +218,7 @@ function Rutas() {
             <>
 
                 <Transition appear show={isOpenG} as={Fragment}>
-                    <Dialog as="div" className="relative z-10" onClose={() => setIsOpenG(false)}>
+                    <Dialog as="div" className="relative z-50" onClose={() => setIsOpenG(false)}>
                         <Transition.Child
                             as={Fragment}
                             enter="ease-out duration-300"
@@ -250,22 +250,18 @@ function Rutas() {
 
                                         </Dialog.Title>
                                         <div className="grid grid-rows-4 gap-5">
-                                            <div className="row-span-3">
+                                            <div className="row-span-4">
                                                 <App fileUrl={url} />
                                             </div>
                                             <div className="row-span-1 text-center">
-                                                <div className="mt-2">
-                                                    <p className="text-sm text-gray-500">
-                                                        Tener precauci&oacute;n
-                                                    </p>
-                                                </div>
+                                                
 
                                                 <div className="mt-4">
                                                     <button
                                                         type="button"
-                                                        className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                                                        className='relative inline-block m-[15px] py-[15px] px-[30px] text-center text-[18px] text-[#083d56] bg-transparent cursor-pointer ease-out duration-500 border-2 border-solid border-[#083d56] rounded-xl shadow-btnA hover:text-white hover:shadow-btnB active:scale-90'
                                                         onClick={() => setIsOpenG(false)}>
-                                                        ¡Entendido!
+                                                        ¡{t("Rutas.btn-dialog")}!
                                                     </button>
                                                 </div>
                                             </div>
@@ -363,10 +359,10 @@ function Rutas() {
                                         className="w-full h-full object-center object-cover lg:w-full lg:h-full"
                                     />
 
-                                    
+
                                     <div className='px-5 tab:px-2 mob:px-2 xmob:px-2'>
                                         <h3 className='text-4xl tracking-normal font-semibold text-dark-blue'>"Casa del &Aacute;rbol"</h3>
-                                        <br/>
+                                        <br />
                                         <h5 className='text-2xl tracking-normal  text-dark-blue'>{t("Rutas.distancia")}: 21Km</h5>
                                         <h5 className='text-xl tracking-normal  text-dark-blue'>{t("Rutas.altura")}: +1370m</h5>
                                         <br />
@@ -418,7 +414,7 @@ function Rutas() {
                                             </span> */}
                                     <div className='px-5 tab:px-2 mob:px-2 xmob:px-2'>
                                         <h3 className='text-4xl tracking-normal font-semibold text-dark-blue'>"Boca de Pez"</h3>
-                                        <br/>
+                                        <br />
                                         <h5 className='text-2xl tracking-normal  text-dark-blue'>{t("Rutas.distancia")}: 34Km</h5>
                                         <h5 className='text-xl tracking-normal  text-dark-blue'>{t("Rutas.altura")}: +2300m</h5>
                                         <br />
@@ -447,6 +443,23 @@ function Rutas() {
                         {modal()}
                         {modalGuia()}
 
+
+                    </div>
+
+
+                </div>
+
+                <div className="grid grid-rows-4 gap-0 ">
+                    <div className="row-span-2 self-center text-center border-b-4 border-dotted border-white py-5">
+                        <h3 className="text-5xl font-semibold text-white">{t("pdf.titulo")}</h3>
+                    </div>
+                    <div className="row-span-2 text-center">
+                        <button
+                            type="button"
+                            className='relative inline-block m-[15px] py-[15px] px-[30px] text-center text-[25px] text-[#083d56] bg-white/50 cursor-pointer ease-out duration-500 border-2 border-solid border-[#083d56] rounded-xl shadow-btnA hover:text-white hover:shadow-btnB active:scale-90'
+                            onClick={() => setIsOpenG(true)}>
+                            ¡{t("pdf.btn")}!
+                        </button>
                     </div>
                 </div>
             </div>

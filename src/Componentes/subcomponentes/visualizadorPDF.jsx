@@ -20,7 +20,7 @@ export const App = ({fileUrl}) => {
         
         <div style={{
             border: '1px solid rgba(0, 0, 0, 0.3)',
-            height: '500px',
+            height: '550px',
         }}>
             <Worker workerUrl="https://unpkg.com/pdfjs-dist@2.15.349/build/pdf.worker.min.js" >
                     <Viewer 

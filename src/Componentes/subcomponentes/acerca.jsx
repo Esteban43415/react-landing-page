@@ -91,6 +91,22 @@ function Acerca() {
                                     <p className="text-4xl mob:text-2xl xmob:text-2xl">{t("acerca.categoria")}</p>
                                 </div>
                                 <div className="row-span-1 text-center self-center">
+                                    <p className="text-7xl  text-second-color mob:text-5xl xmob:text-5xl">{t("acerca.juvenil")}</p>
+                                </div>
+                                <div className="row-span-1 text-center self-center">
+                                    <p className="text-4xl mob:text-2xl xmob:text-2xl">14 - 17 {t("acerca.años")}</p>
+                                </div>
+                            </div>
+                        </div>
+                        {/* 
+                                //* ---------------------------------------------------------------------------------------------------------------
+                            */}
+                        <div className="pc:col-span-2 tab:col-span-7 mob:col-span-7 xmob:col-span-7">
+                            <div className="grid grid-rows-3 text-2xl  pc:border-l-4 border-dotted border-second-color tab:border-b-4 mob:border-b-4 xmob:border-b-4">
+                                <div className="row-span-1 text-center self-center">
+                                    <p className="text-4xl mob:text-2xl xmob:text-2xl">{t("acerca.categoria")}</p>
+                                </div>
+                                <div className="row-span-1 text-center self-center">
                                     <p className="text-7xl  text-second-color mob:text-5xl xmob:text-5xl">Open</p>
                                 </div>
                                 <div className="row-span-1 text-center self-center">
@@ -103,7 +119,7 @@ function Acerca() {
                                 //* ---------------------------------------------------------------------------------------------------------------
                             */}
                         <div className="pc:col-span-2 tab:col-span-7 mob:col-span-7 xmob:col-span-7">
-                            <div className="grid grid-rows-3 text-2xl border-second-color pc:border-l-4 border-dotted tab:border-b-4 mob:border-b-4 xmob:border-b-4">
+                            <div className="grid grid-rows-3 text-2xl border-second-color pc:border-l-4 pc:border-r-4 border-dotted tab:border-b-4 mob:border-b-4 xmob:border-b-4">
                                 <div className="row-span-1 text-center self-center">
                                     <p className="text-4xl mob:text-2xl xmob:text-2xl">{t("acerca.categoria")}</p>
                                 </div>
@@ -119,7 +135,7 @@ function Acerca() {
                                 //* ---------------------------------------------------------------------------------------------------------------
                             */}
                         <div className="pc:col-span-2 tab:col-span-7 mob:col-span-7 xmob:col-span-7">
-                            <div className="grid grid-rows-3 text-2xl border-second-color pc:border-l-4 pc:border-r-4 border-dotted tab:border-b-4 mob:border-b-4 xmob:border-b-4">
+                            <div className="grid grid-rows-3 text-2xl border-second-color pc:border-l-4  border-dotted tab:border-b-4 mob:border-b-4 xmob:border-b-4">
                                 <div className="row-span-1 text-center self-center">
                                     <p className="text-4xl mob:text-2xl xmob:text-2xl">{t("acerca.categoria")}</p>
                                 </div>
@@ -134,7 +150,7 @@ function Acerca() {
                         {/* 
                                 //* ---------------------------------------------------------------------------------------------------------------
                             */}
-                        <div className="pc:col-span-3 tab:col-span-7 mob:col-span-7 xmob:col-span-7">
+                        <div className="pc:col-span-2 tab:col-span-7 mob:col-span-7 xmob:col-span-7">
                             <div className="grid grid-rows-3 text-2xl border-second-color pc:border-l-4 border-dotted tab:border-b-4 mob:border-b-4 xmob:border-b-4">
                                 <div className="row-span-1 text-center self-center">
                                     <p className="text-4xl mob:text-2xl xmob:text-2xl">{t("acerca.categoria")}</p>
@@ -150,7 +166,7 @@ function Acerca() {
                         {/* 
                                 //* ---------------------------------------------------------------------------------------------------------------
                             */}
-                        <div className="pc:col-span-3 tab:col-span-7 mob:col-span-7 xmob:col-span-7">
+                        <div className="pc:col-span-2 tab:col-span-7 mob:col-span-7 xmob:col-span-7">
 
                             <div className="grid grid-rows-3 text-2xl border-second-color pc:border-r-4 pc:border-l-4 border-dotted">
                                 <div className="row-span-1 text-center self-center">

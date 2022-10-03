@@ -1,22 +1,23 @@
 {
     "header": {
         "titulo": "BOCA DE PEZ",
-        "descripcion": "THE FIRST TRAIL RACE IN CUENCA WITH iTRA AND UTMB BENEFITS"
+        "descripcion": "THE FIRST TRAIL RACE IN CUENCA WITH ITRA AND UTMB BENEFITS"
     },
     "acerca": {
         "premios": "General",
         "generales": "Cash",
         "en-efectivo": "Prizes",
         "categorias": "Available Categories",
-        "categoria": "Categories",
-        "años": "Years old"
+        "categoria": "Category",
+        "años": "Years old",
+        "juvenil": "Youth"
     },
     "patrocinadores": {
         "beneficios": "Benefits",
-        "desc-beneficios": "It is the first event in Cuenca that has points to qualify for the Ultra Trail Du Mont Blanc (UTMB) and its related races, and 2 of the 3 routes will have iTRA points.",
+        "desc-beneficios": "It is the first event in Cuenca that has points to qualify for the Ultra Trail Du Mont Blanc (UTMB) and its related races, and 2 of the 3 routes will have ITRA points.",
         "tooltip-itra": "More information about the race click here",
         "tooltip-utmb": "More information about the classification of the races click here",
-        "desc-itra": "The International Trail Running Association (iTRA) aims to give trail running actors a voice to promote its strong values, diversity, route safety and runner health prevail, contribute to the development of trail running and encourage dialogue with national and international associations.",
+        "desc-itra": "The International Trail Running Association (ITRA) aims to give trail running actors a voice to promote its strong values, diversity, route safety and runner health prevail, contribute to the development of trail running and encourage dialogue with national and international associations.",
         "desc-utmb": "Ultra Trail Du Mont Blanc (UTMB) is a sporting event located between France, Switzerland and Italy that over 19 years has set an international trend, increasing the attention of many legendary athletes in Trail Running.",
         "auspiciantes": "Our sponsors"
     },
@@ -118,6 +119,10 @@
             "id": "C"
         },
         {
+            "name": "Camping",
+            "id": "F"
+        },
+        {
             "name": "Routes",
             "id": "D"
         },
@@ -129,5 +134,74 @@
     "inscripcion": {
         "titulo": "To make your registration we send you to the official page of meet2go",
         "btn": "Register now"
+    },
+    "promocion": {
+        "principal": "Learn about our giveaways and promotions",
+        "titulo": "Promo",
+        "descripcion1": "Remember the promotion",
+        "descripcion2": "For every 5 registered participants the 6th participant is",
+        "descripcion3": "FREE!"
+    },
+    "promocion2": {
+        "titulo": "Promo",
+        "descripcion1": "15% OFF",
+        "descripcion2": "In the inscriptions of all routes from September 22 to October 9"
+    },
+    "beneficios": {
+        "titulo": "Benefits in race kits and many more implements",
+        "uswe": "With USWE you have a 25% discount on their hydration backpack products and more",
+        "gaviota": "With Gaviota Hotel you have a 20% discount on accommodation with prior verification of registration",
+        "petzl": "With PETZL you have a 30% cash discount and a 17% card discount on all its tool products and more",
+        "hammer": "Hammer Nutrition is a sports nutrition company that offers supply points on the different routes in the Boca de pez Trail Journey event"
+    },
+    "pdf": {
+        "titulo": "Check the official regulations of the event",
+        "btn": "Click here"
+    },
+    "sorteo": {
+        "titulo": "Giveaway",
+        "descripcion": "Gaviota Hotel gives away 2 Free Glamping stays at 'Gaviota Dorada Lodge' a few meters from the event"
+    },
+    "camping": {
+        "descripcion": "For you to be part of the Boca de Pez experience, we invite you to enjoy the camping service where we offer you",
+        "servicios": [{
+                "desc": "Horror movie"
+            },
+            {
+                "desc": "snack at dawn"
+            },
+            {
+                "desc": "Snacks and hydration"
+            },
+            {
+                "desc": "Wood fire"
+            },
+            {
+                "desc": "Trekking at dawn"
+            },
+            {
+                "desc": "Privileged parking"
+            },
+            {
+                "desc": "Sanitary facilities"
+            }
+        ],
+        "descripcion2": "For more information consult the itinerary and official regulations of Camping Boca de Pez",
+        "descripcion3": "Registration only by WhatsApp",
+        "desc-wpp": "Contact us"
+    },
+    "mes": {
+        "01": "January",
+        "02": "February",
+        "03": "March",
+        "04": "April",
+        "05": "May",
+        "06": "June",
+        "07": "July",
+        "08": "August",
+        "09": "September",
+        "10": "October",
+        "11": "November",
+        "12": "December"
     }
 }

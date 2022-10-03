@@ -9,7 +9,7 @@ function Patrocinadores() {
             <>
                 <h2 className='text-7xl tab:text-3xl mob:text-3xl xmob:text-3xl text-center text-white col-span-4'>{t("patrocinadores.auspiciantes")}</h2>
                 <div className='flex justify-center items-center'>
-                    <div className="grid grid-cols-10 gap-7 pc:gap-10  tab:grid-cols-3 mob:grid-cols-3 xmob:grid-cols-3 pc:pt-10 pc:px-20 tab:p-10 mob:p-10 xmob:p-10">
+                    <div className="grid grid-cols-12 gap-7 pc:gap-10  tab:grid-cols-3 mob:grid-cols-3 xmob:grid-cols-3 pc:pt-10 pc:px-20 tab:p-10 mob:p-10 xmob:p-10">
 
                         <div className="col-span-2 self-center tab:col-span-1 mob:col-span-1 xmob:col-span-1">
                             <img src="../imagenes/auspicios/petzl.png" alt="" className="object-center  w-full h-full" />
@@ -28,6 +28,12 @@ function Patrocinadores() {
                         </div>
                         <div className="col-span-2 self-center tab:col-span-1 mob:col-span-1 xmob:col-span-1">
                             <img src="../imagenes/auspicios/Monodedo.png" alt="" className="w-full  object-center " />
+                        </div>
+                        <div className="col-span-2 self-center tab:col-span-1 mob:col-span-1 xmob:col-span-1">
+                            <img src="../imagenes/auspicios/gaviota.png" alt="" className="w-full  object-center " />
+                        </div>
+                        <div className="col-span-2 self-center tab:col-span-1 mob:col-span-1 xmob:col-span-1">
+                            <img src="../imagenes/auspicios/at.png" alt="" className="w-full  object-center " />
                         </div>
                         <div className="col-span-2 self-center tab:col-span-1 mob:col-span-1 xmob:col-span-1">
                             <img src="../imagenes/auspicios/CruzRoja.png" alt="" className="w-full  object-center " />
@@ -105,6 +111,37 @@ function Patrocinadores() {
                         <p className='text-justify text-2xl tab:text-xl mob:text-xl xmob:text-xl  indent-6'>
                             {t("patrocinadores.desc-utmb")}
                         </p>
+                    </div>
+                </div>
+            </div>
+            <div className="col-span-5 text-center text-white">
+                <h3 className="text-6xl mob:text-4xl xmob:text-4xl tracking-tight">{t("beneficios.titulo")}</h3>
+            </div>
+            <div className="col-span-5">
+                <div className="grid grid-cols-3 gap-x-3 gap-y-14 px-32 py-20 tab:px-7 mob:px-7 xmob:px-7">
+                    <div className="col-span-1 self-center ">
+                        <img src="../imagenes/auspicios/gaviota.png" alt="" className="w-full  object-center " />
+                    </div>
+                    <div className="col-span-2 self-center pl-10">
+                        <p className="text-3xl text-white text-justify tab:text-xl mob:text-xl xmob:text-xl">{t('beneficios.gaviota')}</p>
+                    </div>
+                    <div className="col-span-1 self-center">
+                        <img src="../imagenes/auspicios/uswe.png" alt="" className="w-full  object-center " />
+                    </div>
+                    <div className="col-span-2 self-center pl-10">
+                        <p className="text-3xl text-white text-justify tab:text-xl mob:text-xl xmob:text-xl">{t('beneficios.uswe')}</p>
+                    </div>
+                    <div className="col-span-1 self-center">
+                        <img src="../imagenes/auspicios/petzl.png" alt="" className="w-full  object-center " />
+                    </div>
+                    <div className="col-span-2 self-center pl-10">
+                        <p className="text-3xl text-white text-justify tab:text-xl mob:text-xl xmob:text-xl">{t('beneficios.petzl')}</p>
+                    </div>
+                    <div className="col-span-1 self-center">
+                        <img src="../imagenes/auspicios/Hammer.png" alt="" className="w-full  object-center " />
+                    </div>
+                    <div className="col-span-2 self-center pl-10">
+                        <p className="text-3xl text-white text-justify tab:text-xl mob:text-xl xmob:text-xl">{t('beneficios.hammer')}</p>
                     </div>
                 </div>
             </div>

@@ -353,6 +353,15 @@ ul#nav li.current a {
     color: #ffb000;
 }
 
+#E {
+    background: #0e2a47;
+    color: #636363;
+    text-align: center;
+    background: rgba(14, 42, 71, 0.75) url(../imagenes/fondo2.jpg) top center;
+    background-size: cover !important;
+    -webkit-background-size: cover !important;
+}
+
 #contact {
     /* box-shadow: 10px 10px 40px 5px black; */
     /* border-radius: 5%; */
