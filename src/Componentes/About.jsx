@@ -16,9 +16,9 @@ class About extends Component {
             <div className='col-span-2' id='C'>
                <Patrocinadores />
             </div>
-            <div id="F" className="col-span-2">
+            {/* <div id="F" className="col-span-2">
                <Camping />
-            </div>
+            </div> */}
             <div id="D" className='col-span-2'>
                <Rutas />
             </div>

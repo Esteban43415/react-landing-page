@@ -12,7 +12,9 @@ function MyTimer({ expiryTimestamp }) {
         minutes,
         hours,
         days,
-    } = useTimer({ expiryTimestamp, onExpire: () => console.warn('onExpire called') });
+    } = useTimer({ expiryTimestamp, onExpire: () => {
+        return [1,0,0,0]
+    } });
 
 
     return (
@@ -38,13 +40,14 @@ function MyTimer({ expiryTimestamp }) {
                 </div>
             </div>
 
+            
         </div>
     );
 }
 
 
 
-    const fin = moment('2022-10-29 04:30:00').format('YYYY-MM-DD HH:mm:ss');
+    const fin = moment('2025-08-09 12:21:00').format('YYYY-MM-DD HH:mm:ss');
     const act = moment().format('YYYY-MM-DD HH:mm:ss');
     const res = moment(fin).diff(act, 'seconds');
     const time = new Date();

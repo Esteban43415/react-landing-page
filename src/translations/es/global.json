@@ -37,10 +37,16 @@
         "pa-titulo": "Puntos de Abasto (PA)",
         "pa-descripcion": "Son los puestos más completos, ya que son puntos de control y de avituallamiento, se contará con comida (frutas, barras energeticas,etc) e hidratación (agua, electrolitos,etc) con 2 asistentes médicos y 2 miembros del staff.",
         "btn-dialog": "Entendido",
+        "guia": "Toma un vistazo más a detalle sobre esta ruta",
+        "titulo-modal": "Detalles de la ruta",
+        "desc-modal": "Consulta la guía del corredor",
+        "desc-modal2": "Consulta los detalles de la ruta",
+        "btn-modal": "Descargar el archivo GPX de la ruta aquí",
+        "titulo-reglamento": "Reglamento oficial de Boca de Pez Trail Journey",
         "RutaA": {
             "Nombre": "Escalera al Cielo 'ROB D'",
-            "Distancia": 10,
-            "Descripcion": "10.10km conformados por un 99% de sendero, mantiene partes técnicas y abiertas, cruces de riachuelos y zonas de bosque y pajonal, con desnivel positivo 1050m y negativo 1050m, tiene una intensidad moderada y su dificultad es media, punto más alto 3800m, punto más bajo 2700m, hora de salida 9am el sábado 29 de Octubre del 2022, lugar de salida y llegada km 2 vía barabón (Cuenca – Ecuador) tiempo límite 4 horas",
+            "Distancia": 5,
+            "Descripcion": "5 km conformados por un 99% de sendero, mantiene partes técnicas y abiertas, cruces de riachuelos y zonas de bosque y pajonal, con desnivel positivo 1050m y negativo 1050m, tiene una intensidad moderada y su dificultad es media, punto más alto 3800m, punto más bajo 2700m, hora de salida 9:00am el sábado 29 de Octubre del 2023, lugar de salida y llegada km 2 vía barabón (Cuenca – Ecuador) tiempo límite 4 horas",
             "PuntosControl": [{
                 "Nombre": "PC 1",
                 "Descripcion": "km 5 fin de ascenso pico Km vertical"
@@ -53,8 +59,8 @@
         },
         "RutaB": {
             "Nombre": "Casa de Árbol",
-            "Distancia": 21,
-            "Descripcion": "20.20km conformados por un 85% de sendero 12% de lastre 3% de pavimento, matiene partes técnicas y abiertas, cruces de riachuelos y zonas de bosque y pajonal, con desnivel positivo 1370m y negativo 1370m, tiene una intensidad moderada y su dificultad es media, punto más alto 3800m, punto más bajo 2700m, hora de salida 7am el sábado 29 de Octubre del 2022, lugar de salida y llegada km 2 vía de barabón (Cuenca – Ecuador) tiempo límite 8 horas.",
+            "Distancia": 15,
+            "Descripcion": "15km conformados por un 85% de sendero 12% de lastre 3% de pavimento, matiene partes técnicas y abiertas, cruces de riachuelos y zonas de bosque y pajonal, con desnivel positivo 1370m y negativo 1370m, tiene una intensidad moderada y su dificultad es media, punto más alto 3800m, punto más bajo 2700m, hora de salida 7:00am el sábado 29 de Octubre del 2023, lugar de salida y llegada km 2 vía de barabón (Cuenca – Ecuador) tiempo límite 8 horas.",
             "PuntosControl": [{
                 "Nombre": "PC 1",
                 "Descripcion": "Km 5 a la salida del sendero sector iglesia"
@@ -72,8 +78,8 @@
         },
         "RutaC": {
             "Nombre": "Boca de Pez",
-            "Distancia": 34,
-            "Descripcion": "33.30km conformados por un 75% de sendero 15% de lastre 5% de pavimento, mantiene partes técnicas y abiertas, cruces de riachuelos y zonas de bosque y pajonal, con desnivel positivo 2300m y negativo 2300m, tiene una intensidad moderada y su dificultad es media – alta, punto más alto 3800m, punto más bajo 2700m, hora de salida 4h30am el sábado 29 de Octubre del 2022, lugar y llegada km 2 vía barabón (Cuenca – Ecuador) tiempo límite 10 horas.",
+            "Distancia": 35,
+            "Descripcion": "35km conformados por un 75% de sendero 15% de lastre 5% de pavimento, mantiene partes técnicas y abiertas, cruces de riachuelos y zonas de bosque y pajonal, con desnivel positivo 2300m y negativo 2300m, tiene una intensidad moderada y su dificultad es media – alta, punto más alto 3800m, punto más bajo 2700m, hora de salida 5:00am el sábado 29 de Octubre del 2023, lugar y llegada km 2 vía barabón (Cuenca – Ecuador) tiempo límite 10 horas.",
             "PuntosControl": [{
                     "Nombre": "PC 1",
                     "Descripcion": "Km 7.5 Cumbre final del kilómetro vertical"
@@ -118,18 +124,12 @@
             "name": "Beneficios",
             "id": "C"
         },
-        {
-            "name": "Camping",
-            "id": "F"
-        },
+
         {
             "name": "Rutas",
             "id": "D"
-        },
-        {
-            "name": "Inscripciones",
-            "id": "E"
         }
+        
     ],
     "inscripcion": {
         "titulo": "Para realizar tu inscripción te enviamos a la página oficial de meet2go",
@@ -148,6 +148,29 @@
         "descripcion2": "En las inscripciones de todas las rutas desde el 22 de Septiembre hasta el 9 de Octubre"
     },
     "beneficios": {
+        "kit": [{
+                "desc": "Bag"
+            },
+            {
+                "desc": "Camiseta"
+            },
+            {
+                "desc": "Visera"
+            },
+            {
+                "desc": "Buff"
+            },
+            {
+                "desc": "Dorsal/Chip"
+            },
+            {
+                "desc": "Sorpresa de los Auspiciantes"
+            }
+        ],
+        "titulo2": "Kit Oficial de Boca de Pez Trail Journey",
+        "descripcion2": "El kit oficial de Boca de Pez Trail Journey incluye los siguientes elementos:",
+        "titulo3": "Beneficios de los auspiciantes",
+        "descripcion3": "Los participantes de Boca de Pez Trail Journey tendrán los siguientes beneficios:",
         "titulo": "Beneficios en kits de carrera y muchos implementos más",
         "uswe": "Con USWE tienes el 25% de descuento en sus productos de mochilas de hidratación y más",
         "gaviota": "Con Gaviota Hotel tienes el 20% de descuento en hospedaje con la previa comprobación de la inscripción",

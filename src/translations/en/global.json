@@ -37,6 +37,12 @@
         "pa-titulo": "Supply Points (SP)",
         "pa-descripcion": "They are the most complete posts, since they are control and refreshment points, there will be food (fruits, energy bars, etc.) and hydration (water, electrolytes, etc.) with 2 medical assistants and 2 staff members.",
         "btn-dialog": "It is understood",
+        "guia": "Learn about the runner's guide and take a closer look at this route",
+        "titulo-modal": "Runner's guide and route details",
+        "desc-modal": "Check the runner's guide",
+        "desc-modal2": "Take a look at the route",
+        "btn-modal": "Download the GPX file of the route here",
+        "titulo-reglamento": "Boca de Pez Trail Journey Official Rules",
         "RutaA": {
             "Nombre": "Escalera al Cielo 'ROB D'",
             "Distancia": 10,
@@ -148,6 +154,29 @@
         "descripcion2": "In the inscriptions of all routes from September 22 to October 9"
     },
     "beneficios": {
+        "kit": [{
+                "desc": "Bag"
+            },
+            {
+                "desc": "T-shirt"
+            },
+            {
+                "desc": "Hat"
+            },
+            {
+                "desc": "Buff"
+            },
+            {
+                "desc": "Number/Chip"
+            },
+            {
+                "desc": "Sponsors gifts"
+            }
+        ],
+        "titulo2": "Official Kit Boca de Pez Trail Journey",
+        "descripcion2": "The official Boca de Pez Trail Journey kit includes the following items:",
+        "titulo3": "Sponsor Benefits",
+        "descripcion3": "Boca de Pez Trail Journey participants will have the following benefits:",
         "titulo": "Benefits in race kits and many more implements",
         "uswe": "With USWE you have a 25% discount on their hydration backpack products and more",
         "gaviota": "With Gaviota Hotel you have a 20% discount on accommodation with prior verification of registration",

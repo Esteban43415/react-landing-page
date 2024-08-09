@@ -5,11 +5,9 @@ function Acerca() {
     return (
         <div className="rounded-t-2xl p-10  ">
             <div className="grid grid-cols-1 gap-5 p-5 pc:px-24 text-center">
-                <div className="col-span-1 border-b-4 border-second-color border-dotted pb-[60px]">
+                {/* <div className="col-span-1 border-b-4 border-second-color border-dotted pb-[60px]">
                     <div className="pc:grid pc:grid-cols-2 pc:gap-5 tab:grid tab:grid-cols-2 tab:gap-5 mob:grid mob:grid-cols-2 mob:gap-3 xmob:grid xmob:grid-cols-2 xmob:gap-3">
-                        {/* 
-                                //* ---------------------------------------------------------------------------------------------------------------
-                            */}
+                        
                         <div className="pc:col-span-1 tab:col-span-2 grid grid-rows-3 mob:col-span-2 xmob:col-span-2">
                             <div className="row-span-1  pc:text-left tab:text-center mob:text-center xmob:text-center self-center ">
                                 <h1 className="pc:text-6xl text-white tab:text-4xl mob:text-2xl xmob:text-2xl"> {t("acerca.premios")} </h1>
@@ -21,9 +19,7 @@ function Acerca() {
                                 <h1 className="pc:text-6xl text-white  tab:text-4xl mob:text-2xl xmob:text-2xl"> {t("acerca.en-efectivo")} </h1>
                             </div>
                         </div>
-                        {/* 
-                                //* ---------------------------------------------------------------------------------------------------------------
-                            */}
+                       
                         <div className="pc:col-span-1 tab:col-span-2 grid grid-rows-3 mob:col-span-2 xmob:col-span-2">
                             <div className="row-span-1 grid grid-cols-2 gap-3 self-center border-b-2 border-second-color border-solid pb-5">
                                 <div className="pc:col-span-1 tab:col-span-1 mob:col-span-3 xmob:col-span-3 text-white">
@@ -65,11 +61,9 @@ function Acerca() {
                             </div>
 
                         </div>
-                        {/* 
-                                //* ---------------------------------------------------------------------------------------------------------------
-                            */}
+                        
                     </div>
-                </div>
+                </div> */}
                 {/* 
                         //* ---------------------------------------------------------------------------------------------------------------
                     */}

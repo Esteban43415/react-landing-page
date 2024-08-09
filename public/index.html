@@ -11,11 +11,52 @@
     <link rel="stylesheet" href="%PUBLIC_URL%/css/media-queries.css">
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
-    <title>Boca de pez Trail - 2022</title>
+    <title>Boca de pez Trail - 2023</title>
+    <!-- <script src="https://pay.payphonetodoesposible.com/api/button/js?appId=q36AcM6K30W2CAnS3S7uaQ"></script> -->
+    <!-- <script>
+        window.onload = function () {
+            payphone.Button({
+
+                //token obtenido desde la consola de developer
+                token: "idcBFd6lMpmdWI2ox9K3eE3spWgq13mqAmv43u0kqpxU46oPUHdpH7GiHaIhrAxo-O4V4QFgf4FtU1SALu9RDNMKtBp_eZHMkAceXjVNnExo0mvOjxK8EUyu5sIc0xL_VpgPM0MwW5FHnZxgPlEmaNImlLzyxO6wdw_8sDXDNUNSEg_kZRbUgL-K6GJvyuvtrS-23n-TItwLcA0q17ZkPlXr6Kf3qCF3o7ohuvsNsoYri5M08qV2jG5GZjgLxtnTcIBwAGT1Cg85_QLgxGJdfst4UPZ8d3U__GuAWvyiBFQzQRdcrASQOB9T_kQ6CAbX8xdpEw",
+
+                //PARÁMETROS DE CONFIGURACIÓN
+                btnHorizontal: false,
+                btnCard: false,
+
+                createOrder: function (actions) {
+                    //Se ingresan los datos de la transaccion ej. monto, impuestos, etc
+
+                    return actions.prepare({
+
+                        amount: 100,
+                        amountWithoutTax: 100,
+                        currency: "USD",
+                        clientTransactionId: "PruebasExpress",
+                        lang: "es"
+
+                    }).then(function (paramlog) {
+                        console.log(paramlog);
+                        return paramlog;
+                    }).catch(function (paramlog2) {
+                        console.log(paramlog2);
+                        return paramlog2;
+                    });
+                },
+
+                onComplete: function (model, actions) {
+                    console.log("Modelo:");
+                    console.log(model);
+                }
+            }).render("#pp-button");
+        }
+    </script> -->
+
 </head>
 
 <body class="font-STD">
     <div id="root"></div>
+    <!-- <div id="pp-button"></div> -->
 
 </body>
 

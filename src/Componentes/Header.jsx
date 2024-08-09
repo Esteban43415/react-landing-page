@@ -216,8 +216,8 @@ function Header() {
                             <div className="pc:col-span-2 tab:col-span-2 mob:col-span-2">
                                 <h1 className="font-Spongebob pc:text-6xl tab:text-6xl mob:text-4xl xmob:text-4xl">{t("header.titulo")}</h1>
 
-                                <br />
-                                <h3 className='font-roboto pc:text-xl tab:text-lg mob:text-base xmob:text-base'>{t("header.descripcion")}</h3>
+                                {/* <br /> */}
+                                {/* <h3 className='font-roboto pc:text-xl tab:text-lg mob:text-base xmob:text-base'>{t("header.descripcion")}</h3> */}
                             </div>
                         </div>
                     </div>
@@ -233,6 +233,10 @@ function Header() {
                         </div>
 
                     </div>
+
+                    {/* <div className="row-span-1 flex justify-center items-center mb-28">
+                        <a href="#contact" className='text-center tab:text-3xl mob:text-3xl hover:underline text-5xl font-bold text-second-color'>Realiza tu inscripción aquí</a>
+                    </div> */}
 
 
                 </div>

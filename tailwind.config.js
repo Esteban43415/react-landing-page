@@ -9,6 +9,7 @@ module.exports = {
             'Spongebob': ['Spongebob', 'sans-serif'],
         },
         screens: {
+            '4sm': { 'min': '320px', 'max': '425px' },
 
             '3sm': { 'min': '320px', 'max': '480px' },
             // => @media (min-width: 320px and max-width: 480px) { ... }
@@ -38,6 +39,7 @@ module.exports = {
 
             'xmob': { 'max': '360px' },
             'all': { 'min': '0px' },
+            'mob3' : {'max':'768px'}
 
 
         },
