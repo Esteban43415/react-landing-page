@@ -330,7 +330,7 @@ class Formulario extends Component {
     }
     boton = (e) => {
         e.preventDefault();
-        let usuario = [this.state.cedula, this.state.nombres, this.state.apellidos, this.state.correo, this.state.telefono, this.state.pais, this.state.provincia, this.state.ciudad, this.state.ruta10km, this.state.ruta21km, this.state.ruta34km, this.state.Sexo, this.state.FechaNac, this.state.ContactoEmergencia, this.state.CondicionMedica, this.state.Club, this.state.TallaCamiseta];
+        // let usuario = [this.state.cedula, this.state.nombres, this.state.apellidos, this.state.correo, this.state.telefono, this.state.pais, this.state.provincia, this.state.ciudad, this.state.ruta10km, this.state.ruta21km, this.state.ruta34km, this.state.Sexo, this.state.FechaNac, this.state.ContactoEmergencia, this.state.CondicionMedica, this.state.Club, this.state.TallaCamiseta];
         // inscribirUsuario(usuario);
         // console.log(value);
         // if (value) {

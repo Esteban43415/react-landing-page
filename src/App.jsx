@@ -3,7 +3,6 @@ import './App.css';
 import Header from './Componentes/Header';
 // import Footer from './Componentes/Footer';
 import About from './Componentes/About';
-import Formulario from './Componentes/formulario';
 // import { useTranslation } from "react-i18next"
 
 // import Formulario from './Componentes/formulario';

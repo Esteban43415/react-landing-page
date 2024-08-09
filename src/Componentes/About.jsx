@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import Acerca from './subcomponentes/acerca';
 import Patrocinadores from './subcomponentes/patrocinadores';
 import Rutas from './subcomponentes/rutas';
-import Camping from './subcomponentes/camping';
-
 class About extends Component {
    render() {
 
