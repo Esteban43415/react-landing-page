@@ -1,0 +1,69 @@
+{
+    "RutaA": {
+        "Nombre": "Escalera al Cielo 'ROB D'",
+        "Distancia": 10,
+        "Descripcion": "10.10km conformados por un 99% de sendero, mantiene partes técnicas y abiertas, cruces de riachuelos y zonas de bosque y pajonal, con desnivel positivo 1050m y negativo 1050m, tiene una intensidad moderada y su dificultad es media, punto más alto 3800m, punto más bajo 2700m, hora de salida 9am el sábado 29 de Octubre del 2022, lugar de salida y llegada km 2 vía barabón (Cuenca – Ecuador) tiempo límite 4 horas",
+        "PuntosControl": [{
+            "Nombre": "PC #1",
+            "Descripcion": "km 5 fin de ascenso pico Km vertical"
+        }],
+        "PuntosAbasto": [{
+                "Nombre": "PA #1",
+                "Descripcion": "km 4 - Sector parqueaderopico de pez"
+            },
+            {
+                "Nombre": "PA #2",
+                "Descripcion": "km 6 - sector parqueadero pico de pez"
+            }
+        ]
+    },
+    "B": {
+        "Nombre": "Casa de Árbol",
+        "Distancia": 21,
+        "Descripcion": "20.20km conformados por un 85% de sendero 12% de lastre 3% de pavimento, matiene partes técnicas y abiertas, cruces de riachuelos y zonas de bosque y pajonal, con desnivel positivo 1370m y negativo 1370m, tiene una intensidad moderada y su dificultad es media, punto más alto 3800m, punto más bajo 2700m, hora de salida 7am el sábado 29 de Octubre del 2022, lugar de salida y llegada km 2 vía de barabón (Cuenca – Ecuador) tiempo límite 8 horas.",
+        "PuntosControl": [{
+            "Nombre": "PC #1",
+            "Descripcion": "Km 5 a la salida del sendero sector iglesia"
+        }],
+        "PuntosAbasto": [{
+                "Nombre": "PA #1",
+                "Descripcion": "Km 9 - sector parqueadero pico de pez"
+            },
+            {
+                "Nombre": "PA #2",
+                "Descripcion": "Km 16 - sector parqueadero pico de pez"
+            }
+        ]
+    },
+    "C": {
+        "Nombre": "Boca de Pez",
+        "Distancia": 34,
+        "Descripcion": "33.30km conformados por un 75% de sendero 15% de lastre 5% de pavimento, mantiene partes técnicas y abiertas, cruces de riachuelos y zonas de bosque y pajonal, con desnivel positivo 2300m y negativo 2300m, tiene una intensidad moderada y su dificultad es media – alta, punto más alto 3800m, punto más bajo 2700m, hora de salida 4h30am el sábado 29 de Octubre del 2022, lugar y llegada km 2 vía barabón (Cuenca – Ecuador) tiempo límite 10 horas.",
+        "PuntosControl": [{
+                "Nombre": "PC #1",
+                "Descripcion": "Km 7.5 Cumbre final del kil&oacute;metro vertical"
+            },
+            {
+                "Nombre": "PC #2",
+                "Descripcion": "Km 9.2 Final del kil&oacute;metro vertical antiguo"
+            }
+        ],
+        "PuntosAbasto": [{
+                "Nombre": "PA #1",
+                "Descripcion": "Km 11.5 Cumbre boca de pez"
+            },
+            {
+                "Nombre": "PA #2",
+                "Descripcion": "Km 15 - sector parqueadero pico de pez"
+            },
+            {
+                "Nombre": "PA #3",
+                "Descripcion": "Km 25 a la salida del sendero sector iglesia"
+            },
+            {
+                "Nombre": "PA #4",
+                "Descripcion": "Km 29 - sector parqueadero pico de pez"
+            }
+        ]
+    }
+}
