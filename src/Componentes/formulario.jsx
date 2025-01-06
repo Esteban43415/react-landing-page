@@ -17,7 +17,7 @@ var settings = {
 const MySwal = withReactContent(Swal);
 
 // var baseUrl = "http://localhost/bocadepez/BD/functions.php";
-var baseUrl = "https://bocadepeztrail.com/BD/functions.php";
+// var baseUrl = "https://bocadepeztrail.com/BD/functions.php";
 class Formulario extends Component {
     constructor(props) {
         super(props);
