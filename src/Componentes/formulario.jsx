@@ -204,47 +204,47 @@ class Formulario extends Component {
             formData.append('jsonData', JSON.stringify(data_user));
             formData.append('textData', 'add_user');
             this.setState({ isLoading: true });
-            $.ajax({
-                type: "POST",
-                url: baseUrl,
-                data: formData,
-                processData: false,
-                contentType: false,
-            }).done(function (response) {
-                const Toast = MySwal.mixin({
-                    toast: true,
-                    position: 'top-end',
-                    showConfirmButton: false,
-                    timer: 10000,
-                    timerProgressBar: true,
-                    didOpen: (toast) => {
-                        toast.addEventListener('mouseenter', Swal.stopTimer)
-                        toast.addEventListener('mouseleave', Swal.resumeTimer)
-                    }
-                })
-                Toast.fire({
-                    icon: 'success',
-                    title: 'La inscripción se realizo de forma existosa, pronto te enviaremos más información a tu correo'
-                })
-            }).fail(function (response) {
-                const Toast = MySwal.mixin({
-                    toast: true,
-                    position: 'top-end',
-                    showConfirmButton: false,
-                    timer: 3000,
-                    timerProgressBar: true,
-                    didOpen: (toast) => {
-                        toast.addEventListener('mouseenter', Swal.stopTimer)
-                        toast.addEventListener('mouseleave', Swal.resumeTimer)
-                    }
-                })
-                Toast.fire({
-                    icon: 'error',
-                    title: 'La cedula/pasaporte ya se encuentra registrado por favor revisar tu correo electrónico para más información'
-                })
-            }).always(() => {
-                this.setState({ isLoading: false });
-            });
+            // $.ajax({
+            //     type: "POST",
+            //     url: baseUrl,
+            //     data: formData,
+            //     processData: false,
+            //     contentType: false,
+            // }).done(function (response) {
+            //     const Toast = MySwal.mixin({
+            //         toast: true,
+            //         position: 'top-end',
+            //         showConfirmButton: false,
+            //         timer: 10000,
+            //         timerProgressBar: true,
+            //         didOpen: (toast) => {
+            //             toast.addEventListener('mouseenter', Swal.stopTimer)
+            //             toast.addEventListener('mouseleave', Swal.resumeTimer)
+            //         }
+            //     })
+            //     Toast.fire({
+            //         icon: 'success',
+            //         title: 'La inscripción se realizo de forma existosa, pronto te enviaremos más información a tu correo'
+            //     })
+            // }).fail(function (response) {
+            //     const Toast = MySwal.mixin({
+            //         toast: true,
+            //         position: 'top-end',
+            //         showConfirmButton: false,
+            //         timer: 3000,
+            //         timerProgressBar: true,
+            //         didOpen: (toast) => {
+            //             toast.addEventListener('mouseenter', Swal.stopTimer)
+            //             toast.addEventListener('mouseleave', Swal.resumeTimer)
+            //         }
+            //     })
+            //     Toast.fire({
+            //         icon: 'error',
+            //         title: 'La cedula/pasaporte ya se encuentra registrado por favor revisar tu correo electrónico para más información'
+            //     })
+            // }).always(() => {
+            //     this.setState({ isLoading: false });
+            // });
         }
 
     }
