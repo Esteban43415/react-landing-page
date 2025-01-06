@@ -806,7 +806,7 @@ class Formulario extends Component {
                                                 {errors.ruta}</span>}
                                         </div>
 
-                                        <div className="max-w-5xl w-full">
+                                        {/* <div className="max-w-5xl w-full">
 
                                             <div className="flex flex-col gap-4 w-full h-full justify-center items-center">
                                                 <div className="row-span-3 font-medium text-4xl text-second-color" aria-hidden="true">
@@ -845,76 +845,12 @@ class Formulario extends Component {
                                                         </div>
                                                     </div>
                                                 </div>
-                                                {/* <Accordion transition transitionTimeout={200} className='w-full'>
-                                                    <AccordionItem header={
-                                                        <div className='h-full'>
-                                                            <h3 className='text-2xl p-5'>
-                                                                Transferencia Bancaria
-                                                            </h3>
-                                                        </div>
-                                                    } contentProps={{
-                                                        className: "transition-height duration-200 ease-out"
-                                                    }} className="border-b-solid border-b-2 border-b-second-color text-second-color font-semibold text-2xl">
-                                                        <div className='bg-white/30 w-full h-full rounded-t '>
-                                                            <table className="table-fixed">
-                                                                <thead>
-                                                                    <tr>
-                                                                        <th className='w-1/2'>Song</th>
-                                                                        <th className='w-1/2'>Year</th>
-                                                                    </tr>
-                                                                </thead>
-                                                                <tbody>
-                                                                    <tr>
-                                                                        <td>The Sliding Mr. Bones (Next Stop, Pottersville)</td>
-                                                                        <td>1961</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>Witchy Woman</td>
-                                                                        <td>1972</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>Shining Star</td>
-                                                                        <td>1975</td>
-                                                                    </tr>
-                                                                </tbody>
-                                                            </table>
-                                                        </div>
-                                                    </AccordionItem>
-
-                                                    <AccordionItem contentProps={{
-                                                        className: "transition-height duration-200 ease-out"
-                                                    }} className="border-b-solid border-b-2 border-b-second-color text-second-color font-semibold text-2xl" header={
-                                                        <div className='h-full'>
-                                                            <h3 className='text-2xl p-5'>
-                                                                Tarjeta de crédito/débito - Payphone
-                                                            </h3>
-                                                        </div>
-                                                    }>
-                                                        <div className="bg-white/30 w-full h-full rounded-t ">
-                                                            Quisque eget luctus mi, vehicula mollis lorem. Proin fringilla
-                                                            vel erat quis sodales. Nam ex enim, eleifend venenatis lectus
-                                                            vitae, accumsan auctor mi.
-                                                        </div>
-                                                    </AccordionItem>
-
-                                                    <AccordionItem contentProps={{
-                                                        className: "transition-height duration-200 ease-out"
-                                                    }} className="border-b-solid border-b-2 border-b-second-color text-second-color font-semibold text-2xl" header={
-                                                        <div className='h-full'>
-                                                            <h3 className='text-2xl p-5'>
-                                                                Banco pichincha - De una!
-                                                            </h3>
-                                                        </div>
-                                                    }>
-                                                        <div className='bg-white/30 w-full h-full rounded-t '>Suspendisse massa risus, pretium id interdum in, dictum sit
-                                                            amet ante. Fusce vulputate purus sed tempus feugiat.</div>
-                                                    </AccordionItem>
-                                                </Accordion> */}
+                                                
                                             </div>
-                                        </div>
+                                        </div> */}
 
 
-                                        <div className='flex flex-wrap gap-4 justify-between items-center max-w-3xl'>
+                                        {/* <div className='flex flex-wrap gap-4 justify-between items-center max-w-3xl'>
                                             <div className='w-full'>
                                                 <h4 className='text-4xl font-bold text-second-color'>Como último paso</h4>
                                                 <p className='text-second-color text-lg'><span className='font-bold'>¡IMPORTANTE!</span> Asegurate de enviar el comprobante de transferencia como una imagen</p>
@@ -936,7 +872,7 @@ class Formulario extends Component {
                                                     {errors.image}
                                                 </span>}
                                             </div>
-                                        </div>
+                                        </div> */}
                                     </div>
                                     <div className="px-4 py-3 text-center ">
                                         <button
